@@ -1,0 +1,3 @@
+Results of the GABLS3 diurnal cycle benchmark for wind energy applications
+==========================================================================
+.. notebook:: NEWAbenchmark/GABLS3DiurnalCycleBenchmarkForWindEnergy_2017.ipynb

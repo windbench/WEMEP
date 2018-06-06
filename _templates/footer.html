@@ -1,0 +1,20 @@
+<div class="footer">
+      <div class="container">
+          <span style="float: left;">© Windbench 2018 </span>
+          <span style="float: left;">
+            &nbsp;<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+          </span>
+          <span id="social-footer" class="pull-right">
+            <span><a href="mailto:jsrodrigo@cener.com"><i class="iconf-email"></i>jsrodrigo@cener.com</a></span> |
+            <span><a href="https://github.com/windbench/MEP"><i class="iconf-github-circled-alt2"></i>GitHub</a></span> |
+            <span><a href="{{ pathto('code-of-conduct') }}">Code&nbsp;of&nbsp;Conduct</a></span>
+          </span>
+      </div>
+
+    {% if theme_github_banner|lower != 'false' %}
+    <a href="https://github.com/{{ theme_github_user }}/{{ theme_github_repo }}" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="{{ pathto('_static/' ~ theme_github_banner, 1) if theme_github_banner|lower != 'true' else 'https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png' }}" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    {% endif %}
+
+</div>
