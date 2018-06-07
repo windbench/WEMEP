@@ -1,4 +1,4 @@
-GABLS Atmospheric Boundary Layer
+GEWEX Atmospheric Boundary Layer Study (GABLS)
 ==============================================
 `Javier Sanz Rodrigo, CENER <mailto:jsrodrigo@cener.com>`_
 
@@ -10,45 +10,30 @@ The GEWEX Atmospheric Boundary Layer Study (GABLS) series of benchmarks have bee
 
 GABLS1 simulated a quasi-steady stable boundary layer resulting from 9 hours of uniform surface cooling [1][2][3]. GABLS2 simulated a diurnal cycle, still with idealized forcing, by simplifying measurements from the CASES-99 experiment in Kansas [4][5]. GABLS3 simulated a real diurnal case with a strong nocturnal low-level jet (LLJ) at the Cabauw met tower in the Netherlands [6][7][8][9][10]. In GABLS4, the aim is to study the interaction of a boundary layer with strong stability in relatively simple surface coupling characteristics.
 
+Challenges
+~~~~~~~~~~
 The challenges of stable boundary layers and diurnal cycles are reviewed by Hotlslag et al. [11], notably: the relation between enhanced mixing in operational weather models performance, investigate the role of land-surface heterogeneity in the coupling with the atmosphere, develop LES models with interactive land-surface schemes, create a climatology of boundary-layer parameters (stability classes, boundary-layer depth, and surface fluxes) and develop parameterizations for the very stable boundary layer when turbulence is not the dominant driver. These challenges are ultimately shared by wind energy applications that are embeded in atmospheric models.
 
+Benchmarks
+~~~~~~~~~~
 The GABLS benchmarks are revisited in Windbench as baseline for the design of microscale wind farm flow models that progressively incorporate more complex atmospheric physics. Wind energy specific quantities of interest are used in order to focus the model evaluation on the application of interest.
 
-The GABLS activities are coordinated within under the `GEWEX <http://www.gewex.org/>`_ Modelling and Prediction Panel (GMPP). The cases have been throughly documented in the literature and in the following websites:
+The GABLS activities are coordinated within the `GEWEX <http://www.gewex.org/>`_ Modelling and Prediction Panel (GMPP). The cases have been throughly documented in the literature and in the following websites:
 
 * GABLS1: `SCM <http://turbulencia.uib.es/gabls/>`__, `LES <http://gabls.metoffice.com/>`__
 * `GABLS2 <http://www.misu.su.se/~gunilla/gabls>`__
 * GABLS3: `SCM <http://projects.knmi.nl/gabls/>`__, `LES <http://www4.ncsu.edu/~sbasu5/GABLS3/>`__
 * `GABLS4 <http://www.cnrm-game-meteo.fr/aladin/meshtml/GABLS4/GABLS4.html>`__
 
-In the context of developing a downscaling methodology to link mesoscale wind climate processes and microscale wind farm flow models, the GABLS3 case is particularly relevant. GABLS 1 and 2 can be considered as precursor cases dealing with turbulence modelling of the atmospheric boundary layer under idealized forcing conditions. These cases are suitable for the design of RANS-based SCMs by comparison with LES simulations, that have shown high consistency [3][5]. GABLS3 incorporates realistic forcing by using mesoscale 
+In the context of developing a downscaling methodology to link mesoscale wind climate processes and microscale wind farm flow models, the GABLS3 case is particularly relevant. GABLS 1 and 2 can be considered as precursor cases dealing with turbulence modelling of the atmospheric boundary layer under idealized forcing conditions. These cases are suitable for the design of RANS-based SCMs by comparison with LES simulations, that have shown high consistency [3][5]. 
 
-GABLS3 Site Description
-~~~~~~~~~~~~~~~~~~~~~~~
-The GABLS3 set-up is described in Bosveld et al. [8]. The case analyzes the period from 12:00 UTC 1 July to 12:00 UTC 2 July 2006, at the KNMI-Cabauw Experimental Site for Atmospheric Research (`CESAR <http://www.cesar-observatory.nl/>`_), located in the Netherlands (51.971ºN, 4.927ºE), with a distance of 50 km to the North Sea at the WNW direction [12]. The elevation of the site is approximately -0.7 m, surrounded by relatively flat terrain characterized by grassland, fields and some scattered tree lines and villages (Figure 1). The mesoscale roughness length for the sector of interest (60º - 120º) is 15 cm.
+GABLS3 incorporates realistic forcing by using mesoscale model simulations and synoptic stations [6][7][8][9][10]. This benchmark has been revisited by the wind energy community in the context of the `NEWA <http://www.neweuropeanwindatlas.eu>`_ project to develop meso-micro methodologies for wind resource assessment applications:
 
-.. image:: _static/Cabauw_landuse_30km.jpg
-	:scale: 35%
-	:align: center
-
-Figure 1: Land-use map of a 30x30 km area around the Cabauw site (figure from `KNMI <http://projects.knmi.nl/hydra/index.html>`_'s HYDRA project website)
-
-Measurement Campaign and Case Selection
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The CESAR measurements are carried out at a 200-m tower, free of obstacles up to a few hundred meters in all directions. The measurements include 10-min averaged vertical profiles of wind speed, wind direction, temperature and humidity at heights 10, 20, 40, 80, 140 and 200 m, as well as surface radiation and energy budgets. Turbulence fluxes are also monitored at four heights: 3, 60, 100 and 180 m. A RASS profiler measures wind speed, wind direction and virtual temperature above 200 m.
-
-The selection criteria for GABLS3 consisted on the following filters applied to a database of 6 years (2001 - 2006): stationary synoptic conditions, clear skies (net longwave cooling > 30 W m-2 at night), no fog, moderate geostrophic winds (5 to 19 m s-1, with less than 3 m s-1 variation at night) and small thermal advective tendencies. Out of the 9 diurnal cycles resulting from this filtering process, the one that seemed more suitable was finally selected: 12:00 UTC 1 July to 12:00 UTC 2 July 2006.
-
-More information about the case background and set-up can be found in the official `GABLS3 <http://projects.knmi.nl/gabls/index.html>`_ website
-
-GABLS3 benchmark
-~~~~~~~~~~~~~~~~
 .. toctree::
    :glob:
    :maxdepth: 1
 
    gabls3.rst
-
 
 References 
 ~~~~~~~~~~

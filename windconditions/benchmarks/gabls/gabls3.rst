@@ -2,7 +2,7 @@ GABLS3 Diurnal Cycle in Flat Terrain Leading to a Nocturnal Low-Level Jet
 =========================================================================
 `Javier Sanz Rodrigo, CENER <mailto:jsrodrigo@cener.com>`_
 
-16 June 2016
+June 2017
 
 Status
 ~~~~~~~~~~
@@ -30,17 +30,14 @@ Notebooks
 
 Scope
 ~~~~~~~~~~~~~~~~~~~~
-
 The GABLS3 case has been selected in the NEWA project as a baseline exercise for the design of mesoscale-to-microscale methodologies for wind resource assessment. The case is suitable for the development of microscale wind farm models that incorporate realistic forcing, derived from a mesoscale model, along a typical diurnal case that leads to the development of a nocturnal low-level jet. Challenges of this case include: incorporating time- and height-dependent mesoscale forcing in microscale models, turbulence modeling at varying atmospheric stability conditions, defining suitable surface boundary conditions for momentum and heat and characterization of the wind profile in (non-logarithmic) LLJ conditions.  
 
 Data Accessibility
 ~~~~~~~~~~~~~~~~~~~~
-
 Data is provided open-access for registered participants. Observational data is available at the GABLS3-SCM `KNMI <http://projects.knmi.nl/gabls/>`__ website.
 
 Objectives
 ~~~~~~~~~~~~~~~~~~~~
-
 Wind-energy specific objectives of the benchmark include:
 
 * Demonstrate the capability of wind energy ABL models to incorporate realistic mesoscale forcing
@@ -49,6 +46,24 @@ Wind-energy specific objectives of the benchmark include:
 * Define suitable metrics for validation of ABL models based on wind energy quantities of interest
 
 By "typical wind energy campaigns" we would like to encourage modellers to prioritize observations that are common place in wind resource assessment campaigns (80 masts with velocity and temperature measurements, lidar profilers measuring up to 400 m). 
+
+Site Description
+~~~~~~~~~~~~~~~~~~~~~~~
+The GABLS3 set-up is described in Bosveld et al. [8]. The case analyzes the period from 12:00 UTC 1 July to 12:00 UTC 2 July 2006, at the KNMI-Cabauw Experimental Site for Atmospheric Research (`CESAR <http://www.cesar-observatory.nl/>`_), located in the Netherlands (51.971ºN, 4.927ºE), with a distance of 50 km to the North Sea at the WNW direction [12]. The elevation of the site is approximately -0.7 m, surrounded by relatively flat terrain characterized by grassland, fields and some scattered tree lines and villages (Figure 1). The mesoscale roughness length for the sector of interest (60º - 120º) is 15 cm.
+
+.. image:: _static/Cabauw_landuse_30km.jpg
+	:scale: 35%
+	:align: center
+
+Figure 1: Land-use map of a 30x30 km area around the Cabauw site (figure from `KNMI <http://projects.knmi.nl/hydra/index.html>`_'s HYDRA project website)
+
+Measurement Campaign and Case Selection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The CESAR measurements are carried out at a 200-m tower, free of obstacles up to a few hundred meters in all directions. The measurements include 10-min averaged vertical profiles of wind speed, wind direction, temperature and humidity at heights 10, 20, 40, 80, 140 and 200 m, as well as surface radiation and energy budgets. Turbulence fluxes are also monitored at four heights: 3, 60, 100 and 180 m. A RASS profiler measures wind speed, wind direction and virtual temperature above 200 m.
+
+The selection criteria for GABLS3 consisted on the following filters applied to a database of 6 years (2001 - 2006): stationary synoptic conditions, clear skies (net longwave cooling > 30 W m-2 at night), no fog, moderate geostrophic winds (5 to 19 m s-1, with less than 3 m s-1 variation at night) and small thermal advective tendencies. Out of the 9 diurnal cycles resulting from this filtering process, the one that seemed more suitable was finally selected: 12:00 UTC 1 July to 12:00 UTC 2 July 2006.
+
+More information about the case background and set-up can be found in the official `GABLS3 <http://projects.knmi.nl/gabls/index.html>`_ website
 
 Input data 
 ~~~~~~~~~~~~~~~~~~~~

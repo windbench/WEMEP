@@ -23,7 +23,9 @@ Challenges
    :glob:
    :maxdepth: 1
 
+   benchmarks/gabls/gabls.rst
    benchmarks/mesomicrochallenge.rst
+
 
 Benchmarks
 ----------
@@ -36,7 +38,7 @@ Benchmarks
    benchmarks/leipzig.rst
    benchmarks/askervein.rst
    benchmarks/bolund.rst
-   benchmarks/gabls/gabls.rst
+   benchmarks/gabls/gabls3.rst
 
 Open Source Models
 ------------------
