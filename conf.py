@@ -32,7 +32,7 @@
 # ones.
 extensions = ['sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
-    'sphinx.ext.githubpages',
+    #'sphinx.ext.githubpages',
     'nbsphinx',
     'IPython.sphinxext.ipython_console_highlighting'
     ]
@@ -88,12 +88,28 @@ todo_include_todos = False
 # a list of builtin themes.
 #
 html_title = 'Wind Energy Model Evaluation Protocol'
-html_theme = 'alabaster'
+html_theme = "sphinx_rtd_theme"
 html_theme_options = {
-    'logo': 'IEA_Wind_Logo.png',
-    'sidebar_includehidden': False,
-    'github_banner': True,
-    'github_button': False,
+    #albaster options
+    #'logo': 'IEA_Wind_Logo.png',
+    #'sidebar_includehidden': False,
+    #'github_banner': True,
+    #'github_button': False,
+
+    #sphinx_rtd options
+    #'canonical_url': '',
+    #'analytics_id': '',
+    #'logo_only': False,
+    'display_version': True,
+    'prev_next_buttons_location': 'bottom',
+    'style_external_links': False,
+    #'vcs_pageview_mode': '',
+    # Toc options
+    'collapse_navigation': False,
+    'sticky_navigation': True,
+    'navigation_depth': 4,
+    'includehidden': True,
+    'titles_only': False
 }
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -111,14 +127,14 @@ html_static_path = ['_static']
 #
 # This is required for the alabaster theme
 # refs: http://alabaster.readthedocs.io/en/latest/installation.html#sidebars
-html_sidebars = {
-    '**': [
-        'about.html',
-        'info.html',
-        'navigation.html',
-        'searchbox.html',
-    ]
-}
+#html_sidebars = {
+#    '**': [
+#        'about.html',
+#        'info.html',
+#        'navigation.html',
+#        'searchbox.html',
+#    ]
+#}
 
 
 # -- Options for HTMLHelp output ------------------------------------------
