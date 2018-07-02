@@ -34,7 +34,8 @@ extensions = ['sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
     #'sphinx.ext.githubpages',
     'nbsphinx',
-    'IPython.sphinxext.ipython_console_highlighting'
+    'IPython.sphinxext.ipython_console_highlighting',
+    'sphinx.ext.todo'
     ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -79,7 +80,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '**.ipynb_checkpoints']
 pygments_style = 'sphinx'
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
-todo_include_todos = False
+todo_include_todos = True
 
 
 # -- Options for HTML output ----------------------------------------------
@@ -108,7 +109,7 @@ html_theme_options = {
     'collapse_navigation': False,
     'sticky_navigation': True,
     'navigation_depth': 4,
-    'includehidden': True,
+    'includehidden': False,
     'titles_only': False
 }
 # Theme options are theme-specific and customize the look and feel of a theme
