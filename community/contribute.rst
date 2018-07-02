@@ -1,4 +1,4 @@
-Hot to Contribute
+How to Contribute
 ==================
 
 .. todo:: Community contribute content. 
