@@ -15,6 +15,7 @@ Contents
 .. toctree::
    :glob:
    :maxdepth: 2
+   :caption: Model Evaluation Protocol
 
    mep/mep.rst
 
@@ -31,6 +32,7 @@ Modeling Communities
 .. toctree::
    :glob:
    :maxdepth: 2
+   :caption: Modeling Communities
 
    windconditions/index.rst
 
