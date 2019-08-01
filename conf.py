@@ -35,7 +35,8 @@ extensions = ['sphinx.ext.mathjax',
     #'sphinx.ext.githubpages',
     'nbsphinx',
     'IPython.sphinxext.ipython_console_highlighting',
-    'sphinx.ext.todo'
+    'sphinx.ext.todo',
+    'sphinxcontrib.bibtex'
     ]
 
 # Add any paths that contain templates here, relative to this directory.

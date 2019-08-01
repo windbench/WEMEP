@@ -18,13 +18,10 @@ How to Contribute
 -----------------
 You can find information about how to contribute at the `Community Guide`_.
 
-The documentation is written using Sphinx_ docs based on reStructuredText_. Then, it is automatically built into a `Read The Docs`_ website. You can also build the documentation locally with:
+The documentation is written using Sphinx_ docs based on reStructuredText_. Then, it is automatically built into a `Read The Docs`_ website. You can also build the documentation locally with::
 
-```
-pip install sphinx_rtd_theme 
-
-make html
-```  
+	pip install sphinx_rtd_theme 
+	make html
 
 .. _Sphinx: http://www.sphinx-doc.org/
 .. _reStructuredText: http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html
