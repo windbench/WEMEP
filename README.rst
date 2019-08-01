@@ -16,7 +16,15 @@ Other research communities are welcomed to integrate their model evaluation stra
 
 How to Contribute
 -----------------
-The documentation is written using Sphinx_ docs based on reStructuredText_. Then, it is automatically built into a `Read The Docs`_ website. You can find information about how to contribute at the `Community Guide`_.  
+You can find information about how to contribute at the `Community Guide`_.
+
+The documentation is written using Sphinx_ docs based on reStructuredText_. Then, it is automatically built into a `Read The Docs`_ website. You can also build the documentation locally with:
+
+```
+pip install sphinx_rtd_theme 
+
+make html
+```  
 
 .. _Sphinx: http://www.sphinx-doc.org/
 .. _reStructuredText: http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html
@@ -25,6 +33,6 @@ The documentation is written using Sphinx_ docs based on reStructuredText_. Then
 
 License
 -------
-`GNU General Public License v3.0`_ © 2019 Windbench
+`GNU General Public License`_ v3.0 © 2019 Windbench
 
 .. _GNU General Public License: LICENSE
