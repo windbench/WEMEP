@@ -25,6 +25,6 @@ The documentation is written using Sphinx_ docs based on reStructuredText_. Then
 
 License
 -------
-`GNU General Public License`_ v3.0 © 2019 Windbench
+`GNU General Public License v3.0`_ © 2019 Windbench
 
 .. _GNU General Public License: LICENSE
