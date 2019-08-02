@@ -1,5 +1,5 @@
-Contents
-========
+Model Evaluation Protocol
+=========================
 
 Introduction
 ------------
@@ -28,10 +28,61 @@ Quoting COST-732, *models of whatever type are only of use if their quality (fit
 
 Scope and Objectives
 --------------------
+WEMEP is a community project with the following objectives: 
 
+* To develop an **international framework** to guide model developers and users on methodologies and best practices to conduct formal verification, validation (V&V) and uncertainty quantification (UQ).
+* To promote collaboration between modeling communities and foster **interdisciplinary research** and development towards integrated models.  
+* To make model evaluation **traceable** through best practices for model evaluation and benchmarking and through open-access repositories of models, validation cases and data analysis scripts.
+
+The protocol is defined in generic model-agnostic terms so it can be adopted by any modeling community. Then, each community can document their interpretation of the protocol in the definition of suitable validation strategies for the intended uses of their models. Ultimately, this results in the definition of a hierarchy of verification and validation cases of increasing complexity. These cases are curated by the community through model intercomparison benchmarks archived as public data repositories. Knowledge gaps identified in the V&V process are addressed by planning, setting up and executing targeted experiments.  
+     
+The protocol is launched from the `IEA Wind TCP Task 31 Wakebench <https://community.ieawind.org/task31/home>`_ which is focused on the evaluation of wind farm flow models. This includes models for the atmospheric boundary layer, to simulate wind conditions for wind resource and site suitability assessment, as well as wake models for the assessment of wind farm array efficiency and loads in connection to wind farm design.
+
+Modeling communities are welcomed to implement the protocol and contribute with open access repositories that can be interopeable with those from other communities.
 
 Terminology
 -----------
+The most important keywords of the evaluation process are defined next, extracted from :cite:`Holmesetal_2013`. The purpose of this list is to adopt a common terminology when discussing model evaluation results. Terms are ordered alphabetically:
+
+* **Benchmark**: Typically in literature this is defined as an analytical or highly accurate numerical solution for use in verification :cite:`Britter&Schatzmann_2007`.  However, this term is often being used to describe experimental datasets for use in validation, therefore care should be taken when using this term to clarify the accurateness and purpose of the dataset.
+
+* **Blind test**: Comparison of numerical results with experimental data, where modelers are not allowed access to the experimental dataset.
+
+* **Error**: Inaccuracy of the numerical model i.e., insufficient time-step resolution or spatial grid convergence. This can be known error due to limitations in implementing the mathematical equations (acknowledged error) or unknown error from mistakes (unacknowledged error).
+
+* **Scientific evaluation**: Determining the appropriateness of the conceptual model in describing the real world application, includes three parts: scientific review, verification and validation.
+
+* **Extrapolation**: Using a numerical model to simulate a process outside the range of which it was previously validated.
+
+* **Conceptual model**: System of mathematical equations, governing laws, initial and boundary conditions that describe the physical process of interest in the selected real world application.
+
+* **Computational model**: Implementation of the conceptual model into computer code.
+
+* **Metric**: Variable used to quantitatively compare results from a numerical model with experimental data, typically with specified criteria for validation.
+
+* **Numerical calibration**:  Utilizing field measurements, ensuring the proper scaling and units, as input parameters to the numerical model that are not a priori known.
+
+* **Numerical model**: Another term for conceptual or computational model, this term is provided to distinguish between wind tunnel data and computer simulations.
+
+* **Physical model**: Non-numerical modeling of a real world process; i.e., using a wind tunnel or water tunnel to model a real world process to provide a high quality dataset for the validation of computational models.
+
+* **Prediction**: The output from a validated numerical simulation, for a specific real world process that is within the modeling capabilities deemed acceptable from the numerical model validation.
+
+* **Quantity of interest**: Output variable from numerical model to compare directly with experimental data, the metric is used to quantitatively compare the two results.
+
+* **Real world**: Determination of the physical process to be investigated, examples for wind energy applications include wind flow patterns and flow around a wind turbine.
+
+* **Scientific review**:  The first step in model evaluation, it is an investigation of the scientific basis of a numerical model, which physical processes are included, how they are modeled, assumptions, approximations, solution techniques and the interface and resources available to the user.
+
+* **Tuning**: Making adjustments to parameters in the numerical model based on the comparison between the model output and field measurements, not considered orthodox validation since it is not a blind test.
+
+* **Uncertainty**: Recognizable inaccuracies of the model that are not due to a lack of knowledge.  This can be due to inherent variability in the physical process (aleatory uncertainty) or from a lack of scientific understanding (epistemic uncertainty).  Epistemic uncertainty can be improved by increasing modeling skill or understanding.
+
+* **Validation**: Ensuring the physical processes are accurately modeled, this involves a comparison of the computational results with experimental data.
+
+* **Variability**: In this case of wind energy this is the aleatory uncertainty attributed to the irregularity of turbulent processes in the atmosphere.
+
+* **Verification**: Ensuring the mathematical accuracy of the computational model, including accurate implementation of equations (Solution Verification) and checking the computer code for errors (Code Verification).
 
 
 Quick Guide
