@@ -196,4 +196,5 @@ texinfo_documents = [
 ]
 
 
-
+# Figures
+numfig = True

@@ -3,17 +3,24 @@ Model Evaluation Protocol
 
 Introduction
 ------------
-WEMEP addresses quality assurance of models being used for research and to drive wind energy applications. This is achieved through a framework to conduct formal verification and validation (V&V) that ultimately determines how model credibility is built upon. Based on the AIAA guide for V&V of computational fluid dynamics (CFD) :cite:`AIAA_1998`: 
+WEMEP addresses quality assurance of models being used for research and to drive wind energy applications. This is achieved through a framework to conduct formal verification and validation (V&V) that ultimately determines how model credibility is built upon. The protocol is based SANDIA's **V&V Framework** :cite:`Hillsetal_2015` which, itselft, is based on well-established procedures developed by various organizations including the Department of Energy, National Aeronautics and Space Administration, the American Institute of Aeronautics and Astronautics, and the American Society of Mechanical Engineers. Background articles include :cite:`Oberkampf&Trucano_2002`, :cite:`Oberkampfetal_2004` and :cite:`Oberkampf&Barone_2006`. The framework's primary focus is *to provide guidance on the development and execution of tightly integrated modeling/experimental programs based on well-established V&V practices for the purpose of model assessment*.
+
+Based on the AIAA guide for V&V of computational fluid dynamics (CFD) :cite:`AIAA_1998`: 
 
 * **Verification** is the process of determining that the model implementation accurately represents the developer’s conceptual description of the model and the solution of the model. Here accuracy is measured with respect to benchmark solutions of simplified model problems
 
 * **Validation** is the process of determining the degree to which the model is an accurate representation of the real world from the perspective of the intended uses of the model. Here accuracy is measured with respect to experimental data.
 
-The AIAA guide states that verification and validation are processes or ongoing activities without a clearly defined completion point. It is a matter of performing as many V&V exercises as possible in order to gain confidence and credibility on the model results towards the specific intended use of the model. Indeed, the *intended use*, i.e. the target application, is the main driver of this process to define the physical scope of the design system, its range of operating conditions, the variables of interest and their associated acceptance criteria. By identifying the needs from the application point of view, it is possible to define a validation plan, built on existing benchmarks, to foresee the most relevant experimental knowledge gaps.
+The AIAA guide states that verification and validation are processes or ongoing activities without a clearly defined completion point. It is a matter of performing as many V&V exercises as possible in order to gain confidence and credibility on the model results towards the specific intended use of the model. Indeed, the *intended use*, i.e. the target application, is the main driver of this process to define the physical scope of the design system, its range of operating conditions, the variables of interest and their associated acceptance criteria. These acceptance criteria are defined in terms of error metrics that should be unified by the user community. 
 
-The intrinsic high complexity of the wind energy design system makes it very difficult to validate the full range of operating conditions. Hence, the main objective of the validation process is to develop and quantify enough confidence on the computer model (or code) so that they can be used reliably to predict the variables of interest within acceptable limits. Hence, validation is sometimes also referred to the assessment of the *predictive capacity* of a code.       
+The intrinsic high complexity of the wind energy design system makes it very difficult to validate the full range of operating conditions. Hence, it is implicit that a validated model will use inference methodologies to extrapolate performance from the validation space to the operational space (:numref:`fig-validation-application`). Therefore, the main objective of the validation process is to develop and quantify enough confidence on the computer model (or code) so that they can be used reliably to predict the quantities of interest within acceptable limits. Hence, validation is sometimes also referred to the assessment of the *predictive capacity* of a code.
 
-WEMEP is based SANDIA's **V&V Framework** :cite:`Hillsetal_2015` which, itselft, is based on well-established procedures developed by various organizations including the Department of Energy, National Aeronautics and Space Administration, the American Institute of Aeronautics and Astronautics, and the American Society of Mechanical Engineers. Background articles include :cite:`Oberkampf&Trucano_2002`, :cite:`Oberkampfetal_2004` and :cite:`Oberkampf&Barone_2006`. The framework's primary focus is *to provide guidance on the development and execution of tightly integrated modeling/experimental programs based on well-established V&V practices for the purpose of model assessment*.
+.. _fig-validation-application:
+.. figure:: figures/validation-application.png
+    :width: 600
+    :align: center
+
+    Different scenarios of validation vs application space (adapted from :cite:`Oberkampfetal_2004`).
 
 Based in Europe, it is also worth mentioning the **COST-732 Model Evaluation Guidance and Protocol Document** :cite:`Britter&Schatzmann_2007` with focus on microscale modeling for the dispersion of pollutants in the urban environment. The protocol comprises the following aspects:
 
@@ -85,15 +92,41 @@ The most important keywords of the evaluation process are defined next, extracte
 * **Verification**: Ensuring the mathematical accuracy of the computational model, including accurate implementation of equations (Solution Verification) and checking the computer code for errors (Code Verification).
 
 
+Building-Block Approach
+-----------------------
+
+The building-block model evaluation approach analyzes a complex system, consisting for instance of of a wind farm and its siting and environmental conditions, by subdividing it in subsystems and unit problems to form a hierarchy of test cases with a systematic increase of complexity (:numref:`fig-building-block-approach`) (:cite:`AIAA_1998`)
+
+.. _fig-building-block-approach:
+.. figure:: figures/building-block-approach.png
+    :width: 600
+    :align: center
+
+    Building-block model evaluation approach.
+
+The building-block approach allows isolating individual or combined elements of the system, to segregate relevant physical phenomena in a more controlled setting that can be characterized more easily, and evaluate the predictive capacity of a model and estimate the potential impact of those elements on the full system performance. The process typically implies analyzing idealized conditions using theoretical approaches like similarity theory, parametric testing in a controlled environment with scaled-down models in wind tunnels and field testing of scaled or full-scale prototypes in research conditions as well as operational units in operational conditions. This hierarchy of increasing physical complexity is typically associated with decreasing levels of accuracy, in terms of data quality and resolution, because of practical as well as economical limitations. As mentioned previously, the validation space will always be limited to a limited range of system configurations and flow cases. The ultimate step in the building-block approach requires testing the model in operational conditions, where all phenomena are integrated. Here, the model can be calibrated and, eventually, fine-tuned to improve its predictive capacity (reduce bias and uncertainty).
+
 The Model Evaluation Process
 ----------------------------
 
-- Infinite-loop process
-- Step-by-step guide
+The evaluation process can be considered an intrinsic part of technology innovation, i.e. translating ideas into added value of a product or service to meet specific needs. The innovation process originates from understanding the market needs, following a top-down or market-pull approach (:numref:`fig-building-block-approach`) to define challenges that technology should solve. Alternatively, bottom-up or science-push innovation will use new knowledge to improve the "state-of-the-art" that feeds into the technology. In practice, both coexist although the market-pull approach should be the main driver to set expectations and avoid anchoring to knowledge niches. 
+
+In wind assessment applications, the product shall be a design tool whose core technology is a computational model. Innovation implies improving the predictive capacity of the model through better physical insight. Then, we use the model evaluation process to design experiments and validation cases that will allow us to test if certain model capabilities work as expected according to our conceptual model (our idea) and, more importantly, if this is actually adding value to the design tool.        
+
+This dual organization of the V&V process, in terms of interconnected exploration and exploitation cycles, can be described as an ambidextrous V&V process, in analogy with the term ambidextrous organization that would relate research and operational activities in the innovation process (O’Reilly and Tushman, 2004). 
+
+.. _fig-ambidextrous-process:
+.. figure:: figures/ambidextrous-process.png
+    :width: 600
+    :align: center
+
+    Ambidextrous model evaluation process implemented in the NEWA project (Sanz Rodrigo, 2019).
+
+:numref:`fig-ambidextrous-process` illustrates this process in the context of the NEWA challenge of producing wind resource assessment methodologies based on a mesoscale-to-microscale model chain (Sanz Rodrigo, 2019). The challenge leads to formulating a concept for the model-chain through scientific review (Sanz Rodrigo, 2016c) and devising experiments to target all the relevant phenomena that should be captured. A validation hierarchy is defined to address these phenomena in a systematic way of increasing complexity (Sanz Rodrigo et al, 2016b). For example, :numref:`fig-ambidextrous-process` shows how the GABLS3 benchmark was used to demonstrate meso-micro coupling methodologies in the simulation of ABL flow along a diurnal cycle in flat terrain conditions. This case was used to implement the “tendencies” approach in microscale CFD models, which was then tested in operational conditions by integrating the model over one year at the Cabauw site to quantify performance in terms of relevant quantities of interest for wind resource assessment such as annual energy prediction (AEP). This model evaluation cycle is described in detail in Section 4, and shall be repeated as many times as possible to progressively incorporate detailed flow cases from experimental campaigns to improve the physical insight of the model, at the right-hand side of the cycle, and long-term operational campaigns at the left-hand side to improve the statistical significance of the model in the application space.  
 
 
 Validation-Directed Program Planning 
----------------------------
+------------------------------------
 
 Setting objectives 
 ^^^^^^^^^^^^^^^^^^
@@ -168,7 +201,7 @@ Documenting
 
 
 Data Management
---------------
+---------------
 
 Data Provision
 ^^^^^^^^^^^^^^
