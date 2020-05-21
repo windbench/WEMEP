@@ -30,7 +30,7 @@ Scope and Objectives
 --------------------
 WEMEP is a community project with the following objectives: 
 
-* To develop an **international framework** to guide model developers and users on methodologies and best practices to conduct formal verification, validation (V&V) and uncertainty quantification (UQ).
+* To develop an **international framework** to guide model developers and end users on methodologies and best practices to conduct formal verification, validation and uncertainty quantification (VV&UQ).
 * To promote collaboration between modeling communities and foster **interdisciplinary research** and development towards integrated models.  
 * To make model evaluation **traceable** through best practices for model evaluation and benchmarking and through open-access repositories of models, validation cases and data analysis scripts.
 
@@ -85,39 +85,35 @@ The most important keywords of the evaluation process are defined next, extracte
 * **Verification**: Ensuring the mathematical accuracy of the computational model, including accurate implementation of equations (Solution Verification) and checking the computer code for errors (Code Verification).
 
 
-Quick Guide
------------
+The Model Evaluation Process
+----------------------------
 
-Identify the Challenge
-^^^^^^^^^^^^^^^^^^^^^^
-
-Scientific review
-^^^^^^^^^^^^^^^^^
-
-Find a Suitable Validation Database
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Assess the Validation Hierarchy
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-A/B Testing
-^^^^^^^^^^^
-
-Quantify Performance for Intended Use
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Identify Knowledge Gaps
-^^^^^^^^^^^^^^^^^^^^^^^
+- Infinite-loop process
+- Step-by-step guide
 
 
-Validation Directed Program 
+Validation-Directed Program Planning 
 ---------------------------
 
-Setting goals based on quantities of interest and metrics
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Setting objectives 
+^^^^^^^^^^^^^^^^^^
 
-Defining priorities based on Phenomena Identification Ranking Table (PIRT) gap analysis
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Phenomena Identification Ranking Table (PIRT) 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Validation Hierarchy
+^^^^^^^^^^^^^^^^^^^^
+
+
+
+Integrated Experiment, Model Planning and Execution 
+---------------------------------------------------
+
+Experiment design
+^^^^^^^^^^^^^^^^^
+
+
+
 
 
 Verification
@@ -133,11 +129,6 @@ Solution Verification
 Validation
 ----------
 
-Defining a validation strategy using a building-block hierarchy
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Design of experiment
-^^^^^^^^^^^^^^^^^^^^
 
 Setting up of a validation benchmark
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -176,7 +167,7 @@ Documenting
 -----------
 
 
-Data Provision
+Data Management
 --------------
 
 Data Provision
