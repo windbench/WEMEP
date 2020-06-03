@@ -33,8 +33,8 @@ Based in Europe, it is also worth mentioning the **COST-732 Model Evaluation Gui
 Quoting COST-732, *models of whatever type are only of use if their quality (fitness-for-purpose) has been quantified, documented, and communicated to potential users* :cite:`Britter&Schatzmann_2007`. Hence, WEMEP will define the framework that wind energy model developers can follow to make their codes trustfull for the wind energy community. Trust is built when the code performance has been tested and quantified based on appropriate datasets agreed upon to cover a relevant range of applicability. This protocol shall also support the planning, setting up and execution of forthcoming experiments that will feed the validation process as a sistematic and sustained activity for model development. 
 
 
-Scope and Objectives
---------------------
+WEMEP Objectives
+----------------
 WEMEP is a community project with the following objectives: 
 
 * To develop an **international framework** to guide model developers and end users on methodologies and best practices to conduct formal verification, validation and uncertainty quantification (VV&UQ).
@@ -122,21 +122,75 @@ This dual organization of the V&V process, in terms of interconnected exploratio
 
     Ambidextrous model evaluation process implemented in the NEWA project (Sanz Rodrigo, 2019).
 
-:numref:`fig-ambidextrous-process` illustrates this process in the context of the NEWA challenge of producing wind resource assessment methodologies based on a mesoscale-to-microscale model chain (Sanz Rodrigo, 2019). The challenge leads to formulating a concept for the model-chain through scientific review (Sanz Rodrigo, 2016c) and devising experiments to target all the relevant phenomena that should be captured. A validation hierarchy is defined to address these phenomena in a systematic way of increasing complexity (Sanz Rodrigo et al, 2016b). For example, :numref:`fig-ambidextrous-process` shows how the GABLS3 benchmark was used to demonstrate meso-micro coupling methodologies in the simulation of ABL flow along a diurnal cycle in flat terrain conditions. This case was used to implement the “tendencies” approach in microscale CFD models, which was then tested in operational conditions by integrating the model over one year at the Cabauw site to quantify performance in terms of relevant quantities of interest for wind resource assessment such as annual energy prediction (AEP). This model evaluation cycle is described in detail in Section 4, and shall be repeated as many times as possible to progressively incorporate detailed flow cases from experimental campaigns to improve the physical insight of the model, at the right-hand side of the cycle, and long-term operational campaigns at the left-hand side to improve the statistical significance of the model in the application space.  
+:numref:`fig-ambidextrous-process` illustrates this process in the context of the NEWA challenge of producing wind resource assessment methodologies based on a mesoscale-to-microscale model chain (Sanz Rodrigo, 2019). The challenge leads to formulating a concept for the model-chain through scientific review (Sanz Rodrigo, 2016c) and devising experiments to target all the relevant phenomena that should be captured. A validation hierarchy is defined to address these phenomena in a systematic way of increasing complexity (Sanz Rodrigo et al, 2016b). For example, :numref:`fig-ambidextrous-process` shows how the GABLS3 benchmark was used to demonstrate meso-micro coupling methodologies in the simulation of ABL flow along a diurnal cycle in flat terrain conditions. This case was used to implement the “tendencies” approach in microscale CFD models, which was then tested in operational conditions by integrating the model over one year at the Cabauw site to quantify performance in terms of relevant quantities of interest for wind resource assessment such as annual energy prediction (AEP). This model evaluation cycle is repeated as many times as possible to progressively incorporate additional phenomena from experimental campaigns and improve the physical insight of the model, at the right-hand side of the cycle, and long-term operational campaigns at the left-hand side to improve the statistical significance of the model in the application space.  
 
+Intended Use 
+------------
+
+- Identify applications and end-users of the model
+- Relevant standards that define quantities of interest and metrics
+- Quality acceptance criteria 
+- Understanding the validation range to infer relevant scales to consider 
 
 Validation-Directed Program Planning 
 ------------------------------------
 
-Setting objectives 
-^^^^^^^^^^^^^^^^^^
+Under the umbrella of international research networks like those promoted by IEA-Wind TCP research Tasks, it becomes natural to use the opportunity to coordinate large-scale experiments and validation programmes that would otherwise happen in a fragmented way. In order to implement an international model evaluation strategy it is necessary to count with a planning process that sets priorities along a unified validation directed research program. The planning process is shown in the top panel of :numref:`fig-validation-program-planning`, reprinted from Hills et al. (2015). It is composed of four phases: 
+
+1.	Identify the objectives of the model from the perspective of the intended use (application) in terms of quantities of interest and the impact on the application.
+2.	Identify the phenomena of interest that the model should capture and prioritize the assessment based on the expected impact on the objectives.
+3.	Define a validation hierarchy that will allow to assess model performance for the prioritized phenomena. 
+4.	Plan experiments to generate data for the validation hierarchy based on how the limited resources can be used most effectively. 
+
+The lower panel of :numref:`fig-validation-program-planning` shows the process of experiment design, execution and validation activities that lead to the model assessment. The credibility step in the end determines, by expert judgment, to what extent the verification and validation results will improve the predictive capacity in the operational conditions of the model. 
+
+.. _fig-validation-program-planning:
+.. figure:: figures/validation-program-planning.png
+    :width: 600
+    :align: center
+
+    Validated directed program planning and execution (from Hills et al., 2015).
 
 Phenomena Identification Ranking Table (PIRT) 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Validation Hierarchy
-^^^^^^^^^^^^^^^^^^^^
+An integrated program planning shall determine the links between knowledge gaps, experiment and model development needs and expected impact. The **Phenomena Identification and Ranking Table (PIRT)** is used as planning instrument to facilitate the collection and aggregation of information that is required to define and prioritize particular experimental validation activities (Pitch et al., 2001; Hills et al., 2015). This instrument relates the modeling requirements of the target application with the validation activities. By expert elicitation, it prioritizes experimental and validation tasks, following the building-block approach, to progressively and systematically build confidence on the models. The PIRT process is already established in the A2e programme with focus on wind farm models (Maniaci et al., 2017). It has also been adopted in the NEWA project for mesoscale to microscale atmospheric flow models (Sanz Rodrigo et al., 2016b). 
 
+Based on the needs of the application of interest and the associated modeling scope (Section 2), improving credibility is a matter of systematically addressing the phenomena of interest that are relevant for the model-chain to meet those needs. Hence, a PIRT is built to: 
+
+*	rank these physical and other related phenomena for the intended use;
+*	characterize the adequacy of the model-chain, and the exiting experimental and validation datasets; and 
+*	perform gap analysis to identity the issues associated to the modeling of these phenomena and how they can be addressed.   
+
+Through expert elicitation, it is determined if a model has sufficient evidence to be used for the intended application and, if not, how to efficiently prioritize phenomena of interest that are expected to maximally improve model credibility within the available resources.
+
+:numref:`tab-pirt` shows different categories of phenomena of interest that could be included in the PIRT table through gap analysis. The phenomena are described in terms of associated issues (what the problem is) and the potential responses, i.e. what actions need to be taken to mitigate these issues. Examples of PIRT tables for wind energy can be found in Maniaci and Naughton (2017) and Sanz Rodrigo et al. (2016b).
+
+.. _tab-pirt:
+.. csv-table:: Types of phenomena in a PIRT (adapted from Hills at al., 2015)
+   :header: "Type", "Issues", "Potential Responses"
+   :widths: 10, 15, 30
+    
+	Physics,Important physics inadequately represented or missing,Model development or experimental characterization to better represent the phenomena; Model validation to assess the uncertainty associated with the lack of physics
+	,"Not clear if important phenomena, or interactions between phenomena, are adequately represented by model",Model validation to incorporate the effect of the phenomena 
+	,Ranking of phenomena not clear,Sensitivity analysis to rank importance for the quantities of interest
+	Model and Geometric Fidelity,Sub-components poorly represented,Sensitivity analysis of subsystem level with higher fidelity model to assess impact of underrepresented components
+	,Geometric fidelity and/or grid resolution insufficient to capture behavior,Sensitivity analysis of subsystem level with higher fidelity model to assess impact of under-resolved geometry; Grid studies (solution verification) to characterize uncertainty due to grid dependencies
+	Characterization,"Inadequate inputs (inflow, boundary conditions, site) characterization",Refine characterization to the required fidelity using experimental techniques or other techniques
+	,Inadequate parameter characterization,Characterize based on literature or experimental data
+	Uncertainty Quantification,Uncertainty in model prediction not adequately characterized due to large number of runs,Approximate methods such as surrogate model or other advanced UQ methods to reduce the number of runs
+
+Validation Hierarchy 
+^^^^^^^^^^^^^^^^^^^^
+:numref:`fig-fullsystem-building-blocks` provides a description of the high-level building-blocks established in the Wakebench framework. The V&V hierarchy addresses a two-sided multi-scale system consisting of the interplay between atmospheric scales ("wind") and wind energy system scales ("wakes"). Atmospheric scales (dark grey blocks) range from surface-layer MOST conditions close to the ground, modified by terrain and vegetation, to turbulence across the ABL driven by mesoscale processes modulated by the regional wind climate. On the other side (light grey blocks) a wind energy system can range from a single turbine, a wind farm, a cluster of wind farms and, ultimately, the power system they are interconnected to.     
+Each scale has a number of physical phenomena, some of them listed in :numref:`fig-fullsystem-building-blocks`, which will be the basis of the PIRT process. As a whole, an integrated multi-scale model-chain for wind farm modeling will consist of inputs from the three blocks at the vertices of the triangle (turbine specifications, characterization of terrain and land-cover and initial and boundary conditions for the flow based on meteorological data from a global climate model (for instance, reanalysis data). The inner hexagon in the triangle defines the two-way couplings in the model-chain between the sub-system components. Depending on the application of interest, each of these sub-system models will have different fidelity levels. Each sub-system has its own V&V hierarchy down to unitary problem level as described in :numref:`fig-building-block-approach`. The PIRT process will identify the shortcomings of each building-block and define V&V benchmarks to solve them. 
+
+.. _fig-fullsystem-building-blocks:
+.. figure:: figures/fullsystem-building-blocks.png
+    :width: 600
+    :align: center
+
+    System scales and phenomena of interest for "wind" (right) and "wake" conditions (left).
 
 
 Integrated Experiment, Model Planning and Execution 
@@ -144,10 +198,6 @@ Integrated Experiment, Model Planning and Execution
 
 Experiment design
 ^^^^^^^^^^^^^^^^^
-
-
-
-
 
 Verification
 ------------
@@ -162,12 +212,14 @@ Solution Verification
 Validation
 ----------
 
+Benchmarking Guidelines
+^^^^^^^^^^^^^^^^^^^^^^^
 
-Setting up of a validation benchmark
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Blind Testing
+^^^^^^^^^^^^^
 
-Validation assessment at system level 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Model Calibration
+^^^^^^^^^^^^^^^^^
 
 
 Uncertainty Quantification
@@ -184,16 +236,6 @@ Experimental uncertainty
 
 Computational model uncertainty
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-
-Blind Testing 
--------------
-
-Blind Testing
-^^^^^^^^^^^^^
-
-Model Calibration
-^^^^^^^^^^^^^^^^^
 
 
 Documenting

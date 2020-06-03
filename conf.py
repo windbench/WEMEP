@@ -198,3 +198,12 @@ texinfo_documents = [
 
 # Figures
 numfig = True
+
+# Table width fix for Read the Docs Sphinx theme (https://rackerlabs.github.io/docs-rackspace/tools/rtd-tables.html)
+html_static_path = ['_static']
+
+html_context = {
+    'css_files': [
+        '_static/theme_overrides.css',  # override wide tables in RTD theme
+        ],
+     }

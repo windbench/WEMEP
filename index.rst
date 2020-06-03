@@ -24,7 +24,7 @@ Community Guide
    :maxdepth: 2
    :caption: Modeling Communities
 
-   windconditions/index.rst
+   windconditions/windconditions.rst
 
 Indices and tables
 -------------------
