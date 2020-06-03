@@ -5,8 +5,8 @@ Wind conditions is a generic term to refer to atmospheric flow quantities that a
 
 Intended Use
 ------------
-Energy Yield Assessment and Site Suitability
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Wind Resource Assessment and Site Suitability
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The planning phase of wind assessment spans a period of several years from site prospecting to wind farm design and financing. Quantities of interest (QoI) during this are mainly: 
 
 * Long-term wind resource and wind farm annual energy production (AEP) including wake losses and associated uncertainties, relevant for wind mapping, energy yield assessment and project financing

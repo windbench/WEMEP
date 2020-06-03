@@ -26,6 +26,12 @@ Community Guide
 
    windconditions/windconditions.rst
 
+.. toctree::
+   :glob:
+   :maxdepth: 2
+
+   wakes/wakes.rst
+
 Indices and tables
 -------------------
 

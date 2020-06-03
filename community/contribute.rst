@@ -17,7 +17,7 @@ These are some basic steps to get started when you are ready to contribute.
 
       $ pip install -r requirements.txt
 
-#. Find the chapter you want to edit in the .rst files and edit it with your favorite text editor. 
+#. Find the chapter you want to edit in the ``.rst`` files and edit it with your favorite text editor using `Sphinx <https://www.sphinx-doc.org/en/master/index.html>`_ syntax. 
 #. Build the docs into a local html copy at ``/WEMEP/_build/html``
 
     .. code:: bash
@@ -33,10 +33,9 @@ These are some basic steps to get started when you are ready to contribute.
       $ git commit -m "Commit message"
       $ git push origin master
 
-Usefull Links
--------------
-* `GitHub quick guide <https://rogerdudler.github.io/git-guide/>`_
-* `Sphinx <https://www.sphinx-doc.org/en/master/index.html>`_
+# `Read the Docs <https://readthedocs.org/>`_ takes care of hosting the WEMEP website. Your commit will be automatically build by RTD  
+
+
 
 
 
