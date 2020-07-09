@@ -33,8 +33,8 @@ Based in Europe, it is also worth mentioning the **COST-732 Model Evaluation Gui
 Quoting COST-732, *models of whatever type are only of use if their quality (fitness-for-purpose) has been quantified, documented, and communicated to potential users* :cite:`Britter&Schatzmann_2007`. Hence, WEMEP will define the framework that wind energy model developers can follow to make their codes trustfull for the wind energy community. Trust is built when the code performance has been tested and quantified based on appropriate datasets agreed upon to cover a relevant range of applicability. This protocol shall also support the planning, setting up and execution of forthcoming experiments that will feed the validation process as a sistematic and sustained activity for model development. 
 
 
-WEMEP Objectives
-----------------
+Objectives
+----------
 WEMEP is a community project with the following objectives: 
 
 * To develop an **international framework** to guide model developers and end users on methodologies and best practices to conduct formal verification, validation and uncertainty quantification (VV&UQ).
@@ -167,7 +167,7 @@ Through expert elicitation, it is determined if a model has sufficient evidence 
 :numref:`tab-pirt` shows different categories of phenomena of interest that could be included in the PIRT table through gap analysis. The phenomena are described in terms of associated issues (what the problem is) and the potential responses, i.e. what actions need to be taken to mitigate these issues. Examples of PIRT tables for wind energy can be found in Maniaci and Naughton (2017) and Sanz Rodrigo et al. (2016b).
 
 .. _tab-pirt:
-.. csv-table:: Types of phenomena in a PIRT (adapted from Hills at al., 2015)
+.. csv-table:: Types of phenomena in a PIRT (adapted from Hills et al., 2015)
    :header: "Type", "Issues", "Potential Responses"
    :widths: 10, 15, 30
     

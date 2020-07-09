@@ -1,14 +1,34 @@
 Wind Conditions 
 ===============
 
-Wind conditions is a generic term to refer to atmospheric flow quantities that affect wind turbine and wind farm performance. The application of atmospheric models in wind energy is related to activities such as wind resource assessment, wind turbine site suitability and wind farm design, during the planning phase, and weather and wind power forecasting during the operational phase of the wind farm. The IEA-Wind TCP Task 31 "Wakebench" is focused on the planning phase while Task 36 is dealing with wind power forecasting. We shall also focus more on the wind farm system, considering all the mesoscale-to-microscale weather and turbulence processes, which are relevant for inflow and wind farm wake propagation and interaction.   
+Wind conditions is a generic term to refer to atmospheric flow quantities that affect wind turbine and wind farm performance. The application of atmospheric models in wind energy is related to activities such as wind resource and energy yield assessment, wind turbine site suitability and wind farm design, during the planning phase, and weather and wind power forecasting during the operational phase of the wind farm. The IEA-Wind TCP Task 31 "Wakebench" is focused on the planning phase while Task 36 is dealing with wind power forecasting. We shall also focus on the wind farm system, considering all the mesoscale-to-microscale weather and turbulence processes, which are relevant for inflow and wind farm wake propagation and interaction.   
 
 Intended Use
 ------------
-Wind Resource Assessment and Site Suitability
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The planning phase of wind assessment spans a period of several years from site prospecting to wind farm design and financing. Quantities of interest (QoI) during this are mainly: 
+Assessment of Wind Resource, Energy Yield and Turbine Suitability
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The assessment of the long-term wind resource, energy yield and turbine site suitability is addressed by the IEC 61400-15 [ref]. This standard complements IEC 61400-1 and 61400-3 in the definition of site specific wind conditions. We shall use the definitions provided therein on relevant quantities of interest, representative of the design lifetime, defined at hub-height (:math:`z_{hub}`) unless otherwise stated:
 
+* *Annual average wind speed at hub height* (:math:`V_{ave}`): wind speed averaged according to the definition of *annual average*, i.e. mean value of a set of measured data of sufficient size and duration to serve as an estimate of the expected value of the quantity. The averaging time interval shall be a whole number of years to average out non-stationary effects such as seasonality.  
+* *Reference wind speed* (:math:`V_{ref}`): basic parameter for wind speed used for defining Wind Turbine Generator System (WTGS) classes. A turbine designed for a WTGS class with a reference wind speed :math:`V_{ref}`, is designed to withstand climates for which the extreme 10 min average wind speed with a recurrence period of 50 years at turbine hub-height is lower than or equal to :math:`V_{ref}`.  
+* *Annual average flow inclination angle* (:math:`\phi`): The flow inclination is defined as the angle between a horizontal plane and the wind velocity vector at hub height: :math:`\phi = arctan\left(V_z/V_{xy}\right)`, where :math:`V_{xy}` and :math:`V_{z}` are the horizontal and vertical components of the wind speed. The flow inclination angle is positive if the wind velocity vector is pointing upwards. The annual average shall be taken as the energy weighted mean from all directions.
+* *Mean turbulence intensity* (:math:`I`): the ratio of the wind speed standard deviation to the mean wind speed determined from the same set of measured wind speed data and taken over a period of 10 minutes and a minimum sampling frequency of 5 seconds.
+* *Standard deviation of turbulence intensity* (:math:`\sigma_{I}`): The standard deviation of a sub set of the turbulence intensities (:math:`I`). The sub set typically represents a bin within a wind speed- wind direction matrix.
+* *Mean wind shear* (:math:`\alpha`): Wind shear, i.e. the variation of wind speed across a plane perpendicular to the wind direction, (or power law) exponent.
+
+.. math:: V(z) = V(z_r)\left(\frac{z}{z_r}\right)^{\alpha}
+
+* *Average turbulence intensity at 15m/s* (:math:`I_{15}`): Mean turbulence intensity over all wind directions in 15m/s wind speed bin.
+* *Annual wind speed frequency distribution*: Annual distribution of wind speeds as a function of wind direction and/or wind speeds.
+* *Weibull distribution*: The probability distribution function used to describe the distribution of wind speeds over a period of one year, defined in terms of the scale parameter (:math:`C`) and shape parameter :math:`k`.
+
+.. math:: P_w(V) = 1 - exp\left[-(V/C)^k\right]
+
+* *Coefficient of variation of the extreme wind speed distribution*: Standard deviation divided by the mean value of the extreme wind speed distribution.
+* *Extreme ambient turbulence intensity*: Extreme value of the ambient turbulence intensity with a return period of 50 years as a function of wind speed.   
+
+
+*old text*
 * Long-term wind resource and wind farm annual energy production (AEP) including wake losses and associated uncertainties, relevant for wind mapping, energy yield assessment and project financing
 * 50-year recurrent 10-min-averaged extreme wind speed, effective (background and wake-added) turbulence intensity at hub-height, inflow angle (angle off the horizontal plane at which the mean wind flow comes into the rotor) at hub-height and wind shear (vertical velocity gradient) and wind veer (vertical wind direction gradient) across the rotor span. 
 
