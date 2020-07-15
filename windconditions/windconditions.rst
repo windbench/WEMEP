@@ -1,42 +1,64 @@
 Wind Conditions 
 ===============
 
-Wind conditions is a generic term to refer to atmospheric flow quantities that affect wind turbine and wind farm performance. The application of atmospheric models in wind energy is related to activities such as wind resource and energy yield assessment, wind turbine site suitability and wind farm design, during the planning phase, and weather and wind power forecasting during the operational phase of the wind farm. The IEA-Wind TCP Task 31 "Wakebench" is focused on the planning phase while Task 36 is dealing with wind power forecasting. We shall also focus on the wind farm system, considering all the mesoscale-to-microscale weather and turbulence processes, which are relevant for inflow and wind farm wake propagation and interaction.   
+Wind conditions is a generic term to refer to atmospheric flow quantities that affect wind turbine and wind farm performance in terms of energy production and structural integrity. This is the context for the application of atmospheric flow models in activities such as wind resource and energy yield assessment, wind turbine site suitability and wind farm design, during the planning phase, and weather and wind power forecasting during the operational phase of the wind farm. The IEA-Wind TCP Task 31 `Wakebench <https://community.ieawind.org/task31/home>`_ is focused on the planning phase while `Task 36 <https://www.ieawindforecasting.dk/>`_ is dealing with wind power forecasting. We shall focus on the wind farm system, considering all the mesoscale-to-microscale weather and turbulence processes, which are relevant for inflow and wind farm wake propagation and interaction.   
 
 Intended Use
 ------------
 Assessment of Wind Resource, Energy Yield and Turbine Suitability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The assessment of the long-term wind resource, energy yield and turbine site suitability is addressed by the IEC 61400-15 [ref]. This standard complements IEC 61400-1 and 61400-3 in the definition of site specific wind conditions. We shall use the definitions provided therein on relevant quantities of interest, representative of the design lifetime, defined at hub-height (:math:`z_{hub}`) unless otherwise stated:
+The assessment of the long-term wind resource, energy yield and turbine site suitability is addressed by the IEC 61400-15 [ref], providing a framework for reporting and uncertainty quantification. This standard complements IEC 61400-1 and 61400-3 in the definition of site specific wind conditions. We shall use the definitions provided therein on relevant quantities of interest, representative of the design lifetime and defined at hub-height (:math:`z_{hub}`) unless otherwise stated:
 
 * *Annual average wind speed at hub height* (:math:`V_{ave}`): wind speed averaged according to the definition of *annual average*, i.e. mean value of a set of measured data of sufficient size and duration to serve as an estimate of the expected value of the quantity. The averaging time interval shall be a whole number of years to average out non-stationary effects such as seasonality.  
-* *Reference wind speed* (:math:`V_{ref}`): basic parameter for wind speed used for defining Wind Turbine Generator System (WTGS) classes. A turbine designed for a WTGS class with a reference wind speed :math:`V_{ref}`, is designed to withstand climates for which the extreme 10 min average wind speed with a recurrence period of 50 years at turbine hub-height is lower than or equal to :math:`V_{ref}`.  
-* *Annual average flow inclination angle* (:math:`\phi`): The flow inclination is defined as the angle between a horizontal plane and the wind velocity vector at hub height: :math:`\phi = arctan\left(V_z/V_{xy}\right)`, where :math:`V_{xy}` and :math:`V_{z}` are the horizontal and vertical components of the wind speed. The flow inclination angle is positive if the wind velocity vector is pointing upwards. The annual average shall be taken as the energy weighted mean from all directions.
-* *Mean turbulence intensity* (:math:`I`): the ratio of the wind speed standard deviation to the mean wind speed determined from the same set of measured wind speed data and taken over a period of 10 minutes and a minimum sampling frequency of 5 seconds.
-* *Standard deviation of turbulence intensity* (:math:`\sigma_{I}`): The standard deviation of a sub set of the turbulence intensities (:math:`I`). The sub set typically represents a bin within a wind speed- wind direction matrix.
-* *Mean wind shear* (:math:`\alpha`): Wind shear, i.e. the variation of wind speed across a plane perpendicular to the wind direction, (or power law) exponent.
 
-.. math:: V(z) = V(z_r)\left(\frac{z}{z_r}\right)^{\alpha}
+* *Annual wind speed frequency distribution* (:math:`f_{i,j}`): Annual distribution of wind speeds as a function of wind direction *i* and/or wind speeds *j*.
 
-* *Average turbulence intensity at 15m/s* (:math:`I_{15}`): Mean turbulence intensity over all wind directions in 15m/s wind speed bin.
-* *Annual wind speed frequency distribution*: Annual distribution of wind speeds as a function of wind direction and/or wind speeds.
 * *Weibull distribution*: The probability distribution function used to describe the distribution of wind speeds over a period of one year, defined in terms of the scale parameter (:math:`C`) and shape parameter :math:`k`.
 
-.. math:: P_w(V) = 1 - exp\left[-(V/C)^k\right]
+  .. math:: P_w(V) = 1 - exp\left[-(V/C)^k\right]
 
-* *Coefficient of variation of the extreme wind speed distribution*: Standard deviation divided by the mean value of the extreme wind speed distribution.
+* *Annual energy production* (:math:`AEP`): total amount of electrical energy produced by the Wind Turbine Generator System (WTGS), estimated by integrating the power curve with the wind speed frequency distribution and multiplying by the number of hours in a year. 
+
+  .. math:: AEP = T\sum_{i,j} P(V_j)f_{i,j}
+
+  where :math:`P(V_j)` is the power curve at wind speed :math:`V_j` and :math:`T` = 8760 h. 
+
+* *Annual capacity factor* (:math:`CF`): the ratio between the AEP and the maximum possible annual energy output.    
+
+  .. math:: CF = \frac{AEP}{N_tP_{rated}T}
+
+  where :math:`N_t` is the number of turbines and :math:`P_{rated}` is the WTGS rated power.
+
+* *Reference wind speed* (:math:`V_{ref}`): basic parameter for wind speed used for defining WTGS classes. A turbine designed for a WTGS class with a reference wind speed :math:`V_{ref}`, is designed to withstand climates for which the extreme 10 min average wind speed with a recurrence period of 50 years at turbine hub-height is lower than or equal to :math:`V_{ref}`.  
+
+* *Annual average flow inclination angle* (:math:`\phi`): The flow inclination is defined as the angle between a horizontal plane and the wind velocity vector at hub height: 
+
+  .. math:: \phi = tan^{-1}\left(V_z/V_{xy}\right) 
+
+  where :math:`V_{xy}` and :math:`V_{z}` are the horizontal and vertical components of the wind speed. The flow inclination angle is positive if the wind velocity vector is pointing upwards. The annual average shall be taken as the energy weighted mean from all directions.
+
+* *Mean turbulence intensity* (:math:`I`): the ratio of the wind speed standard deviation to the mean wind speed determined from the same set of measured wind speed data and taken over a period of 10 minutes and a minimum sampling frequency of 5 seconds.
+
+  .. math:: I = \frac{\sigma_V}{V}
+
+* *Standard deviation of turbulence intensity* (:math:`\sigma_{I}`): The standard deviation of a sub set of the turbulence intensities (:math:`I`). The sub set typically represents a bin within a wind speed- wind direction matrix.
+
+* *Average turbulence intensity at 15m/s* (:math:`I_{15}`): Mean turbulence intensity over all wind directions in 15m/s wind speed bin.
+
 * *Extreme ambient turbulence intensity*: Extreme value of the ambient turbulence intensity with a return period of 50 years as a function of wind speed.   
 
+* *Mean wind shear* (:math:`\alpha`): Wind shear, i.e. the variation of wind speed across a plane perpendicular to the wind direction, (or power law) exponent.
 
-*old text*
-* Long-term wind resource and wind farm annual energy production (AEP) including wake losses and associated uncertainties, relevant for wind mapping, energy yield assessment and project financing
-* 50-year recurrent 10-min-averaged extreme wind speed, effective (background and wake-added) turbulence intensity at hub-height, inflow angle (angle off the horizontal plane at which the mean wind flow comes into the rotor) at hub-height and wind shear (vertical velocity gradient) and wind veer (vertical wind direction gradient) across the rotor span. 
+  .. math:: V(z) = V(z_r)\left(\frac{z}{z_r}\right)^{\alpha}
 
-These variables are relevant for energy yield assessment and site suitability studies following the standards of the International Electrotechnical Commission (IEC 61400-15) regarding wind turbine design aspects (IEC, 2005). 
+The IEC 61400-15 standard provides a framework for the categorization of energy production losses and uncertainties. We shall focus on those related to the flow model, namely:
 
-Conventional wind farm design is driven by site suitability and optimization based on AEP. In contrast, an integrated design approach will optimize based on minimizing the lifetime levelized cost of energy (LCOE), defined as the capital (CAPEX) and operational (OPEX) costs divided by the energy yield (EWEA, 2009). Project financing costs contributing to the CAPEX are associated to uncertainties in the long-term predictability of AEP. Hale (2015) provides a couple of examples about the impact of bias and uncertainty in AEP for a 200 MW project. A 3% bias on the p50 (50% exceedance probability) of AEP means $17MM difference in the net project value, whereas a 1.5% difference on p95 (uncertainty) results in $1.5M difference on the net project value. These deviations are representative of the variability on AEP estimates faced by the wind industry and show how sensitive project financing is to relatively small changes in the AEP assessment. 
 
-Baily (2015) publishes mean values of energy losses (19.7%) and uncertainties (7.5%) for North American wind farms. The largest contributors to project underperformance are factors that depend on the quality of the flow model like wake losses, long-term extrapolation, and horizontal and vertical extrapolation of measured wind resource.
+
+
+It is defined in terms of the median (:math:`P50`), representing an excedence probability of 50%, and the standard deviation (:math:`\sigma_{AEP}`) as a measure of uncertainty.
+
+* *   
 
 .. todo:: Define end-user requirements explicitely. 
 
