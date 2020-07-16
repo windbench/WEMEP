@@ -7,8 +7,10 @@ Intended Use
 ------------
 Assessment of Wind Resource, Energy Yield and Turbine Suitability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The assessment of the long-term wind resource, energy yield and turbine site suitability is addressed by the IEC 61400-15 [ref], providing a framework for reporting and uncertainty quantification. This standard complements IEC 61400-1 and 61400-3 in the definition of site specific wind conditions. We shall use the definitions provided therein on relevant quantities of interest, representative of the design lifetime and defined at hub-height (:math:`z_{hub}`) unless otherwise stated:
+The assessment of the long-term wind resource, energy yield and turbine site suitability is addressed by the IEC 61400-15 [ref] by providing a framework for reporting and uncertainty quantification. This standard complements IEC 61400-1 and 61400-3 in the definition of site specific wind conditions. Whenever possible we shall use the definitions provided therein on relevant quantities of interest, representative of the design lifetime and defined at hub-height (:math:`z_{hub}`) unless otherwise stated.
 
+Wind Resource
+"""""""""""""
 * *Annual average wind speed at hub height* (:math:`V_{ave}`): wind speed averaged according to the definition of *annual average*, i.e. mean value of a set of measured data of sufficient size and duration to serve as an estimate of the expected value of the quantity. The averaging time interval shall be a whole number of years to average out non-stationary effects such as seasonality.  
 
 * *Annual wind speed frequency distribution* (:math:`f_{i,j}`): Annual distribution of wind speeds as a function of wind direction *i* and/or wind speeds *j*.
@@ -17,18 +19,32 @@ The assessment of the long-term wind resource, energy yield and turbine site sui
 
   .. math:: P_w(V) = 1 - exp\left[-(V/C)^k\right]
 
-* *Annual energy production* (:math:`AEP`): total amount of electrical energy produced by the Wind Turbine Generator System (WTGS), estimated by integrating the power curve with the wind speed frequency distribution and multiplying by the number of hours in a year. 
 
-  .. math:: AEP = T\sum_{i,j} P(V_j)f_{i,j}
+Energy Yield
+""""""""""""
+* *Gross annual energy production* (:math:`AEP_{gross}`): total amount of electrical energy produced by the Wind Turbine Generator System (WTGS), estimated by integrating the power curve with the wind speed frequency distribution and multiplying by the number of hours in a year. 
+
+  .. math:: AEP_{gross} = T\sum_{i,j} P(V_j)f_{i,j}
 
   where :math:`P(V_j)` is the power curve at wind speed :math:`V_j` and :math:`T` = 8760 h. 
 
-* *Annual capacity factor* (:math:`CF`): the ratio between the AEP and the maximum possible annual energy output.    
+* *(Net) Annual energy production* (:math:`AEP`): total amount of electrical energy delivered at the grid connection point after deducing all the energy losses that take place in the wind farm. 
+
+  .. math:: AEP = AEP_{gross} - AEP_{gross}\prod_{k} \eta_{k} 
+
+  where :math:`\eta_{k}` is the *efficiency* corresponding to the loss category *k* as per the IEC 61400-15, namely: electrical, availability, wake effect, curtailment, environmental and turbine performance. Each category includes a number of subcategories to differentiate different sources. For instance, wake losses are subdivided into internal, external and future wake losses. 
+
+* *Annual capacity factor* (:math:`CF`): the ratio between the AEP and the maximum possible annual energy output, an ideal case where all turbines would be producing at rated power throughout the year.    
 
   .. math:: CF = \frac{AEP}{N_tP_{rated}T}
 
-  where :math:`N_t` is the number of turbines and :math:`P_{rated}` is the WTGS rated power.
+  where :math:`N_t` is the number of turbines and :math:`P_{rated}` is the WTGS rated power. Alternatively, wind farm performance is defined in terms of the *annual equivalent hours* of the wind farm operating at rated power, i.e. 
 
+  .. math: AEH = CF \cdot T
+
+
+Site Suitability
+""""""""""""""""
 * *Reference wind speed* (:math:`V_{ref}`): basic parameter for wind speed used for defining WTGS classes. A turbine designed for a WTGS class with a reference wind speed :math:`V_{ref}`, is designed to withstand climates for which the extreme 10 min average wind speed with a recurrence period of 50 years at turbine hub-height is lower than or equal to :math:`V_{ref}`.  
 
 * *Annual average flow inclination angle* (:math:`\phi`): The flow inclination is defined as the angle between a horizontal plane and the wind velocity vector at hub height: 
@@ -51,8 +67,9 @@ The assessment of the long-term wind resource, energy yield and turbine site sui
 
   .. math:: V(z) = V(z_r)\left(\frac{z}{z_r}\right)^{\alpha}
 
-The IEC 61400-15 standard provides a framework for the categorization of energy production losses and uncertainties. We shall focus on those related to the flow model, namely:
 
+Uncertainty Quantification
+""""""""""""""""""""""""""
 
 
 
