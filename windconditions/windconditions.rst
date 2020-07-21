@@ -1,19 +1,28 @@
 Wind Conditions 
 ===============
 
-Wind conditions is a generic term to refer to atmospheric flow quantities that affect wind turbine and wind farm performance in terms of energy production and structural integrity. This is the context for the application of atmospheric flow models in activities such as wind resource and energy yield assessment, wind turbine site suitability and wind farm design, during the planning phase, and weather and wind power forecasting during the operational phase of the wind farm. The IEA-Wind TCP Task 31 `Wakebench <https://community.ieawind.org/task31/home>`_ is focused on the planning phase while `Task 36 <https://www.ieawindforecasting.dk/>`_ is dealing with wind power forecasting. We shall focus on the wind farm system, considering all the mesoscale-to-microscale weather and turbulence processes, which are relevant for inflow and wind farm wake propagation and interaction.   
+Wind conditions is a generic term to refer to atmospheric flow quantities that affect wind turbine and wind farm performance in terms of energy production and structural integrity. This is the context for the application of atmospheric flow models in activities such as wind resource and energy yield assessment, wind turbine site suitability and wind farm design, during the planning phase, and weather and wind power forecasting during the operational phase of the wind farm. The IEA-Wind TCP Task 31 `Wakebench <https://community.ieawind.org/task31/home>`_ is focused on the planning phase while `Task 36 <https://www.ieawindforecasting.dk/>`_ is dealing with wind power forecasting. The model evaluation framework shall focus on the wind farm system, considering all the mesoscale-to-microscale weather and turbulence processes, which are relevant for inflow and wind farm wake propagation and interaction.   
 
 Intended Use
 ------------
+
 Assessment of Wind Resource, Energy Yield and Turbine Suitability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The assessment of the long-term wind resource, energy yield and turbine site suitability is addressed by the IEC 61400-15 [ref] by providing a framework for reporting and uncertainty quantification. This standard complements IEC 61400-1 and 61400-3 in the definition of site specific wind conditions. Whenever possible we shall use the definitions provided therein on relevant quantities of interest, representative of the design lifetime and defined at hub-height (:math:`z_{hub}`) unless otherwise stated.
+The assessment of the long-term wind resource, energy yield and turbine site suitability is addressed by the `IEC 61400-15 working group <https://www.iec.ch/dyn/www/f?p=103:14:13217413763586::::FSP_ORG_ID:10314>`_ by providing a framework for assessment and reporting. Two standards result from this group: 
+
+* The IEC 61400-15-1 complements IEC 61400-1 and 61400-3 in the reporting of site specific wind conditions and related atmospheric variables. 
+* The IEC 61400-15-2 addresses the asessment and reporting of wind resource and energy yield.
+
+Whenever possible we shall use the definitions provided therein on relevant quantities of interest for flow model evaluation. The variables are integrated with a wind speed distribution that is representative of the design lifetime and they are defined at hub-height (:math:`z_{hub}`) unless otherwise stated.
+
+.. note:: 
+   As of June 2020, the IEC 61400-15 standards are in draft form.  
 
 Wind Resource
 """""""""""""
 * *Annual average wind speed at hub height* (:math:`V_{ave}`): wind speed averaged according to the definition of *annual average*, i.e. mean value of a set of measured data of sufficient size and duration to serve as an estimate of the expected value of the quantity. The averaging time interval shall be a whole number of years to average out non-stationary effects such as seasonality.  
 
-* *Annual wind speed frequency distribution* (:math:`f_{i,j}`): Annual distribution of wind speeds as a function of wind direction *i* and/or wind speeds *j*.
+* *Annual wind speed frequency distribution* (:math:`f_{i,j}`): Annual distribution of wind speeds as a function of wind direction *i* and/or wind speeds *j*. Wind speed is classified using 1 m/s bins and wind direction sectors are no wider than :math:`30^{\circ}`. Additional dimmensions related to turbulence characteristics like stability, turbulence intensity or wind shear could be used for additional granularity in the distribution.  
 
 * *Weibull distribution*: The probability distribution function used to describe the distribution of wind speeds over a period of one year, defined in terms of the scale parameter (:math:`C`) and shape parameter :math:`k`.
 
@@ -22,30 +31,31 @@ Wind Resource
 
 Energy Yield
 """"""""""""
-* *Gross annual energy production* (:math:`AEP_{gross}`): total amount of electrical energy produced by the Wind Turbine Generator System (WTGS), estimated by integrating the power curve with the wind speed frequency distribution and multiplying by the number of hours in a year. 
+* *Gross annual energy production* (:math:`AEP_{gross}`): total amount of electrical energy produced by the Wind Turbine Generator System (WTGS), estimated by integrating the power curve with the wind speed frequency distribution and multiplying by the number of hours in a year. For a wind farm:
 
-  .. math:: AEP_{gross} = T\sum_{i,j} P(V_j)f_{i,j}
+  .. math:: AEP_{gross} = T\sum_{i,j,k} P_k(V_j) f_{i,j,k}
 
-  where :math:`P(V_j)` is the power curve at wind speed :math:`V_j` and :math:`T` = 8760 h. 
+  where :math:`f_{i,j,k}` is the annual wind speed frequency distribution at each turbine site *k*, :math:`P_k(V_j)` is the power curve of each turbine at wind speed :math:`V_j` and :math:`T` = 8760 h is the number of hours in a year. The gross AEP is also defined as the AEP at a reference site, typically a meteorological mast, vertically extrapolated to hub-height and horizontally extrapolated to the turbine sites. This extrapolation is carried out by profile methods and flow models that predict speed-up effects due to terrain elevation and roughness changes, forest canopies and obstacles. 
 
 * *(Net) Annual energy production* (:math:`AEP`): total amount of electrical energy delivered at the grid connection point after deducing all the energy losses that take place in the wind farm. 
 
-  .. math:: AEP = AEP_{gross} - AEP_{gross}\prod_{k} \eta_{k} 
+  .. math:: AEP = AEP_{gross} - AEP_{gross}\prod_{l} \eta_{l} 
 
-  where :math:`\eta_{k}` is the *efficiency* corresponding to the loss category *k* as per the IEC 61400-15, namely: electrical, availability, wake effect, curtailment, environmental and turbine performance. Each category includes a number of subcategories to differentiate different sources. For instance, wake losses are subdivided into internal, external and future wake losses. 
+  where :math:`\eta_{l}` is the *efficiency* corresponding to the loss category *l* as per the IEC 61400-15, namely: electrical, availability, wake effect, curtailment, environmental and turbine performance. Each category includes a number of subcategories. For instance, wake losses are subdivided into internal (interarray effects), external (current farm-farm effects) and future (prospect farm-farm effects) wake losses. Internal wake losses are predicted by wake models to obtain the, so-called, *array efficiency*:
+
+  .. math:: \eta_{wake} = \frac{P_{wake}}{P_{gross}} = \frac{\sum_{i,j,k} Pw_k(V_j) f_{i,j,k}} {\sum_{i,j,k} P_k(V_j)f_{i,j,k}}
+
+  where the efficiency is defined in terms of a power ratio with :math:`Pw_k` being the power output predicted by the wake model at each turbine position *k*.
 
 * *Annual capacity factor* (:math:`CF`): the ratio between the AEP and the maximum possible annual energy output, an ideal case where all turbines would be producing at rated power throughout the year.    
 
-  .. math:: CF = \frac{AEP}{N_tP_{rated}T}
+  .. math:: CF = \frac{AEP}{T\sum_{k} Prated_k}
 
-  where :math:`N_t` is the number of turbines and :math:`P_{rated}` is the WTGS rated power. Alternatively, wind farm performance is defined in terms of the *annual equivalent hours* of the wind farm operating at rated power, i.e. 
-
-  .. math: AEH = CF \cdot T
-
+  where :math:`Prated_k` is the rated power of each turbine. Alternatively, wind farm performance is defined in terms of the *annual equivalent hours* of the wind farm operating at rated power, i.e. :math:`AEH = CF \cdot T`
 
 Site Suitability
 """"""""""""""""
-* *Reference wind speed* (:math:`V_{ref}`): basic parameter for wind speed used for defining WTGS classes. A turbine designed for a WTGS class with a reference wind speed :math:`V_{ref}`, is designed to withstand climates for which the extreme 10 min average wind speed with a recurrence period of 50 years at turbine hub-height is lower than or equal to :math:`V_{ref}`.  
+* *Extreme wind speed with a recurrence interval of 50 years* (:math:`V_{50}`): Also called *reference wind speed* (:math:`V_{ref}`) in the IEC 61400-1 standard to define WTGS classes. A turbine designed for a WTGS class with a reference wind speed :math:`V_{ref}`, is designed to withstand climates for which the extreme 10 min average wind speed with a recurrence period of 50 years at turbine hub-height is lower than or equal to :math:`V_{ref}`.  
 
 * *Annual average flow inclination angle* (:math:`\phi`): The flow inclination is defined as the angle between a horizontal plane and the wind velocity vector at hub height: 
 
@@ -68,21 +78,13 @@ Site Suitability
   .. math:: V(z) = V(z_r)\left(\frac{z}{z_r}\right)^{\alpha}
 
 
-Uncertainty Quantification
-""""""""""""""""""""""""""
+AEP Prediction Bias and Uncertainty Quantification
+""""""""""""""""""""""""""""""""""""""""""""""""""
+The pre-construction energy yield assessment process will output a distribution of AEP defined in terms of the median :math:`P50`, where the actual AEP would be exceeded 50% of the time, and a standard deviation :math:`\sigma_{AEP}` as a measure of the AEP *uncertainty*. Then, the *prediction bias* is the difference between the estimated *P50* and the actual AEP
 
+.. math:: BIAS_{AEP} = AEP_{true} - AEP_{P50} 
 
-
-It is defined in terms of the median (:math:`P50`), representing an excedence probability of 50%, and the standard deviation (:math:`\sigma_{AEP}`) as a measure of uncertainty.
-
-* *   
-
-.. todo:: Define end-user requirements explicitely. 
-
-   * Discuss IEC 61400-15 context (industry perspective)
-   * Add definitions of quantities of interest including uncertainty quantification categories
-   * Impact of bias and uncertainty: set quality acceptance criteria
-
+While each quantity of interest can be subject to uncertainty quantification individually, the main focus of the IEC 61400-15-2 standard is to predict the overall energy production uncertainty since this is directly connected to the financial performance of a wind project. This overall uncertainty is broken down into categories and subcategories by the standard to provide a common framework for the wind industry. Lee and Fields (2020) provide a review of energy yield assessment prediction bias, losses and uncertainties following this framework. The review shows that while there has been a tendency towards the overestimation of P50, this has been progressively corrected and we are now approaching zero bias on average. The estimated mean AEP uncertainty remains at over 6% implying that there is room for improvement. Indeed, changing the uncertainty by 1% can lead to 3-5% change in the net present value of a wind farm (Kline, 2019).     
 
 Numerical Site Calibration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -94,9 +96,9 @@ Numerical Site Calibration
    * Impact of bias and uncertainty: set quality acceptance criteria
 
 
-The Multi-Scale Model-Chain
----------------------------
-Sanz Rodrigo et al. (2016) provide a review of mesoscale-to-microscale wind farm flow models of different fidelity levels considering meteorological and wind energy terminology. Each scale has different applications and quantities of interest, determining the orientation of the model evaluation strategy (:numref:`fig-model-chain`). 
+Multi-Scale Modeling of Wind Conditions
+---------------------------------------
+Sanz Rodrigo et al. (2016) provide a review of mesoscale-to-microscale wind farm flow models of different fidelity levels considering meteorological and wind energy terminology. Each scale has different applications and quantities of interest, which will determine the orientation of the model evaluation strategy (:numref:`fig-model-chain`). 
 
 .. _fig-model-chain:
 .. figure:: figures/model-chain.png
@@ -106,7 +108,7 @@ Sanz Rodrigo et al. (2016) provide a review of mesoscale-to-microscale wind farm
     Model-chain for wind farm flow modeling (Sanz Rodrigo et al., 2016).
 
 
-A mind map elaborated during IEA-Task 31 Phase 3 shows the relationships between model building-blocks at different scales, input quantities and phenomena of interest for the intended use of these models (:numref:`fig-windconditions-mindmap`). 
+Models can be coupled together to form a multi-scale modeling system where, for instance, the microscale sub-system (the wind farm) uses input data generated by the mesoscale sub-system to characterize the long-term wind climate distribution that modulates the local wind conditions. Similarly, an aerolastic model of the turbine sub-system can be used to predict detailed rotor aerodynamics responsible for wake generation in the wind farm wake model. A mind map elaborated during IEA-Task 31 Phase 3 shows the relationships between model building-blocks at different scales, input quantities and phenomena of interest for the intended use of these models (:numref:`fig-windconditions-mindmap`). 
 
 .. _fig-windconditions-mindmap:
 .. figure:: mindmap/map.svg
@@ -119,8 +121,10 @@ A mind map elaborated during IEA-Task 31 Phase 3 shows the relationships between
 The mind map breaks down the full complexity of atmospheric models into three scales:
 
 1. **Global**: drives wind climate variability from seasons to decades at horizontal scales of tens of kilometers. Global reanalyses are typically used to characterize this variability and serve as input boundary condtions for mesoscale models. 
-2. **Mesoscale**: drives weather processes at regional level down to scales of the order of 1 km. Relevant mesoscale phenomena include: horizontal wind speed gradients due large-scale topography, land-sea transitions and farm-farm effect, low-level jets during stable conditions, etc. Outputs from mesoscale models provide forcing for microscale models in the form of virtual masts, generalized wind climates, lateral boundary conditions or volumetric forzes (tendencies). 
-3. **Microscale**: drives turbulence and speed-up effects at site level at scales down to a few meters. Site effects depend on local changes in elevation and roughness, the presence of obstacles and forest canopies as well as thermal stratification across the atmospheric boundary-layer (ABL). Microscale effects are particularly important in complex terrain where relevant phenomena develop such as: flow separation and recirculation, gravity waves, gap flows, hydraulic jump, mountain-valley winds, etc. 
+2. **Mesoscale**: drives weather processes at regional level down to scales of the order of 1 km. Relevant mesoscale phenomena include: horizontal wind speed (gross AEP) gradients due large-scale topography, land-sea transitions and farm-farm (external wake) effect, low-level jets producing large wind shear during stable conditions, etc. Mesoscale models provide forcing for microscale models in the form of virtual masts, generalized wind climates, lateral boundary conditions or volumetric forzes (also called tendencies).  
+3. **Microscale**: drives turbulence and speed-up effects at site level at scales down to a few meters. Site effects depend on local changes in elevation and roughness, the presence of obstacles and forest canopies as well as thermal stratification across the atmospheric boundary-layer (ABL). Microscale effects are particularly important in complex terrain where relevant phenomena develop such as: flow separation and recirculation, gravity waves, gap flow, hydraulic jump, mountain-valley winds, etc. At microscale, wind farm wake models are embedded in atmospheric flow models to simulate internal wake effects that determine array efficiency. 
+
+Wake models are further developed in the :ref:`Multi-Scale Wind Farm Modeling` section to simulate internal wake effects (array efficiency) and wind turbine loads. 
 
 Validation Strategy
 -------------------

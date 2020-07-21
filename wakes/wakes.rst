@@ -7,8 +7,9 @@ Intended Use
 Wind Farm Design
 ^^^^^^^^^^^^^^^^
 
-Multi-Scale Model-Chain
------------------------
+.. Multi-Scale Wind Farm Modeling:
+Multi-Scale Wind Farm Modeling
+------------------------------
 * Mind map
 
 
