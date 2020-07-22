@@ -254,7 +254,7 @@ Licensing
 
 References
 ----------
-.. bibliography:: references.bib
+.. bibliography:: mep_references.bib
 	:all:
 
 
