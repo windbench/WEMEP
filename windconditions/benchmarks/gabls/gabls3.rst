@@ -25,6 +25,7 @@ Notebooks
    :glob:
    :maxdepth: 1
 
+..
    notebooks/GABLS3DiurnalCycleBenchmarkForWindEnergy_2017.ipynb
    notebooks/GABLS3_CFDWind1D.ipynb
 
