@@ -1,4 +1,4 @@
-sphinx>=2.4.*
+sphinx
 ipykernel
 nbsphinx
 sphinxcontrib.bibtex
