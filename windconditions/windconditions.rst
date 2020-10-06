@@ -84,7 +84,7 @@ The pre-construction energy yield assessment process will output a distribution 
 
 .. math:: BIAS_{AEP} = AEP_{true} - AEP_{P50} 
 
-While each quantity of interest can be subject to uncertainty quantification individually, the main focus of the IEC 61400-15-2 standard is to predict the overall energy production uncertainty since this is directly connected to the financial performance of a wind project. This overall uncertainty is broken down into categories and subcategories by the standard to provide a common framework for the wind industry. Lee and Fields (2020) :cite:`lee_overview_2020` provide a review of energy yield assessment prediction bias, losses and uncertainties following this framework. The review shows that while there has been a tendency towards the overestimation of P50, this has been progressively corrected and we are now approaching zero bias on average. The estimated mean AEP uncertainty remains at over 6% implying that there is room for improvement. Indeed, changing the uncertainty by 1% can lead to 3-5% change in the net present value of a wind farm.     
+While each quantity of interest can be subject to uncertainty quantification individually, the main focus of the IEC 61400-15-2 standard is to predict the overall energy production uncertainty since this is directly connected to the financial performance of a wind project. This overall uncertainty is broken down into categories and subcategories by the standard to provide a common framework for the wind industry. Lee and Fields (2020) :cite:`lee_overview_2020` provide a review of energy yield assessment prediction bias, losses and uncertainties following this framework. The review shows that while there has been a tendency towards the overestimation of P50, this has been progressively corrected and we are now approaching zero bias on average. The estimated mean AEP uncertainty remains at over 6% implying that there is room for improvement. Indeed, changing the uncertainty by 1% can lead to 3-5% change in the net present value of a wind farm :cite:`lee_overview_2020`.     
 
 Numerical Site Calibration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -115,7 +115,7 @@ Models can be coupled together to form a multi-scale modeling system where, for 
     :align: center
 
     Mind map of multi-scale models and phenomena of interest for wind conditions.
-    `Interactive mind map <../../../windconditions/mindmap/index.html>`_  
+    `Interactive mind map </windconditions/mindmap/index.html>`_  
 
 The mind map breaks down the full complexity of atmospheric models into three scales:
 
@@ -164,14 +164,15 @@ While long-term statistics of wind conditions are traditionally characterized wi
    +====================+=============+======================+=========================+=================================================================+
    | **Homogeneous ABL**                                                                                                                                 |
    +--------------------+-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   | *Cabauw/ GABLS3*   | Netherlands | Since 2008           | Onshore flat terrain    | :cite:`cesar_2020`, :cite:`bosveld_third_2014`,                 | 
+   | *Cabauw/ GABLS3*   | Netherlands | Since 2008           | Onshore flat terrain    | :cite:`cesar_2020`, :cite:`bosveld_third_2014a`,                |
+   |                    |             |                      |                         | :cite:`bosveld_third_2014b`,                                    |
    |                    |             |                      |                         | :cite:`rodrigo_results_2017`,                                   |
    |                    |             |                      |                         | :cite:`rodrigo_windbenchgabls3_2020`,                           |
    |                    |             |                      |                         | :cite:`rodrigo_comparing_2018`,                                 |
    |                    |             |                      |                         | :cite:`rodrigo_windbenchnewamesomicrochallengephase1_2018`      |
    +                    +-------------+----------------------+-------------------------+-----------------------------------------------------------------+
    |                    | 200-m tall mast for atmospheric boundary-layer research in horizontally homogeneous conditions. GABLS3 is a diurnal            |
-   |                    | cycle developing a strong nocturnal low-level jet                                                                              | 
+   |                    | cycle developing a strong nocturnal low-level jet                                                                              |
    +--------------------+-------------+----------------------+-------------------------+-----------------------------------------------------------------+
    | **Coastal and Offshore**                                                                                                                            |
    +--------------------+-------------+----------------------+-------------------------+-----------------------------------------------------------------+
@@ -285,12 +286,12 @@ The Homogeneous ABL
 ^^^^^^^^^^^^^^^^^^^
 The ABL building-block of :numref:`fig-ABL-building-block` deals with the horizontally homogeneous atmospheric boundary-layer. A hierarchy of verification and validation cases is suggested to progressively incorporate essential physics, namely:
 
-1. Monin-Obukhov similarity theory (MOST) for surface-layer steady-state conditions depending on roughness and stability (Monin and Obukhov, 1954). 
-2. Leipzig wind profile in neutral steady-state conditions (Lettau, 1950).
-3. GABLS1 quasi-steady stable boundary-layer under uniform geostrophic wind and surface cooling (Cuxart et al., 2006). 
-4. GABLS2 diurnal cycle under uniform geostrophic wind and varying surface temperature (Svensson et al., 2011).
-5. GABLS3 diurnal cycle under realistic mesoscale forcing and varying surface boundary conditions (Bosveld et al., 2014a). 
-6. Cabauw annual integration of the wind climate to predict quantities of interest for the intended use: wind resource assessment and turbine siting.
+1. Monin-Obukhov similarity theory (MOST) for surface-layer steady-state conditions depending on roughness and stability :cite:`monin_obukhov_1954`. 
+2. Leipzig wind profile in neutral steady-state conditions :cite:`lettau_re-examination_1950`.
+3. GABLS1 quasi-steady stable boundary-layer under uniform geostrophic wind and surface cooling :cite:`cuxart_single-column_2006`. 
+4. GABLS2 diurnal cycle under uniform geostrophic wind and varying surface temperature :cite:`kumar_impact_2010`.
+5. GABLS3 diurnal cycle under realistic mesoscale forcing and varying surface boundary conditions :cite:`bosveld_third_2014a`. 
+6. Cabauw annual integration of the wind climate to predict quantities of interest for the intended use: wind resource assessment and turbine siting :cite:`rodrigo_comparing_2018`.
 
 .. _fig-ABL-building-block:
 .. figure:: figures/ABL-building-block.png
