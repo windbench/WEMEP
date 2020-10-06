@@ -115,7 +115,7 @@ Models can be coupled together to form a multi-scale modeling system where, for 
     :align: center
 
     Mind map of multi-scale models and phenomena of interest for wind conditions.
-    `Interactive mind map </windconditions/mindmap/index.html>`_  
+    `Interactive mind map <../_static/windconditions_mindmap/index.html>`_  
 
 The mind map breaks down the full complexity of atmospheric models into three scales:
 
