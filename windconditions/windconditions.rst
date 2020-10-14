@@ -127,9 +127,9 @@ Wake models are described in detail in the :ref:`Multi-Scale Wind Farm Modeling`
 
 Validation Strategy
 -------------------
-Following the model evaluation process of :numref:`fig-ambidextrous-process`, a validation strategy for wind conditions requires the provision of high-fidelity experiments targeting high-impact phenomena of interest, to validate the capacity of the flow model to deal with relevant physics, as well as long-term wind resource campaigns to demonstrate the added value that resolving these phenomena brings to the applications of interest. These applications typically involve integrating a discrete number of flow model simulations with an statistical methodology (a design tool) that provides the expected long-term mean or extreme values and the associated uncertainties. This should be done for a wide variety of wind climates and siting conditions to cover the widest operational range possible. 
+Following the model evaluation process of :numref:`fig-ambidextrous-process`, a validation strategy for wind conditions requires the provision of high-fidelity experiments targeting high-impact phenomena of interest, to validate the capacity of the flow model to deal with relevant physics, as well as long-term wind resource campaigns to demonstrate the added value that resolving these phenomena brings to the applications of interest. These applications typically involve integrating a discrete number of flow model simulations with a statistical methodology that provides the expected long-term mean or extreme values and the associated uncertainties. This should be done for a wide variety of wind climates and siting conditions to cover the widest operational range possible. 
 
-This validation strategy was implemented in the New European Wind Atlas (NEWA) project towards the development of a new methodology for the assessment of wind conditions that is based on a mesoscale to microscale model-chain approach (Sanz Rodrigo et al., 2020) :cite:`rodrigo_new_2020`. The scope of the project was focused on wind conditions for wind resource and site assessment, i.e. without the influence of wind turbines. Therefore, the model-chain was devoted to atmospheric flow models with two applications in mind:
+This validation strategy was implemented in the `New European Wind Atlas <https://zenodo.org/communities/newa/?page=1&size=20>`_ (NEWA) project towards the development of a new methodology for the assessment of wind conditions that is based on a mesoscale to microscale model-chain approach (Sanz Rodrigo et al., 2020) :cite:`rodrigo_new_2020`. The scope of the project was focused on wind conditions for wind resource and site assessment, i.e. without the influence of wind turbines. Therefore, the model-chain was devoted to atmospheric flow models with two applications in mind:
 
 * **Wind atlas for regional planning**: the main focus was on the mesoscale model, to come up with a reference set-up of the Weather Research and Forecasting (WRF) model that could be used seamlessly across Europe. Through sensitivity analysis, the most suitable configuration was selected to produce a 30-year long simulation forced by ERA5 reanalysis data (Hahmann et al. 2020) :cite:`hahmann_making_2020`. Then, this long-term wind climate was statistically downscaled to 50 m using the WAsP methodology. Hence, the wind atlas model-chain consists on physical downscaling down to 3 km resolution, to produce long-term time series of mesoscale wind characteristics, whose long-term wind climate distributions are then used as input data for a microscale model to produce high-resolution wind resource quantities. The validation strategy was based on a database of 291 meteorological masts, at least 40 m tall, made available by Vestas (Dörenkämper et al., 2020) :cite:`dorenkamper_making_2020`. The main objective of the validation campaign was to determine the general quality of the wind atlas, categorized by regions and terrain complexity, determined by the ruggedness index *RIX* (:numref:`fig-NEWA-windatlas-validation`) :cite:`mortensen_field_2008`. A one year multi-physics ensemble run was also used to quantify the spread of mesoscale winds which would translate into input uncertainty for microscale models :cite:`f_gonzalez_rouco_report_2019`.       
 
@@ -153,7 +153,7 @@ The building-block validation hierarchy of :numref:`fig-windconditions-building-
 
     Building-block validation hierarchy and phenomena of interest for wind conditions.
 
-While long-term statistics of wind conditions are traditionally characterized with meteorological masts, many recent experiments include an intense operational period (IOP) of several weeks to months with extensive use of remote sensing equipment. In particular, scanning lidar systems allow to characterize the spatio-temporal structure of the flow field along  scanning trajectories following a particular transect, or slicing vertical or horizontal planes (:cite:`mann_complex_2017`). A summary of NEWA experiments and other sources of open-access validation data are provided in :numref:`tab-windconditions-datasets`. 
+While long-term statistics of wind conditions are traditionally characterized with meteorological masts, many recent experiments include an intense operational period (IOP) of several weeks to months with extensive use of remote sensing equipment. In particular, scanning lidar systems allow to characterize the spatio-temporal structure of the flow field along  scanning trajectories following a particular transect, or slicing vertical or horizontal planes (:cite:`mann_complex_2017`). :numref:`tab-windconditions-datasets` provides a summary of experiments and other sources of open-access data for the validation of atmospheric flow models. 
 
 .. _tab-windconditions-datasets:
 .. table:: Summary of open-access datasets for the validation of flow models for wind conditions
@@ -282,8 +282,8 @@ Phenomena of Interest
 Benchmarks
 ----------
 
-The Homogeneous ABL
-^^^^^^^^^^^^^^^^^^^
+The Homogeneous Atmospheric Boundary Layer (ABL)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The ABL building-block of :numref:`fig-ABL-building-block` deals with the horizontally homogeneous atmospheric boundary-layer. A hierarchy of verification and validation cases is suggested to progressively incorporate essential physics, namely:
 
 1. Monin-Obukhov similarity theory (MOST) for surface-layer steady-state conditions depending on roughness and stability :cite:`monin_obukhov_1954`. 
@@ -300,7 +300,7 @@ The ABL building-block of :numref:`fig-ABL-building-block` deals with the horizo
 
     V&V hierarchy for the ABL building-block.
 
-Benchmarks for MOST and Leipzig were conducted during Wakebench Phase 1 (Sanz Rodrigo et al, 2014). The GEWEX Atmospheric Boundary Layer Studies (GABLS), developed by the boundary-layer meteorology community (Holtslag et al., 2013), and adopted for wind energy applications by focusing the evaluation on rotor-based quantities of interest (Sanz Rodrigo et al., 2017a). The GABLS3 and Cabauw benchmarks were conducted in Wakebench Phase 2 (Sanz Rodrigo et al., 2017b; Sanz Rodrigo et al., 2018). A brief summary of these benchmarks is provided here as a demonstration of the V&V framework.
+Benchmarks for MOST and Leipzig were conducted during Wakebench Phase 1 :cite:`rodrigo_iea-task_2014`. The GEWEX Atmospheric Boundary Layer Studies (GABLS), developed by the boundary-layer meteorology community :cite:`holtslag_stable_2013`, can be adopted by the wind energy community by focusing the evaluation on rotor-based quantities of interest :cite:`sanz_rodrigo_methodology_2017`. The GABLS3 and Cabauw benchmarks were conducted in Wakebench Phase 2 :cite:`rodrigo_results_2017`:cite:`rodrigo_comparing_2018`. 
 
 .. toctree::
    :glob:

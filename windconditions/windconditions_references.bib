@@ -533,16 +533,20 @@ Publisher: Multidisciplinary Digital Publishing Institute},
 	pages = {477--495}
 }
 
-@book{bechmann_large-eddy_2007,
-	title = {Large-eddy simulation of atmospheric flow over complex terrain},
-	isbn = {978-87-550-3556-0},
-	url = {https://orbit.dtu.dk/en/publications/large-eddy-simulation-of-atmospheric-flow-over-complex-terrain},
-	language = {English},
-	urldate = {2020-07-23},
-	publisher = {Risø National Laboratory},
-	author = {Bechmann, Andreas},
+@phdthesis{bechmann_large-eddy_2007,
+	title = "Large-eddy simulation of atmospheric flow over complex terrain",
+	abstract = "The present report describes the development and validation of a turbulence model designed for atmospheric flows based on the concept of Large-Eddy Simulation (LES). The background for the work is the high Reynolds number k - #epsilon# model, which has been implemented on a finite-volume code of the incompressible Reynolds-averaged Navier-Stokes equations (RANS). The k - #epsilon# model is traditionally used for RANS computations, but is here developed to also enable LES. LES is able to provide detailed descriptions of a wide range of engineering flows at low Reynolds numbers. For atmospheric flows, however, the high Reynolds numbers and the rough surface of the earth provide difficulties normally not compatible with LES. Since these issues are most severe near the surface they are addressed by handling the near surface region with RANS and only use LES above this region. Using this method, the developed turbulence model is able to handle both engineering and atmospheric flows and can be run in both RANS or LES mode. For LES simulations a time-dependent wind field that accurately represents the turbulent structures of a wind environment must be prescribed at the computational inlet. A method is implemented where the turbulent wind field from a separate LES simulation can be used as inflow. To avoid numerical dissipation of turbulence special care is paid to the numerical method, e.g. the turbulence model is calibrated with the specific numerical scheme used. This is done by simulating decaying isotropic and homogeneous turbulence. Three atmospheric test cases are investigated in order to validate the behavior of the presented turbulence model. Simulation of the neutral atmospheric boundary layer, illustrates the turbulence model ability to generate and maintain the turbulent structures responsible for boundary layer transport processes. Velocity and turbulence profiles are in good agreement with measurements. Simulation of the flow over the Askervein hill is also performed. Speed-up and turbulence intensities show good agreement with measurements, except 400m downstream of the hill summit where speed-up is underestimated. Flow over a cube in a thick turbulent boundary layer is the final test case. The turbulence model ability to capture the physics of the large separated region downstream of the cube is demonstrated. The turbulence model is, however, shown to have trouble with very large values of roughness.",
+	keywords = "Vindenergi, Ris{\o}-PhD-28(EN), Ris{\o}-PhD-28",
+	author = "Andreas Bechmann",
+	note = "Ris{\o}-PhD-28(EN)",
+	year = "2007",
 	month = aug,
-	year = {2007}
+	language = "English",
+	isbn = "87-550-3556-6",
+	series = "Ris{\o}-PhD",
+	number = "28(EN)",
+	publisher = "Ris{\o} National Laboratory",
+	school = "Technical University of Denmark"
 }
 
 @article{beljaars_mixed_1987,
@@ -939,4 +943,58 @@ Publisher: Multidisciplinary Digital Publishing Institute},
 	year = {2010},
 	note = {Publisher: American Meteorological Society},
 	pages = {1496--1516}
+}
+
+@article{rodrigo_iea-task_2014,
+	title = {{IEA}-{Task} 31 {WAKEBENCH}: {Towards} a protocol for wind farm flow model evaluation. {Part} 1: {Flow}-over-terrain models},
+	volume = {524},
+	issn = {1742-6596},
+	shorttitle = {{IEA}-{Task} 31 {WAKEBENCH}},
+	url = {https://doi.org/10.1088%2F1742-6596%2F524%2F1%2F012105},
+	doi = {10.1088/1742-6596/524/1/012105},
+	abstract = {The IEA Task 31 Wakebench is setting up a framework for the evaluation of wind farm flow models operating at microscale level. The framework consists on a model evaluation protocol integrated on a web-based portal for model benchmarking (www.windbench.net). This paper provides an overview of the building-block validation approach applied to flow-over-terrain models, including best practices for the benchmarking and data processing procedures for the analysis and qualification of validation datasets from wind resource assessment campaigns. A hierarchy of test cases has been proposed for flow-over-terrain model evaluation, from Monin- Obukhov similarity theory for verification of surface-layer properties, to the Leipzig profile for the near-neutral atmospheric boundary layer, to flow over isolated hills (Askervein and Bolund) to flow over mountaneous complex terrain (Alaiz). A summary of results from the first benchmarks are used to illustrate the model evaluation protocol applied to flow-over-terrain modeling in neutral conditions.},
+	language = {en},
+	urldate = {2020-10-14},
+	journal = {J. Phys.: Conf. Ser.},
+	author = {Rodrigo, Javier Sanz and Gancarski, Pawel and Arroyo, Roberto Chavez and Moriarty, Patrick and Chuchfield, Matthew and Naughton, Jonathan W. and Hansen, Kurt S. and Machefaux, Ewan and Koblitz, Tilman and Maguire, Eoghan and Castellani, Francesco and Terzi, Ludovico and Breton, Simon-Philippe and Ueda, Yuko and Prospathopoulos, John and Oxley, Gregory S. and Peralta, Carlos and Zhang, Xiadong and Witha, Björn},
+	month = jun,
+	year = {2014},
+	note = {Publisher: IOP Publishing},
+	pages = {012105}
+}
+
+@article{holtslag_stable_2013,
+	title = {Stable {Atmospheric} {Boundary} {Layers} and {Diurnal} {Cycles}: {Challenges} for {Weather} and {Climate} {Models}},
+	volume = {94},
+	issn = {0003-0007},
+	shorttitle = {Stable {Atmospheric} {Boundary} {Layers} and {Diurnal} {Cycles}},
+	url = {https://journals.ametsoc.org/bams/article/94/11/1691/60301/Stable-Atmospheric-Boundary-Layers-and-Diurnal},
+	doi = {10.1175/BAMS-D-11-00187.1},
+	language = {en},
+	number = {11},
+	urldate = {2020-10-14},
+	journal = {Bull. Amer. Meteor. Soc.},
+	author = {Holtslag, A. a. M. and Svensson, G. and Baas, P. and Basu, S. and Beare, B. and Beljaars, A. C. M. and Bosveld, F. C. and Cuxart, J. and Lindvall, J. and Steeneveld, G. J. and Tjernström, M. and Van De Wiel, B. J. H.},
+	month = nov,
+	year = {2013},
+	note = {Publisher: American Meteorological Society},
+	pages = {1691--1706}
+}
+
+@article{sanz_rodrigo_methodology_2017,
+	title = {A methodology for the design and testing of atmospheric boundary layer models for wind energy applications},
+	volume = {2},
+	issn = {2366-7443},
+	url = {https://wes.copernicus.org/articles/2/35/2017/},
+	doi = {https://doi.org/10.5194/wes-2-35-2017},
+	abstract = {{\textless}p{\textgreater}{\textless}strong{\textgreater}Abstract.{\textless}/strong{\textgreater} The GEWEX Atmospheric Boundary Layer Studies (GABLS) 1, 2 and 3 are used to develop a methodology for the design and testing of Reynolds-averaged Navier–Stokes (RANS) atmospheric boundary layer (ABL) models for wind energy applications. The first two GABLS cases are based on idealized boundary conditions and are suitable for verification purposes by comparing with results from higher-fidelity models based on large-eddy simulation. Results from three single-column RANS models, of 1st, 1.5th and 2nd turbulence closure order, show high consistency in predicting the mean flow. The third GABLS case is suitable for the study of these ABL models under realistic forcing such that validation versus observations from the Cabauw meteorological tower are possible. The case consists on a diurnal cycle that leads to a nocturnal low-level jet and addresses fundamental questions related to the definition of the large-scale forcing, the interaction of the ABL with the surface and the evaluation of model results with observations. The simulations are evaluated in terms of surface-layer fluxes and wind energy quantities of interest: rotor equivalent wind speed, hub-height wind direction, wind speed shear and wind direction veer. The characterization of mesoscale forcing is based on spatially and temporally averaged momentum budget terms from Weather Research and Forecasting (WRF) simulations. These mesoscale tendencies are used to drive single-column models, which were verified previously in the first two GABLS cases, to first demonstrate that they can produce similar wind profile characteristics to the WRF simulations even though the physics are more simplified. The added value of incorporating different forcing mechanisms into microscale models is quantified by systematically removing forcing terms in the momentum and heat equations. This mesoscale-to-microscale modeling approach is affected, to a large extent, by the input uncertainties of the mesoscale tendencies. Deviations from the profile observations are reduced by introducing observational nudging based on measurements that are typically available from wind energy campaigns. This allows the discussion of the added value of using remote sensing instruments versus tower measurements in the assessment of wind profiles for tall wind turbines reaching heights of 200 m.{\textless}/p{\textgreater}},
+	language = {English},
+	number = {1},
+	urldate = {2020-10-14},
+	journal = {Wind Energy Science},
+	author = {Sanz Rodrigo, Javier and Churchfield, Matthew and Kosovic, Branko},
+	month = feb,
+	year = {2017},
+	note = {Publisher: Copernicus GmbH},
+	pages = {35--54}
 }
