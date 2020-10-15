@@ -36,7 +36,8 @@ extensions = ['sphinx.ext.mathjax',
     'IPython.sphinxext.ipython_console_highlighting',
     'sphinx.ext.todo',
     'sphinxcontrib.bibtex',
-    'sphinx.ext.autosectionlabel'
+    'sphinx.ext.autosectionlabel',
+    'recommonmark',
     ]
 
 #    'nbsphinx',

@@ -306,7 +306,7 @@ Benchmarks for MOST and Leipzig were conducted during Wakebench Phase 1 :cite:`r
    :glob:
    :maxdepth: 1
 
-   benchmarks/moninobukhov.rst
+   benchmarks/MOST.rst
    benchmarks/leipzig.rst
    benchmarks/gabls/gabls3.rst
 

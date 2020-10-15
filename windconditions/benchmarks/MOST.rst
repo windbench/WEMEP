@@ -9,23 +9,23 @@ Status
 
 	   * `Input/verification data <https://doi.org/10.5281/zenodo.4088315>`_ :cite:`javier_sanz_rodrigo_input_2012`
 	   * `Presentation <https://doi.org/10.5281/zenodo.4088287>`_ :cite:`rodrigo_presentation_torque_2014`
-	   * `Paper <https://iopscience.iop.org/article/10.1088/1742-6596/524/1/012105>`_ :cite:`rodrigo_torque_2014`
+	   * `Paper <https://iopscience.iop.org/article/10.1088/1742-6596/524/1/012105>`_ :cite:`rodrigo_task31_2014`
 
    **Highlights**
 
-   Participants show good match with MOST at rotor heights. Next to the wall some deviations occur in one :math:`k-\epsilon` model due to a too large first-cell height. The LES model is not designed to run under surface layer conditions and show decreasing *tke* with height typical of ABL models.
+   Participants show good match with MOST at rotor heights (:numref:`fig-MOST-neutral-run1`). Next to the wall some deviations occur in one :math:`k-\epsilon` model due to a too large first-cell height. The LES model is not designed to run under surface layer conditions and show decreasing *tke* with height typical of ABL models.
 
 	.. _fig-MOST-neutral-run1:
 	.. figure:: ../../_static/windconditions/benchmarks/MOST_neutral_run1.png
 	    :width: 600
 	    :align: center
 
-	    Results for neutral offshore-like conditions for non-dimensional wind speed, turbulent kinetic energy and wind shear.   
+	    Results for neutral offshore-like conditions for non-dimensional wind speed, turbulent kinetic energy and wind shear. `© Author(s) 2014. CC BY 3.0 License <https://iopscience.iop.org/article/10.1088/1742-6596/524/1/012105>`_. Used with permission. :cite:`rodrigo_task31_2014`  
 
 
 Background
 ~~~~~~~~~~
-Monin Obukhov similarity theory (MOST) :cite:`monin_obukhov_1954` sets the point of departure of modern micrometeorology :cite:`foken_50_2006`. It is valid in the surface layer, i.e. approximately in the first 10% of the ABL, where Coriolis effects are negligible compared to friction, and under stationary and horizontally homogeneous conditions with no radiation. In these ideal conditions the vertical variations of wind direction, shear stress, heat and moisture fluxes are constant. MOST states that any dimensionless turbulence characteristic will only depend on a reduced set of scales. In addition to friction velocity (:math:`u_*`) and the height above the ground (:math:`z`), as basic scales in neutral conditions, the surface (virtual) potential temperature :math:`\Theta_0` and kinematic heat flux (:math:`\overline{\omega\theta}`) are also required in thermally stratified conditions. The Obukhov length scale :math:`L` is made of a combination of these parameters,
+Monin Obukhov similarity theory (MOST) :cite:`MOST_1954` sets the point of departure of modern micrometeorology :cite:`foken_50_2006`. It is valid in the surface layer, i.e. approximately in the first 10% of the ABL, where Coriolis effects are negligible compared to friction, and under stationary and horizontally homogeneous conditions with no radiation. In these ideal conditions the vertical variations of wind direction, shear stress, heat and moisture fluxes are constant. MOST states that any dimensionless turbulence characteristic will only depend on a reduced set of scales. In addition to friction velocity (:math:`u_*`) and the height above the ground (:math:`z`), as basic scales in neutral conditions, the surface (virtual) potential temperature :math:`\Theta_0` and kinematic heat flux (:math:`\overline{\omega\theta}`) are also required in thermally stratified conditions. The Obukhov length scale :math:`L` is made of a combination of these parameters,
 
 .. math:: L = -\frac{u_{*}^{3}}{\kappa \frac{g}{\Theta_0} \overline{\omega\theta}}
 
@@ -122,6 +122,6 @@ Please describe in detail the way stratification is handled by the model in term
 
 References 
 ~~~~~~~~~~
-.. bibliography:: windconditions_benchmarks_references.bib
+.. bibliography:: MOST_references.bib
    :all:
 
