@@ -4,6 +4,7 @@ Bolund Hill
 
    The Bolund benchmark :cite:`bechmann_bolund_2011` was revisited in Wakebench Phase 1. The results were presented at the Torque 2014 conference. 
 
+	   * `Input and validaton data <https://www.bolund.vindenergi.dtu.dk/background>`_ :cite:`bechmann_bolund_2009` :cite:`berg_bolund_2011` :cite:`bechmann_bolund_2011` 
 	   * `Presentation <https://doi.org/10.5281/zenodo.4088287>`_ :cite:`rodrigo_presentation_task31_torque_2014`
 	   * `Paper <https://iopscience.iop.org/article/10.1088/1742-6596/524/1/012105>`_ :cite:`rodrigo_task31_torque_2014`
 
