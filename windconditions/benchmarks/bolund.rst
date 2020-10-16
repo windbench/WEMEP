@@ -1,5 +1,5 @@
-Bolund Hill (2007)
-==================
+Bolund Hill
+===========
 .. admonition:: June 2014
 
    The Bolund benchmark :cite:`bechmann_bolund_2011` was revisited in Wakebench Phase 1. The results were presented at the Torque 2014 conference. 
