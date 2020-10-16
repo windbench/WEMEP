@@ -50,7 +50,7 @@ The conditions for simulating the Leipzig wind profile in neutral conditions are
 * Roughness length: :math:`z_0 = 0.3 m`
 * Obukhov length: :math:`L = \infty`
 
-Use dry air with a density :math:`\rho = 1.225 kg m^3` and dynamic viscosity `\mu = 1.73e-5 kg m^{-1}s^{-1}`
+Use dry air with a density :math:`\rho = 1.225 kg m^3` and dynamic viscosity :math:`\mu = 1.73e-5 kg m^{-1}s^{-1}`
 
 Validation Data
 ---------------
