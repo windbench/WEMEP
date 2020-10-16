@@ -308,7 +308,7 @@ Benchmarks for MOST and Leipzig were conducted during Wakebench Phase 1 :cite:`r
 
    benchmarks/MOST.rst
    benchmarks/leipzig.rst
-   benchmarks/gabls/gabls3.rst
+   benchmarks/gabls3.rst
 
 Coastal-Offshore
 ^^^^^^^^^^^^^^^^
