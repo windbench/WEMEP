@@ -2,7 +2,7 @@ Diurnal Cycle Leading to a Nocturnal Low-Level Jet (GABLS3)
 ===========================================================
 
 Status
-~~~~~~
+------
 .. admonition:: June 2017
 
    The GABLS3 benchmark was organized within Wakebench Phase 2 with support from the NEWA and MesoWake EU projects. The results were presented at the Wake Conference 2017.
@@ -46,16 +46,8 @@ Status
 
 	    Time-height countour plots of wind speed, direction and potentital temperature for WRF-YSU, :math:`k-\epsilon` model driven by WRF forcings and adding nudging in the first 200 m compared with observations. `© Author(s) 2017. CC BY 3.0 License <https://wes.copernicus.org/articles/2/35/2017/>`_. Used with permission. :cite:`sanz_rodrigo_methodology_2017`   
 
-Background
-~~~~~~~~~~
-The GEWEX Atmospheric Boundary Layer Study (GABLS) series of benchmarks were developed by the boundary-layer meteorology community to improve the representation of the atmospheric boundary layer in regional and large-scale atmospheric models. The model intercomparison studies have been organized for single-column models (SCM) and large-eddy simulation models (LES). The cases are based on observations over flat terrain in the Artic, Kansas (USA), Cabauw (The Netherlands) and Dome C (Antarctica).
-
-GABLS1 simulated a quasi-steady stable boundary layer resulting from 9 hours of uniform surface cooling :cite:`holtslag_preface_2006`:cite:`cuxart_single-column_2006`:cite:`svensson_evaluation_2011`. GABLS2 simulated a diurnal cycle, still with idealized forcing, by simplifying measurements from the CASES-99 experiment in Kansas :cite:`kumar_impact_2010`:cite:`baas_how_2010`. GABLS3 simulated a real diurnal case with a strong nocturnal low-level jet (LLJ) at the Cabauw met tower in the Netherlands :cite:`holtslag_introduction_2014`:cite:`bosveld_third_2014a`:cite:`bosveld_third_2014b`:cite:`basu_gabls3-les_2012`:cite:`holtslag_stable_2013`. In GABLS4, the aim is to study the interaction of a boundary layer with strong stability in relatively simple surface coupling characteristics.
-
-The challenges of stable boundary layers and diurnal cycles are reviewed by Hotlslag et al. (2013) :cite:`holtslag_stable_2013`, notably: the relation between enhanced mixing in operational weather models performance, investigate the role of land-surface heterogeneity in the coupling with the atmosphere, develop LES models with interactive land-surface schemes, create a climatology of boundary-layer parameters (stability classes, boundary-layer depth, and surface fluxes) and develop parameterizations for the very stable boundary layer when turbulence is not the dominant driver. These challenges are ultimately shared by wind energy applications that are embeded in atmospheric models.
-
 Scope and Objectives
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 The GABLS3 case was selected in the NEWA project as a golden benchmark for the design of mesoscale-to-microscale methodologies for wind resource assessment. The case is suitable for the development of microscale wind farm models that incorporate realistic forcing, derived from a mesoscale model, along a typical diurnal case that leads to the development of a nocturnal low-level jet. GABLS1 and GABLS2 can be considered as precursor cases dealing with turbulence modelling of the atmospheric boundary layer under idealized forcing conditions. These cases are suitable for the design of RANS-based single-column models by comparison with LES simulations, that have shown high consistency :cite:`svensson_evaluation_2011`:cite:`baas_how_2010`:cite:`sanz_rodrigo_methodology_2017`. 
 
 Challenges of the GABLS3 case include: incorporating time- and height-dependent mesoscale forcing in microscale models, turbulence modeling at varying atmospheric stability conditions, defining suitable surface boundary conditions for momentum and heat and characterization of the wind profile in (non-logarithmic) LLJ conditions.  
@@ -69,8 +61,16 @@ Wind-energy specific objectives of the benchmark include:
 
 By "typical wind energy campaigns" we would like to encourage modellers to prioritize observations that are common place in wind resource assessment campaigns (80 masts with velocity and temperature measurements, lidar profilers measuring up to 400 m). 
 
+Background
+----------
+The GEWEX Atmospheric Boundary Layer Study (GABLS) series of benchmarks were developed by the boundary-layer meteorology community to improve the representation of the atmospheric boundary layer in regional and large-scale atmospheric models. The model intercomparison studies have been organized for single-column models (SCM) and large-eddy simulation models (LES). The cases are based on observations over flat terrain in the Artic, Kansas (USA), Cabauw (The Netherlands) and Dome C (Antarctica).
+
+GABLS1 simulated a quasi-steady stable boundary layer resulting from 9 hours of uniform surface cooling :cite:`holtslag_preface_2006`:cite:`cuxart_single-column_2006`:cite:`svensson_evaluation_2011`. GABLS2 simulated a diurnal cycle, still with idealized forcing, by simplifying measurements from the CASES-99 experiment in Kansas :cite:`kumar_impact_2010`:cite:`baas_how_2010`. GABLS3 simulated a real diurnal case with a strong nocturnal low-level jet (LLJ) at the Cabauw met tower in the Netherlands :cite:`holtslag_introduction_2014`:cite:`bosveld_third_2014a`:cite:`bosveld_third_2014b`:cite:`basu_gabls3-les_2012`:cite:`holtslag_stable_2013`. In GABLS4, the aim is to study the interaction of a boundary layer with strong stability in relatively simple surface coupling characteristics.
+
+The challenges of stable boundary layers and diurnal cycles are reviewed by Hotlslag et al. (2013) :cite:`holtslag_stable_2013`, notably: the relation between enhanced mixing in operational weather models performance, investigate the role of land-surface heterogeneity in the coupling with the atmosphere, develop LES models with interactive land-surface schemes, create a climatology of boundary-layer parameters (stability classes, boundary-layer depth, and surface fluxes) and develop parameterizations for the very stable boundary layer when turbulence is not the dominant driver. These challenges are ultimately shared by wind energy applications that are embeded in atmospheric models.
+
 Site Description
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^
 The GABLS3 set-up is described in Bosveld et al. (2014) :cite:`bosveld_third_2014a`. The case analyzes the period from 12:00 UTC 1 July to 12:00 UTC 2 July 2006, at the KNMI-Cabauw Experimental Site for Atmospheric Research (`CESAR <https://ruisdael-observatory.nl/cesar-database/>`_), located in the Netherlands (51.971ºN, 4.927ºE), with a distance of 50 km to the North Sea at the WNW direction [12]. The elevation of the site is approximately -0.7 m, surrounded by relatively flat terrain characterized by grassland, fields and some scattered tree lines and villages (:numref:`fig-Cabauw-landuse`). The mesoscale roughness length for the sector of interest (60º - 120º) is 15 cm.
 
 .. _fig-Cabauw-landuse:
@@ -81,15 +81,15 @@ The GABLS3 set-up is described in Bosveld et al. (2014) :cite:`bosveld_third_201
     Land-use map of a 30x30 km area around the Cabauw site (figure from `KNMI <http://projects.knmi.nl/hydra/index.html>`_'s HYDRA project website)
 
 Measurement Campaign and Case Selection
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The CESAR measurements are carried out at a 200-m tower, free of obstacles up to a few hundred meters in all directions. The measurements include 10-min averaged vertical profiles of wind speed, wind direction, temperature and humidity at heights 10, 20, 40, 80, 140 and 200 m, as well as surface radiation and energy budgets. Turbulence fluxes are also monitored at four heights: 3, 60, 100 and 180 m. A RASS profiler measures wind speed, wind direction and virtual temperature above 200 m.
 
 The selection criteria for GABLS3 consisted on the following filters applied to a database of 6 years (2001 - 2006): stationary synoptic conditions, clear skies (net longwave cooling > 30 W/m² at night), no fog, moderate geostrophic winds (5 to 19 m/s, with less than 3 m/s variation at night) and small thermal advective tendencies. Out of the 9 diurnal cycles resulting from this filtering process, the one that seemed more suitable was finally selected: 12:00 UTC 1 July to 12:00 UTC 2 July 2006.
 
 More information about the case background and set-up can be found in the official `GABLS3 <http://projects.knmi.nl/gabls/index.html>`_ website
 
-Input data 
-~~~~~~~~~~
+Input Data 
+----------
 The case set-up and input data of the original GABLS3 case can be found in the KNMI website. This is usefull if you want to compare with published results of the original SCM model intercomparison. In the original GABLS3 set-up, the simulated mesoscale tendencies are adjusted to produce a better match with the surface geostrophic wind obtained from a network of synoptic stations and the wind speed at 200-m measured at the Cabauw tower. Initial profiles are based on soundings measured near the Cabauw mast.
 
 Alternatively, you can use inputs generated entirely from a WRF simulation, as described in :cite:`javier_sanz_rodrigo_wind_2016`:cite:`sanz_rodrigo_methodology_2017`. Here, instead of using observed initial projiles and adjusted mesoscale forcings you can use initial profiles and forcing produced directly from a mesoscale simulation. This is more representative of a wind energy model-chain set-up, where the inputs of a microscale model are generated by a "wind atlas" methodology that doesn't normally include corrections with local measurements. Instead, local adjustments are allowed at the microscale level by incorporating onsite measurements as if these measurements were part of a typical wind resource assessment campaign.    
@@ -114,8 +114,8 @@ Units, dimmensions and variables description are all provided in the NetCDF file
 
 A python script is provided to show how to read the NetCDF input file and extract these variables.
 
-Validation data
-~~~~~~~~~~~~~~~
+Validation Data
+---------------
 The following quantities of interest (QoI) will be evaluated as described in :cite:`javier_sanz_rodrigo_wind_2016`:cite:`sanz_rodrigo_methodology_2017`, using a reference rotor size of 160 m diameter at a hub-height of 120 m (~ 7 MW turbine):
 
 * Rotor equivalent wind speed (*REWS*)
@@ -126,8 +126,8 @@ The following quantities of interest (QoI) will be evaluated as described in :ci
 
 The evaluation consists on time-series plots of these QoIs along the diurnal cycle and mean-absolute error (*MAE*) integrated over the whole cycle. 
 
-Model runs
-~~~~~~~~~~
+Model Runs
+----------
 The benchmark is mainly developed for microscale models that make use of the input data described above. However, mesoscale or multi-scale (online meso-micro) simulations are also welcome. The following suggestions are provided to guide the model runs:
 
 * We shall use the 2-m temperature (*T2*) as our most practical reference to deduce the potential temperature surface boundary conditions using Monin Obukhov similarity theory, since this variable is routinely measured in measurement campaigns and is part of the standard output of meteorological models.    
@@ -138,8 +138,8 @@ The benchmark is mainly developed for microscale models that make use of the inp
 
 If resources allow, please use a spin-up time of 24 hours as in the input data.
 
-Output data
-~~~~~~~~~~~
+Output Data
+-----------
 Data should be provided in a single NetCDF file as described in the python template. The following output variables are requested:
 
 * Time-height 2D arrays of: velocity components, potential temperature and turbulent kinetic energy
@@ -148,12 +148,12 @@ Data should be provided in a single NetCDF file as described in the python templ
 * Heights in meters (please provide model levels at least up to 4000 m)
 
 References 
-~~~~~~~~~~
+----------
 .. bibliography:: gabls3_references.bib
    :all:
 
 Acknowledgements
-~~~~~~~~~~~~~~~~~~~~
+----------------
 This benchmark was produced with support from the MesoWake and NEWA European projects under the umbrella of IEA-Wind Task 31 Wakebench.
 
 

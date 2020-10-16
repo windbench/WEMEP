@@ -214,11 +214,7 @@ While long-term statistics of wind conditions are traditionally characterized wi
    |                    |             |                      |                         | :cite:`bechmann_large-eddy_2007`, :cite:`beljaars_mixed_1987`,  |
    |                    |             |                      |                         | :cite:`raithby_askervein_1987`, :cite:`salmon_askervein_1988`,  |
    |                    |             |                      |                         | :cite:`xu_non-linear_1992`, :cite:`bechmann_hybrid_2010`,       |
-   |                    |             |                      |                         | :cite:`chow_evaluation_2009`, :cite:`conan_experimental_2016`   |
-   |                    |             |                      |                         | :cite:`rodrigo_results_2017`,                                   |
-   |                    |             |                      |                         | :cite:`rodrigo_windbenchgabls3_2020`,                           |
-   |                    |             |                      |                         | :cite:`rodrigo_comparing_2018`,                                 |
-   |                    |             |                      |                         | :cite:`rodrigo_windbenchnewamesomicrochallengephase1_2018`      |
+   |                    |             |                      |                         | :cite:`chow_evaluation_2009`                                    |
    +                    +-------------+----------------------+-------------------------+-----------------------------------------------------------------+
    |                    | 116 m high smooth hill isolated in all wind directions but the NE-E sector. Over 50 masts installed, 35 of them of 10 m        |
    |                    | height installed along transects following the main axes of the hill                                                           |
@@ -243,6 +239,7 @@ While long-term statistics of wind conditions are traditionally characterized wi
    |                    |             |                      |                         | :cite:`bechmann_bolund_2011`,                                   |
    |                    |             |                      |                         | :cite:`prospathopoulos_application_2012`,                       |
    |                    |             |                      |                         | :cite:`diebold_flow_2013`, :cite:`yeow_reproducing_2015`        |
+   |                    |             |                      |                         | :cite:`conan_experimental_2016`                                 |
    +                    +-------------+----------------------+-------------------------+-----------------------------------------------------------------+
    |                    | 12-m high hill surrounded by water in all directions except to the E. An almost vertical escarpment faces the prevailing W-SW  |
    |                    | sector. 10 masts equiped with sonic and cap anemometers.                                                                       |
@@ -359,7 +356,7 @@ Wind Resource Assessment and Site Suitability Benchmark
    :glob:
    :maxdepth: 1
 
-   benchmarks/gabls/gabls.rst
+   benchmarks/gabls3.rst
    benchmarks/mesomicrochallenge.rst
 
 Numerical Site Calibration Benchmark
