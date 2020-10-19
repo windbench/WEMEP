@@ -53,6 +53,12 @@ Energy Yield
 
   where :math:`Prated_k` is the rated power of each turbine. Alternatively, wind farm performance is defined in terms of the *annual equivalent hours* of the wind farm operating at rated power, i.e. :math:`AEH = CF \cdot T`
 
+The pre-construction energy yield assessment process will output a distribution of AEP defined in terms of the median :math:`P50`, where the actual AEP would be exceeded 50% of the time, and a standard deviation :math:`\sigma_{AEP}` as a measure of the AEP *uncertainty*. Then, the *prediction bias* is the difference between the estimated *P50* and the actual AEP
+
+.. math:: BIAS_{AEP} = AEP_{true} - AEP_{P50} 
+
+While each quantity of interest can be subject to uncertainty quantification individually, the main focus of the IEC 61400-15-2 standard is to predict the overall energy production uncertainty since this is directly connected to the financial performance of a wind project. This overall uncertainty is broken down into categories and subcategories by the standard to provide a common framework for the wind industry. Lee and Fields (2020) :cite:`lee_overview_2020` provide a review of energy yield assessment prediction bias, losses and uncertainties following this framework. The review shows that while there has been a tendency towards the overestimation of P50, this has been progressively corrected and we are now approaching zero bias on average. The estimated mean AEP uncertainty remains at over 6% implying that there is room for improvement. Indeed, changing the uncertainty by 1% can lead to 3-5% change in the net present value of a wind farm :cite:`lee_overview_2020`.  
+
 Site Suitability
 """"""""""""""""
 * *Extreme wind speed with a recurrence interval of 50 years* (:math:`V_{50}`): Also called *reference wind speed* (:math:`V_{ref}`) in the IEC 61400-1 standard to define WTGS classes. A turbine designed for a WTGS class with a reference wind speed :math:`V_{ref}`, is designed to withstand climates for which the extreme 10 min average wind speed with a recurrence period of 50 years at turbine hub-height is lower than or equal to :math:`V_{ref}`.  
@@ -76,15 +82,6 @@ Site Suitability
 * *Mean wind shear* (:math:`\alpha`): Wind shear, i.e. the variation of wind speed across a plane perpendicular to the wind direction, (or power law) exponent.
 
   .. math:: V(z) = V(z_r)\left(\frac{z}{z_r}\right)^{\alpha}
-
-
-AEP Prediction Bias and Uncertainty Quantification
-""""""""""""""""""""""""""""""""""""""""""""""""""
-The pre-construction energy yield assessment process will output a distribution of AEP defined in terms of the median :math:`P50`, where the actual AEP would be exceeded 50% of the time, and a standard deviation :math:`\sigma_{AEP}` as a measure of the AEP *uncertainty*. Then, the *prediction bias* is the difference between the estimated *P50* and the actual AEP
-
-.. math:: BIAS_{AEP} = AEP_{true} - AEP_{P50} 
-
-While each quantity of interest can be subject to uncertainty quantification individually, the main focus of the IEC 61400-15-2 standard is to predict the overall energy production uncertainty since this is directly connected to the financial performance of a wind project. This overall uncertainty is broken down into categories and subcategories by the standard to provide a common framework for the wind industry. Lee and Fields (2020) :cite:`lee_overview_2020` provide a review of energy yield assessment prediction bias, losses and uncertainties following this framework. The review shows that while there has been a tendency towards the overestimation of P50, this has been progressively corrected and we are now approaching zero bias on average. The estimated mean AEP uncertainty remains at over 6% implying that there is room for improvement. Indeed, changing the uncertainty by 1% can lead to 3-5% change in the net present value of a wind farm :cite:`lee_overview_2020`.     
 
 Numerical Site Calibration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -159,105 +156,91 @@ While long-term statistics of wind conditions are traditionally characterized wi
 .. table:: Summary of open-access datasets for the validation of flow models for wind conditions
    :class: longtable
 
-   +--------------------+-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   | Dataset            | Location    | Period               | Site Conditions         | References                                                      |
-   +====================+=============+======================+=========================+=================================================================+
-   | **Homogeneous ABL**                                                                                                                                 |
-   +--------------------+-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   | *Cabauw/ GABLS3*   | Netherlands | Since 2008           | Onshore flat terrain    | :cite:`cesar_2020`, :cite:`bosveld_third_2014a`,                |
-   |                    |             |                      |                         | :cite:`bosveld_third_2014b`,                                    |
-   |                    |             |                      |                         | :cite:`rodrigo_results_2017`,                                   |
-   |                    |             |                      |                         | :cite:`rodrigo_windbenchgabls3_2020`,                           |
-   |                    |             |                      |                         | :cite:`rodrigo_comparing_2018`,                                 |
-   |                    |             |                      |                         | :cite:`rodrigo_windbenchnewamesomicrochallengephase1_2018`      |
-   +                    +-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   |                    | 200-m tall mast for atmospheric boundary-layer research in horizontally homogeneous conditions. GABLS3 is a diurnal            |
-   |                    | cycle developing a strong nocturnal low-level jet                                                                              |
-   +--------------------+-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   | **Coastal and Offshore**                                                                                                                            |
-   +--------------------+-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   | *Satellite SAR*    | Global      | Since 2002           | Offshore                | :cite:`hasager_europes_2020`, :cite:`dtu_satellite_2020`        |
-   +                    +-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   |                    | Satellite SAR wind data archive from 2002                                                                                      |
-   +--------------------+-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   | *NEWA-RUNE*        | Denmark     | 2015-11 to 2016-02   | Near-shore              |  :cite:`floors_rune_2016`                                       |
-   +                    +-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   |                    | Near-shore wind resource from 8 lidars, one ocean buoy and satelite data                                                       |
-   +--------------------+-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   | *NEWA-Ferry Lidar* | Baltic Sea  | 2017-02 to 2017-06   | Offshore                | :cite:`gottschall_newa_2018`, :cite:`sanz_rodrigo_report_2019`  |
-   +                    +-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   |                    | Offshore wind resource from a ferry-mounted profiling lidar along the South Baltic Sea from Kiel (Germany) to                  |
-   |                    | Klaipeda (Lithuania)                                                                                                           |
-   +--------------------+-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   | **Roughness Changes and Canopies**                                                                                                                  |
-   +--------------------+-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   | *Ryningsnäs*       | Sweden      | 2011-10 to 2012-06   | Forested simple terrain | :cite:`arnqvist_wind_2015`, :cite:`arnqvist_investigation_2019`,|
-   |                    |             |                      |                         | :cite:`avila_daily_2019`, :cite:`ivanell_micro-scale_2018`,     |
-   |                    |             |                      |                         | :cite:`sanz_rodrigo_report_2017`                                |
-   +                    +-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   |                    | 200-m tall mast in a patchy forested site in simple terrain conditions                                                         |
-   +--------------------+-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   | *NEWA-Østerild*    | Denmark     | 2016-04 to 2016-08   | Forested flat terrain   |  :cite:`karagali_new_2018`                                      |
-   | *Balconies*        |             |                      |                         |                                                                 |
-   +                    +-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   |                    | Two horizontally scanning Doppler lidars, mounted on 250-m high masts and measuring at 50 and 200 m the flow above patchy      |
-   |                    | forest                                                                                                                         |
-   +--------------------+-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   | **Isolated Hill**                                                                                                                                   |
-   +--------------------+-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   | *Askervein*        | Scotland    | 1982-1983            | Smooth hill             | :cite:`taylor_askervein_1987`,                                  |
-   |                    |             |                      |                         | :cite:`walmsley_boundary-layer_1996`,                           |
-   |                    |             |                      |                         | :cite:`mickle_askervein_1988`, :cite:`kim_test_2000`,           |
-   |                    |             |                      |                         | :cite:`castro_simulation_2003`,                                 |
-   |                    |             |                      |                         | :cite:`silva_lopes_simulation_2007`,                            |
-   |                    |             |                      |                         | :cite:`undheim_non-linear_2006`,                                |
-   |                    |             |                      |                         | :cite:`bechmann_large-eddy_2007`, :cite:`beljaars_mixed_1987`,  |
-   |                    |             |                      |                         | :cite:`raithby_askervein_1987`, :cite:`salmon_askervein_1988`,  |
-   |                    |             |                      |                         | :cite:`xu_non-linear_1992`, :cite:`bechmann_hybrid_2010`,       |
-   |                    |             |                      |                         | :cite:`chow_evaluation_2009`                                    |
-   +                    +-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   |                    | 116 m high smooth hill isolated in all wind directions but the NE-E sector. Over 50 masts installed, 35 of them of 10 m        |
-   |                    | height installed along transects following the main axes of the hill                                                           |
-   +--------------------+-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   | *NEWA-Rödeser*     | Germany     | 2016-10 to 2017-01   | Forested hill           | :cite:`dorenkamper_large-eddy_2019`,                            |
-   | *Berg (Kassel)*    |             |                      |                         | :cite:`sanz_rodrigo_report_2018`,                               |
-   |                    |             |                      |                         | :cite:`sanz_rodrigo_report_2019`                                |
-   +                    +-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   |                    | 200-m tall forested hill equipped with a 200-m mast at the hill top, a 140-m mast at the inflow and scanning Doppler lidars    |
-   |                    | mapping a transect along the prevailing wind direction                                                                         |
-   +--------------------+-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   | **Undulating Terrain**                                                                                                                              |
-   +--------------------+-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   | *NEWA-Hornamossen* | Sweden      | 2015-06 to 2017-07   | Forested rolling hills  | :cite:`sanz_rodrigo_report_2019`, :cite:`mann_complex_2017`     |
-   +                    +-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   |                    | 10-km long transect consisting of 9 remote sensing profilers and one 180-m flux-profile mast in forested and moderately        |
-   |                    | complex terrain. Surface pressure gradient measurements                                                                        |
-   +--------------------+-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   | **Steep Ridges**                                                                                                                                    |
-   +--------------------+-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   | *Bolund*           | Denmark     | 2007-2008            | Small isolated ridge    | :cite:`bechmann_bolund_2009`, :cite:`berg_bolund_2011`,         |
-   |                    |             |                      |                         | :cite:`bechmann_bolund_2011`,                                   |
-   |                    |             |                      |                         | :cite:`prospathopoulos_application_2012`,                       |
-   |                    |             |                      |                         | :cite:`diebold_flow_2013`, :cite:`yeow_reproducing_2015`        |
-   |                    |             |                      |                         | :cite:`conan_experimental_2016`                                 |
-   +                    +-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   |                    | 12-m high hill surrounded by water in all directions except to the E. An almost vertical escarpment faces the prevailing W-SW  |
-   |                    | sector. 10 masts equiped with sonic and cap anemometers.                                                                       |
-   +--------------------+-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   | *NEWA-Perdigão*    | Portugal    | 2016-12 to 2017-06   | Double ridge            | :cite:`fernando_perdigao_2019`, :cite:`ncar_perdigao_2020`,     |
-   |                    |             |                      |                         | :cite:`feup_perdigao_2020`                                      |
-   +                    +-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   |                    | 50 masts, 20 scanning lidars, 7 profiling lidars and other meteorological equipment distributed along and across two parallel  |
-   |                    | steep ridges.                                                                                                                  |
-   +--------------------+-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   | **Mountaineous complex terrain**                                                                                                                    |
-   +--------------------+-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   | *NEWA-Alaiz*       | Spain       | 2017-07 to 2019-07   | Ridge-valley-mountain   | :cite:`cantero_alaiz_2019`, :cite:`santos_alaiz_2019`,          |
-   | *(ALEX17)*         |             |                      |                         | :cite:`santos_alaiz_2020`                                       |
-   +                    +-------------+----------------------+-------------------------+-----------------------------------------------------------------+
-   |                    | 5 scanning Doppler lidars measuring a Z-shaped 10-km long transect along the ridge tops and the across the valley together     |
-   |                    | with a windRASS profiler, 7 tall masts and 10 surface stations                                                                 |
-   +--------------------+-------------+----------------------+-------------------------+-----------------------------------------------------------------+
+   +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   | Dataset            | Location    | Period               | Site Conditions         | Key References & Repositories                                      |
+   +====================+=============+======================+=========================+====================================================================+
+   | **Homogeneous ABL**                                                                                                                                    |
+   +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   | *Cabauw*           | This 200-m tall mast has been a reference in ABL research for its horizontally homogeneous conditions.                            |
+   |                    | The GABLS3 flow case is a diurnal cycle developing a strong nocturnal low-level :cite:`bosveld_third_2014a`.                      |
+   +                    +-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   |                    | Netherlands | Since 2008           | Flat terrain            | `Cesar Database <https://ruisdael-observatory.nl/cesar-database/>`_|
+   +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   | **Coastal and Offshore**                                                                                                                               |
+   +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   | *Fino 1,2,3*       | Three 100-m tall offshore research platforms measuring boundary layer measurements between 30 and 100 m.                          |
+   +                    +-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   |                    | North and   | Since 2003           | Offshore                | `FINO1,2,3 <https://www.fino-offshore.de/>`_,                      |
+   |                    | Baltic Seas |                      |                         | `BSH Database <http://fino.bsh.de/>`_                              |
+   +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   | *Satellite SAR*    | Satellite SAR wind data archive from 2002                                                                                         |
+   +                    +-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   |                    | Global      | Since 2002           | Offshore                | `DTU Satellite Winds <https://satwinds.windenergy.dtu.dk/>`_       |
+   |                    |             |                      |                         | :cite:`hasager_europes_2020`                                       |
+   +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   | *RUNE*             | Near-shore wind resource from 8 lidars, one ocean buoy and satelite data                                                          |
+   +                    +-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   |                    | Denmark     | 2015-11 to 2016-02   | Near-shore              |  :cite:`floors_rune_2016`                                          |
+   +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   | *Ferry Lidar*      | Offshore wind resource from a ferry-mounted profiling lidar along the South Baltic Sea from Kiel (Germany) to                     |
+   |                    | Klaipeda (Lithuania)                                                                                                              |
+   +                    +-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   |                    | Baltic Sea  | 2017-02 to 2017-06   | Offshore                | :cite:`gottschall_newa_2018`                                       |
+   +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   | **Roughness Changes and Canopies**                                                                                                                     |
+   +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   | *Ryningsnäs*       | 200-m tall mast in a patchy forested site in simple terrain conditions                                                            |
+   +                    +-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   |                    | Sweden      | 2011-10 to 2012-06   | Forested simple terrain | :cite:`arnqvist_wind_2015`, :cite:`arnqvist_investigation_2019`    |
+   +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   | *Østerild*         | Two horizontally scanning Doppler lidars, mounted on 250-m high masts and measuring at 50 and 200 m the flow above patchy         |
+   | *Balconies*        | forest                                                                                                                            |
+   +                    +-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   |                    | Denmark     | 2016-04 to 2016-08   | Forested flat terrain   |  :cite:`karagali_new_2018`                                         |
+   +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   | **Isolated Hill**                                                                                                                                      |
+   +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   | *Askervein*        | 116 m high smooth hill isolated in all wind directions but the NE-E sector. Over 50 masts installed, 35 of them of 10 m           |
+   |                    | height installed along transects following the main axes of the hill                                                              |
+   +                    +-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   |                    | Scotland    | 1982/1983            | Smooth hill             | :cite:`taylor_askervein_1987`, :cite:`taylor_askervein_1983`       |
+   |                    |             |                      |                         | :cite:`taylor_askervein_1985`                                      |
+   +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   | *Rödeser Berg*     | 200-m tall forested hill equipped with a 200-m mast at the hill top, a 140-m mast at the inflow and scanning Doppler lidars       |
+   | *(Kassel)*         | mapping a transect along the prevailing wind direction                                                                            |
+   +                    +-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   |                    | Germany     | 2016-10 to 2017-01   | Forested hill           | :cite:`dorenkamper_large-eddy_2019`                                |
+   +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   | **Undulating Terrain**                                                                                                                                 |
+   +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   | *Hornamossen*      | 10-km long transect consisting of 9 remote sensing profilers and one 180-m flux-profile mast in forested and moderately           |
+   |                    | complex terrain. Surface pressure gradient measurements                                                                           |
+   +                    +-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   |                    | Sweden      | 2015-06 to 2017-07   | Forested rolling hills  | :cite:`mann_complex_2017`                                          |
+   +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   | **Steep Ridges**                                                                                                                                       |
+   +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   | *Bolund*           | 12-m high hill surrounded by water in all directions except to the E. An almost vertical escarpment faces the prevailing W-SW     |
+   |                    | sector. 10 masts equiped with sonic and cup anemometers.                                                                          |
+   +                    +-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   |                    | Denmark     | 2007-2008            | Small isolated ridge    | :cite:`bechmann_bolund_2009`, :cite:`berg_bolund_2011`,            |
+   |                    |             |                      |                         | :cite:`bechmann_bolund_2011`                                       |
+   +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   | *Perdigão*         | 50 masts, 20 scanning lidars, 7 profiling lidars and other meteorological equipment distributed along and across two parallel     |
+   |                    | steep ridges.                                                                                                                     |
+   +                    +-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   |                    | Portugal    | 2016-12 to 2017-06   | Double ridge            | `FEUP-Porto Database <http://perdigao.fe.up.pt/>`_,                |
+   |                    |             |                      |                         | `NCAR Database <https://data.eol.ucar.edu/project/Perdigao>`_,     |
+   |                    |             |                      |                         | :cite:`fernando_perdigao_2019`                                     |
+   +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   | **Mountaineous complex terrain**                                                                                                                       |
+   +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   | *Alaiz*            | 5 scanning Doppler lidars measuring a Z-shaped 10-km long transect along the ridge tops and across the valley together            |
+   | *(ALEX17)*         | with a windRASS profiler, 7 tall masts and 10 surface stations                                                                    |
+   +                    +-------------+----------------------+-------------------------+--------------------------------------------------------------------+
+   |                    | Spain       | 2017-07 to 2019-07   | Ridge-valley-mountain   | :cite:`cantero_alaiz_2019`, :cite:`santos_alaiz_2019`,             |
+   |                    |             |                      |                         | :cite:`santos_alaiz_2020`                                          |
+   +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
 
 .. note::
    Other open-access datasets can be added when they have been used for flow model validation (provide references) 
@@ -269,12 +252,6 @@ Phenomena of Interest
    * List of physical phenomena providing definitions and references 
    * PIRT table from MMC
 
-.. _fig-Perdigao:
-.. figure:: ../_static/windconditions/Perdigao.jpeg
-    :width: 600
-    :align: center
-
-    Phenomena of interest in the Perdigão experiment. `© American Meteorological Society <https://journals.ametsoc.org/doi/full/10.1175/BAMS-D-17-0227.1>`_. Used with permission. :cite:`fernando_perdigao_2019`
 
 Benchmarks
 ----------
@@ -345,6 +322,13 @@ Complex Terrain
 
    * Perdigao: double-hill
    * Alaiz: mountain-valley-ridge
+
+.. _fig-Perdigao:
+.. figure:: ../_static/windconditions/Perdigao.jpeg
+    :width: 600
+    :align: center
+
+    Phenomena of interest in the Perdigão experiment. `© American Meteorological Society <https://journals.ametsoc.org/doi/full/10.1175/BAMS-D-17-0227.1>`_. Used with permission. :cite:`fernando_perdigao_2019`
 
 Wind Resource Assessment and Site Suitability Benchmark 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
