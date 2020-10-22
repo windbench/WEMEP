@@ -57,7 +57,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Wind Energy Model Evaluation Protocol (WEMEP)'
+project = u'Wind Energy Model Evaluation Protocol'
 copyright = u'2018, Javier Sanz Rodrigo'
 author = u'Javier Sanz Rodrigo'
 
@@ -106,7 +106,7 @@ html_theme_options = {
     #sphinx_rtd options
     #'canonical_url': '',
     #'analytics_id': '',
-    #'logo_only': False,
+    'logo_only': False,
     'display_version': True,
     'prev_next_buttons_location': 'bottom',
     'style_external_links': False,
@@ -145,6 +145,9 @@ html_static_path = ['_static']
 
 
 # -- Options for HTMLHelp output ------------------------------------------
+
+html_logo = "_static/wemep_logo.png"
+html_show_sourcelink = True
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'ModelEvaluationProtocoldoc'
