@@ -57,7 +57,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Model Evaluation Protocol'
+project = u'Wind Energy Model Evaluation Protocol (WEMEP)'
 copyright = u'2018, Javier Sanz Rodrigo'
 author = u'Javier Sanz Rodrigo'
 
