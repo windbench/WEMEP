@@ -182,8 +182,8 @@ While long-term statistics of wind conditions are traditionally characterized wi
    +                    +-------------+----------------------+-------------------------+--------------------------------------------------------------------+
    |                    | Denmark     | 2015-11 to 2016-02   | Near-shore              |  :cite:`floors_rune_2016`                                          |
    +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
-   | *Ferry Lidar*      | Offshore wind resource from a ferry-mounted profiling lidar along the South Baltic Sea from Kiel (Germany) to                     |
-   |                    | Klaipeda (Lithuania)                                                                                                              |
+   | *Ferry Lidar*      | Offshore wind resource from a ferry-mounted profiling lidar (65-275 m) along the South Baltic Sea from Kiel (Germany) to          |
+   |                    | Klaipeda (Lithuania).                                                                                                             |
    +                    +-------------+----------------------+-------------------------+--------------------------------------------------------------------+
    |                    | Baltic Sea  | 2017-02 to 2017-06   | Offshore                | :cite:`gottschall_newa_2018`                                       |
    +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
@@ -286,12 +286,23 @@ Benchmarks for MOST and Leipzig were conducted during Wakebench Phase 1 :cite:`r
 
 Coastal-Offshore
 ^^^^^^^^^^^^^^^^
+The marine atmospheric boundary layer is formed through exchanges of momentum moisture and heat across the air-sea interface. :numref:`fig-cblast` shows a schematic of the physical processes that take place in the coupled atmospheric-ocean boundary layer :cite:`edson_coupled_2007`. Mesoscale variability and wave-induced effects produce deviations from land-based turbulence spectra and flux-profile relationships used in ABL parameterizations :cite:`smedman_case_1999`. The coastal region, where most offshore wind energy is deployed, is subject to large mesoscale variability influenced by coastal topography and temperature gradients between land and sea :cite:`dorenkamper_offshore_2015`. These heterogeneous conditions generate important horizontal wind speed gradients breaking MOST assumptions on which many wake models are based. Furthermore, frequent stable conditions develop due to large land-see temperature contrast producing large-shear low-level jets (LLJ) in shallow boundary-layers and gravity waves that increase wind farm global blockage :cite:`allaerts_gravity_2018`. In extreme wind conditions, wave-induced shear-stress becomes dominant favouring the use of a  wind-wave coupled model :cite:`larsen_estimation_2019`.   
 
-.. todo:: Introduce phenomena you could find in these benchmarks. 
 
-   * Ferry-Lidars
-   * Rune 
+.. _fig-cblast:
+.. figure:: ../_static/windconditions/cblast.jpg
+    :width: 600
+    :align: center
 
+    Air-sea interaction processes in the marine boundary layer. `© American Meteorological Society <https://journals.ametsoc.org/bams/article/88/3/341/59046/The-Coupled-Boundary-Layers-and-Air-Sea-Transfer>`_. Used with permission. :cite:`edson_coupled_2007`
+
+The NEWA project has produced two benchmarks suitable for the assessment of the coastal-offshore boundary layer. The Ferry-Lidar experiment consist on following a ferry-mounted profiling lidar, for a period of 4 months, along a regular route in the Southern Baltic Sea between Kiel (Germany) and Klaipeda (Lithuania). The RUNE experiment comprises measurements from 8 lidars and a buoy to measure the evolution of the wind speed along an ~8 km fetch.   
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   benchmarks/ferry-lidar.rst
 
 Forest Canopy
 ^^^^^^^^^^^^^
