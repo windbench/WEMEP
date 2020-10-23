@@ -306,11 +306,21 @@ The NEWA project has produced two benchmarks suitable for the assessment of the 
 
 Forest Canopy
 ^^^^^^^^^^^^^
-.. todo:: Introduce phenomena you could find in these benchmarks. 
+A canopy is considered when the roughness elements over the ground surface are of significant size compared to the height of interest. Here we shall focus on forest canopies although the term could be also applied for a urban canopy or a wind farm canopy. The classical interpretation of the flow over a forest canopy is that of a displaced logarithmic profile originating by the momentum absortion through aerodynamic drag across the depth of the canopy :cite:`kaimal_finnigan_1994`, where the displacement height depends on the distribution of the drag through the foliage. Within the canopy the flow is highly turbulent and heterogeneous which prevents us from extending Monin-Obukhov surface-layer similarity to the canopy layer as if it was a rough lower boundary. A more realistic approach requires to model explicitely the distribution of drag and the energy balance between the surface and the air aloft to characterize the flow above and within the canopy. 
 
-   * Ryningsnäs: flat terrain 200-m met mast
-   * Osterlid-Balconies: flat terrain horizontal scanning lidar
-   * Hornamossen: forested hills
+The structure of the turbulent flow in horizontally homogeneous canopies have been the object of study of numerous experiments ranging from wind tunnel models (e.g. :cite:`brunet_wind_1994`) to tall forests :cite:`kaimal_finnigan_1994`. All the profiles display a characteristic inflexion point near the canopy top which separates the canopy flow from the boundary layer profile above. A constant shear stress region is present in the free-stream which decreases rapidly as momentum is absorbed by the canopy. 
+
+
+Heterogeneous forest canopies combine patches of trees of different heights and foliage density that typically change throughout the year. Aerial lidar scans are used to map the tree height and plant area density :cite:`boudreault_lidar_2015`. Highly heterogeneous conditions happen at forest edges as the flow transitions in an internal boundary layer towards a developed canopy boundary layer :cite:`dellwik_flow_2014` :cite:`boudreault_how_2017`.
+
+The Ryningsnäs experiment was used in the NEWA experiment to validate ABL models in neutral conditions :cite:`ivanell_micro-scale_2018` considering mean vertical profiles of wind speed and turbulence intensity for different wind direction sectors. A follow-up experiment, Hornamossen, studied the mean flow along a transect of 9 remote sensing profilers and a reference 180-m met mast over undulated forested terrain :cite:`mann_complex_2017`. The Østerild Balconies experiment deployed two horizontally scanning lidars on vertical masts at 50 and 200 m to characterize the heteorogeneous mean flow above the canopy over a relatively flat and semi-forested terrain :cite:`karagali_new_2018`. 
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   benchmarks/ryningsnas.rst
+   benchmarks/hornamossen.rst
 
 Hills 
 ^^^^^
