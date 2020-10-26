@@ -1,5 +1,5 @@
-The Ferry-Lidar Marine Boundary-Layer (Ferry-Lidar) 
-===================================================
+The Rödeser Berg Forested Smooth Hill (Rödeser Berg)
+====================================================
 
 Status
 ------
@@ -27,5 +27,5 @@ Remarks
 
 References 
 ----------
-.. bibliography:: ferry-lidar.bib
+.. bibliography:: rodeserberg_references.bib
    :all:

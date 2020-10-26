@@ -1,5 +1,5 @@
-Bolund Hill
-===========
+The Bolund Isolated Steep Hill (Bolund)
+=======================================
 
 Status
 ------

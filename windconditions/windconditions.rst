@@ -288,7 +288,6 @@ Coastal-Offshore
 ^^^^^^^^^^^^^^^^
 The marine atmospheric boundary layer is formed through exchanges of momentum moisture and heat across the air-sea interface. :numref:`fig-cblast` shows a schematic of the physical processes that take place in the coupled atmospheric-ocean boundary layer :cite:`edson_coupled_2007`. Mesoscale variability and wave-induced effects produce deviations from land-based turbulence spectra and flux-profile relationships used in ABL parameterizations :cite:`smedman_case_1999`. The coastal region, where most offshore wind energy is deployed, is subject to large mesoscale variability influenced by coastal topography and temperature gradients between land and sea :cite:`dorenkamper_offshore_2015`. These heterogeneous conditions generate important horizontal wind speed gradients breaking MOST assumptions on which many wake models are based. Furthermore, frequent stable conditions develop due to large land-see temperature contrast producing large-shear low-level jets (LLJ) in shallow boundary-layers and gravity waves that increase wind farm global blockage :cite:`allaerts_gravity_2018`. In extreme wind conditions, wave-induced shear-stress becomes dominant favouring the use of a  wind-wave coupled model :cite:`larsen_estimation_2019`.   
 
-
 .. _fig-cblast:
 .. figure:: ../_static/windconditions/cblast.jpg
     :width: 600
@@ -296,7 +295,7 @@ The marine atmospheric boundary layer is formed through exchanges of momentum mo
 
     Air-sea interaction processes in the marine boundary layer. `© American Meteorological Society <https://journals.ametsoc.org/bams/article/88/3/341/59046/The-Coupled-Boundary-Layers-and-Air-Sea-Transfer>`_. Used with permission. :cite:`edson_coupled_2007`
 
-The NEWA project has produced two benchmarks suitable for the assessment of the coastal-offshore boundary layer. The Ferry-Lidar experiment consist on following a ferry-mounted profiling lidar, for a period of 4 months, along a regular route in the Southern Baltic Sea between Kiel (Germany) and Klaipeda (Lithuania). The RUNE experiment comprises measurements from 8 lidars and a buoy to measure the evolution of the wind speed along an ~8 km fetch.   
+The NEWA project has produced two benchmarks suitable for the assessment of the coastal-offshore boundary layer. The Ferry-Lidar experiment consist on following a ferry-mounted profiling lidar, for a period of 4 months, along a regular route in the Southern Baltic Sea between Kiel (Germany) and Klaipeda (Lithuania). The RUNE experiment comprises measurements from 8 lidars and a buoy to measure the evolution of the wind speed along a ~8 km fetch.   
 
 .. toctree::
    :glob:
@@ -324,11 +323,11 @@ The Ryningsnäs experiment was used in the NEWA experiment to validate ABL model
 
 Hills 
 ^^^^^
-.. todo:: Introduce phenomena you could find in these benchmarks. 
+To study the influence of terrain elevation changes on the ABL we first study the flow over isolated hills, i.e. when the inflow conditions are relatively homogeneous, the height of the hill is small compared to the ABL height (~100 m) surface-layer turbulence dominates) and the slopes are also small to prevent flow separation, i.e. less than ~30%. These conditions have been traditionally used to validate linearized flow models since pioneering work from Jackson and Hunt (1975) :cite:`jackson_turbulent_1975` that led to the Askervein experiment in 1982 and 1983 :cite:`taylor_askervein_1987`. This is a 116-m high smooth hill in Scothland with homogeneous terrain in the prevailing wind direction from the SW, which produced a quasi-steady flow case in neutral conditions. This case became a golden benchmark to test flow-over-hill models until the Bolund experiment in 2007 :cite:`bechmann_bolund_2009` :cite:`berg_bolund_2011`: a 12-m high isolated ridge with steep terrain in the prevailing wind direction, suitable for testing non-linear flow models still in surface-layer and predominanantly neutral conditions :cite:`bechmann_bolund_2011`. 
 
-   * Askervein: smooth hill
-   * Bolund: small-scale escarpment
-   * Rödeser Berg: forested hill
+The idealized inflow conditions assumed in flow-over-hill studies are suitable for wind tunnel experiments. These are adequate for parametric testing of the flow under different hill shapes, surface roughnesses and stability coditions, e.g. :cite:`finnigan_wind_1990`, :cite:`kim_test_2000`, :cite:`ross_comparison_2004`, :cite:`ross_neutral_2005`, :cite:`wan_large-eddy_2011`. 
+
+The NEWA experiment at the Röderser Berg hill near Kassel is the most recent field campaign in the *isolated hill* category in the wind energy context. This ~200 m hill, covered by a forest with 20-30 m tree-heights, includes two 200-m tall masts at the inflow and hilltop and doppler-lidar longitudinal profiles across the hill to measure the speed-up at two heights (80 and 135 m) :cite:`dorenkamper_large-eddy_2019`.  
 
 .. toctree::
    :glob:
@@ -336,6 +335,8 @@ Hills
 
    benchmarks/askervein.rst
    benchmarks/bolund.rst
+   benchmarks/rodeserberg.rst
+
 
 Complex Terrain 
 ^^^^^^^^^^^^^^^
@@ -344,12 +345,15 @@ Complex Terrain
    * Perdigao: double-hill
    * Alaiz: mountain-valley-ridge
 
+
 .. _fig-Perdigao:
 .. figure:: ../_static/windconditions/Perdigao.jpeg
     :width: 600
     :align: center
 
-    Phenomena of interest in the Perdigão experiment. `© American Meteorological Society <https://journals.ametsoc.org/doi/full/10.1175/BAMS-D-17-0227.1>`_. Used with permission. :cite:`fernando_perdigao_2019`
+    Phenomena of interest in the Perdigão experiment. `©American Meteorological Society <https://journals.ametsoc.org/doi/full/10.1175/BAMS-D-17-0227.1>`_. Used with permission. :cite:`fernando_perdigao_2019`
+
+
 
 Wind Resource Assessment and Site Suitability Benchmark 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -361,7 +365,6 @@ Wind Resource Assessment and Site Suitability Benchmark
    :glob:
    :maxdepth: 1
 
-   benchmarks/gabls3.rst
    benchmarks/mesomicrochallenge.rst
 
 Numerical Site Calibration Benchmark

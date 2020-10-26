@@ -1,5 +1,5 @@
-The Hornamossen diurnal-cycle benchmark for flow modeling in forested and moderately complex terrain (Hornamossen)
-==================================================================================================================
+The Hornamossen Diurnal-Cycle in Forested Undulating Terrain (Hornamossen)
+==========================================================================
 
 Status
 ------
