@@ -255,17 +255,18 @@ Phenomena of Interest
 
 Benchmarks
 ----------
+Following the building-block approach illustrated in :numref:`fig-windconditions-building-blocks`, we provide a comprehensive list of benchmarks for the design and testing of atmospheric flow models. These test cases are derived from theory and high-fidelity experiments to target specific phenomena that is considered relevant for the intended uses of the models. From Monin-Obukhov theory in homogeneous conditions to flow over complex terrain and forest canopies, a hierarchy of flow cases is provided.   
 
 The Homogeneous Atmospheric Boundary Layer (ABL)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The ABL building-block of :numref:`fig-ABL-building-block` deals with the horizontally homogeneous atmospheric boundary-layer. A hierarchy of verification and validation cases is suggested to progressively incorporate essential physics, namely:
 
-1. Monin-Obukhov similarity theory (MOST) for surface-layer steady-state conditions depending on roughness and stability :cite:`monin_obukhov_1954`. 
-2. Leipzig wind profile in neutral steady-state conditions :cite:`lettau_re-examination_1950`.
-3. GABLS1 quasi-steady stable boundary-layer under uniform geostrophic wind and surface cooling :cite:`cuxart_single-column_2006`. 
-4. GABLS2 diurnal cycle under uniform geostrophic wind and varying surface temperature :cite:`kumar_impact_2010`.
-5. GABLS3 diurnal cycle under realistic mesoscale forcing and varying surface boundary conditions :cite:`bosveld_third_2014a`. 
-6. Cabauw annual integration of the wind climate to predict quantities of interest for the intended use: wind resource assessment and turbine siting :cite:`rodrigo_comparing_2018`.
+1. *Monin-Obukhov similarity theory* (MOST) for **surface-layer steady-state** conditions depending on roughness and stability :cite:`monin_obukhov_1954`. 
+2. *Leipzig* **ABL** wind profile in **neutral** steady-state conditions :cite:`lettau_re-examination_1950`.
+3. *GABLS1* **stable ABL** under uniform geostrophic wind and surface cooling :cite:`cuxart_single-column_2006`. 
+4. *GABLS2* **diurnal cycle** under uniform geostrophic wind and varying surface temperature :cite:`kumar_impact_2010`.
+5. *GABLS3* diurnal cycle under **realistic mesoscale forcing** and varying surface boundary conditions :cite:`bosveld_third_2014a`. 
+6. *Cabauw* **annual integration** of the wind climate to predict quantities of interest for the intended use wind resource assessment and turbine siting :cite:`rodrigo_comparing_2018` (see :ref:`apps-wra` section).
 
 .. _fig-ABL-building-block:
 .. figure:: ../_static/windconditions/ABL-building-block.png
@@ -274,7 +275,7 @@ The ABL building-block of :numref:`fig-ABL-building-block` deals with the horizo
 
     V&V hierarchy for the ABL building-block.
 
-Benchmarks for MOST and Leipzig were conducted during Wakebench Phase 1 :cite:`rodrigo_iea-task_2014`. The GEWEX Atmospheric Boundary Layer Studies (GABLS), developed by the boundary-layer meteorology community :cite:`holtslag_stable_2013`, can be adopted by the wind energy community by focusing the evaluation on rotor-based quantities of interest :cite:`sanz_rodrigo_methodology_2017`. The GABLS3 and Cabauw benchmarks were conducted in Wakebench Phase 2 :cite:`rodrigo_results_2017`:cite:`rodrigo_comparing_2018`. 
+Benchmarks for *MOST* and *Leipzig* were conducted during Wakebench Phase 1 :cite:`rodrigo_iea-task_2014`. The GEWEX Atmospheric Boundary Layer Studies (*GABLS*), developed by the boundary-layer meteorology community :cite:`holtslag_stable_2013`, can be adopted by the wind energy community by focusing the evaluation on rotor-based quantities of interest :cite:`sanz_rodrigo_methodology_2017`. The *GABLS3* and *Cabauw* benchmarks were conducted in Wakebench Phase 2 :cite:`rodrigo_results_2017`:cite:`rodrigo_comparing_2018`. 
 
 .. toctree::
    :glob:
@@ -286,7 +287,7 @@ Benchmarks for MOST and Leipzig were conducted during Wakebench Phase 1 :cite:`r
 
 Coastal-Offshore
 ^^^^^^^^^^^^^^^^
-The marine atmospheric boundary layer is formed through exchanges of momentum moisture and heat across the air-sea interface. :numref:`fig-cblast` shows a schematic of the physical processes that take place in the coupled atmospheric-ocean boundary layer :cite:`edson_coupled_2007`. Mesoscale variability and wave-induced effects produce deviations from land-based turbulence spectra and flux-profile relationships used in ABL parameterizations :cite:`smedman_case_1999`. The coastal region, where most offshore wind energy is deployed, is subject to large mesoscale variability influenced by coastal topography and temperature gradients between land and sea :cite:`dorenkamper_offshore_2015`. These heterogeneous conditions generate important horizontal wind speed gradients breaking MOST assumptions on which many wake models are based. Furthermore, frequent stable conditions develop due to large land-see temperature contrast producing large-shear low-level jets (LLJ) in shallow boundary-layers and gravity waves that increase wind farm global blockage :cite:`allaerts_gravity_2018`. In extreme wind conditions, wave-induced shear-stress becomes dominant favouring the use of a  wind-wave coupled model :cite:`larsen_estimation_2019`.   
+The marine atmospheric boundary layer is formed through exchanges of momentum moisture and heat across the air-sea interface. :numref:`fig-cblast` shows a schematic of the physical processes that take place in the coupled atmospheric-ocean boundary layer :cite:`edson_coupled_2007`. Mesoscale variability and wave-induced effects produce deviations from land-based turbulence spectra and flux-profile relationships used in ABL parameterizations :cite:`smedman_case_1999`. The coastal region, where most offshore wind energy is deployed, is subject to large mesoscale variability influenced by coastal topography and temperature gradients between land and sea :cite:`dorenkamper_offshore_2015`. These heterogeneous conditions generate important **horizontal wind speed gradients** breaking MOST assumptions on which many wake models are based. Furthermore, frequent **stable conditions** develop due to large land-see temperature contrast producing large-shear **low-level jets (LLJ)** in shallow boundary-layers and **gravity waves** that increase wind farm global blockage :cite:`allaerts_gravity_2018`. In **extreme wind** conditions, wave-induced shear-stress becomes dominant favouring the use of a  wind-wave coupled model :cite:`larsen_estimation_2019`.   
 
 .. _fig-cblast:
 .. figure:: ../_static/windconditions/cblast.jpg
@@ -295,7 +296,7 @@ The marine atmospheric boundary layer is formed through exchanges of momentum mo
 
     Air-sea interaction processes in the marine boundary layer. `© American Meteorological Society <https://journals.ametsoc.org/bams/article/88/3/341/59046/The-Coupled-Boundary-Layers-and-Air-Sea-Transfer>`_. Used with permission. :cite:`edson_coupled_2007`
 
-The NEWA project has produced two benchmarks suitable for the assessment of the coastal-offshore boundary layer. The Ferry-Lidar experiment consist on following a ferry-mounted profiling lidar, for a period of 4 months, along a regular route in the Southern Baltic Sea between Kiel (Germany) and Klaipeda (Lithuania). The RUNE experiment comprises measurements from 8 lidars and a buoy to measure the evolution of the wind speed along a ~8 km fetch.   
+The NEWA project has produced two benchmarks suitable for the assessment of the coastal-offshore boundary layer. The *Ferry-Lidar* experiment consist on following a ferry-mounted profiling lidar, for a period of 4 months, along a regular route in the Southern Baltic Sea between Kiel (Germany) and Klaipeda (Lithuania). The RUNE experiment comprises measurements from 8 lidars and a buoy to measure the evolution of the wind speed along a ~8 km fetch.   
 
 .. toctree::
    :glob:
@@ -303,16 +304,20 @@ The NEWA project has produced two benchmarks suitable for the assessment of the 
 
    benchmarks/ferry-lidar.rst
 
+.. todo:: 
+   * Complete Ferry-Lidar benchmark. 
+   * Add RUNE benchmark.
+
 Forest Canopy
 ^^^^^^^^^^^^^
-A canopy is considered when the roughness elements over the ground surface are of significant size compared to the height of interest. Here we shall focus on forest canopies although the term could be also applied for a urban canopy or a wind farm canopy. The classical interpretation of the flow over a forest canopy is that of a displaced logarithmic profile originating by the momentum absortion through aerodynamic drag across the depth of the canopy :cite:`kaimal_finnigan_1994`, where the displacement height depends on the distribution of the drag through the foliage. Within the canopy the flow is highly turbulent and heterogeneous which prevents us from extending Monin-Obukhov surface-layer similarity to the canopy layer as if it was a rough lower boundary. A more realistic approach requires to model explicitely the distribution of drag and the energy balance between the surface and the air aloft to characterize the flow above and within the canopy. 
+A canopy is considered when the roughness elements over the ground surface are of significant size compared to the height of interest (e.g. hub-height). Here we shall focus on forest canopies although the term could be also applied for a urban canopy or a wind farm canopy. The classical interpretation of the flow over a forest canopy is that of a displaced logarithmic profile originating by the momentum absortion through aerodynamic drag across the depth of the canopy :cite:`kaimal_finnigan_1994`, where the **displacement height** depends on the distribution of the drag through the foliage. Within the canopy the flow is highly turbulent and heterogeneous which prevents us from extending MOST to the canopy layer as if it was a rough lower boundary. A more realistic approach requires to model explicitely the distribution of drag and the energy balance between the surface and the air aloft to characterize the flow above and within the canopy. 
 
 The structure of the turbulent flow in horizontally homogeneous canopies have been the object of study of numerous experiments ranging from wind tunnel models (e.g. :cite:`brunet_wind_1994`) to tall forests :cite:`kaimal_finnigan_1994`. All the profiles display a characteristic inflexion point near the canopy top which separates the canopy flow from the boundary layer profile above. A constant shear stress region is present in the free-stream which decreases rapidly as momentum is absorbed by the canopy. 
 
 
-Heterogeneous forest canopies combine patches of trees of different heights and foliage density that typically change throughout the year. Aerial lidar scans are used to map the tree height and plant area density :cite:`boudreault_lidar_2015`. Highly heterogeneous conditions happen at forest edges as the flow transitions in an internal boundary layer towards a developed canopy boundary layer :cite:`dellwik_flow_2014` :cite:`boudreault_how_2017`.
+**Heterogeneous forest canopies** combine patches of trees of different heights and foliage density that typically change throughout the year. Aerial lidar scans are used to map the tree height and plant area density :cite:`boudreault_lidar_2015`. Highly heterogeneous conditions happen at **forest edges** as the flow transitions through an internal boundary layer towards a developed canopy boundary layer :cite:`dellwik_flow_2014` :cite:`boudreault_how_2017`.
 
-The Ryningsnäs experiment was used in the NEWA experiment to validate ABL models in neutral conditions :cite:`ivanell_micro-scale_2018` considering mean vertical profiles of wind speed and turbulence intensity for different wind direction sectors. A follow-up experiment, Hornamossen, studied the mean flow along a transect of 9 remote sensing profilers and a reference 180-m met mast over undulated forested terrain :cite:`mann_complex_2017`. The Østerild Balconies experiment deployed two horizontally scanning lidars on vertical masts at 50 and 200 m to characterize the heteorogeneous mean flow above the canopy over a relatively flat and semi-forested terrain :cite:`karagali_new_2018`. 
+The *Ryningsnäs* experiment was used in the NEWA project to validate ABL models in neutral conditions :cite:`ivanell_micro-scale_2018` considering mean vertical profiles of wind speed and turbulence intensity for different wind direction sectors. A follow-up experiment, *Hornamossen*, studied the mean flow along a transect of 9 remote sensing profilers and a reference 180-m met mast over undulated forested terrain :cite:`mann_complex_2017`. The *Østerild Balconies* experiment deployed two horizontally scanning lidars on vertical masts at 50 and 200 m to characterize the heteorogeneous mean flow above the canopy over a relatively flat and semi-forested terrain :cite:`karagali_new_2018`. 
 
 .. toctree::
    :glob:
@@ -321,13 +326,16 @@ The Ryningsnäs experiment was used in the NEWA experiment to validate ABL model
    benchmarks/ryningsnas.rst
    benchmarks/hornamossen.rst
 
-Hills 
-^^^^^
-To study the influence of terrain elevation changes on the ABL we first study the flow over isolated hills, i.e. when the inflow conditions are relatively homogeneous, the height of the hill is small compared to the ABL height (~100 m) surface-layer turbulence dominates) and the slopes are also small to prevent flow separation, i.e. less than ~30%. These conditions have been traditionally used to validate linearized flow models since pioneering work from Jackson and Hunt (1975) :cite:`jackson_turbulent_1975` that led to the Askervein experiment in 1982 and 1983 :cite:`taylor_askervein_1987`. This is a 116-m high smooth hill in Scothland with homogeneous terrain in the prevailing wind direction from the SW, which produced a quasi-steady flow case in neutral conditions. This case became a golden benchmark to test flow-over-hill models until the Bolund experiment in 2007 :cite:`bechmann_bolund_2009` :cite:`berg_bolund_2011`: a 12-m high isolated ridge with steep terrain in the prevailing wind direction, suitable for testing non-linear flow models still in surface-layer and predominanantly neutral conditions :cite:`bechmann_bolund_2011`. 
+.. todo:: 
+   * Complete Ryningsnas and Hornamossen benchmarks. 
+
+Isolated Hills 
+^^^^^^^^^^^^^^
+To study the influence of terrain elevation changes on the ABL we first study the flow over isolated hills, i.e. when the inflow conditions are relatively homogeneous and the height of the hill is small compared to the ABL height (~100 m, where surface-layer turbulence dominates the flow). These conditions have been traditionally used to validate linearized flow models since pioneering work from Jackson and Hunt (1975) :cite:`jackson_turbulent_1975` that led to the *Askervein* experiment in 1982 and 1983 :cite:`taylor_askervein_1987`. This is a 116-m high hill in Scothland with **gentle slopes** (i.e. less than ~30% to prevent flow separation) and homogeneous inflow from the SW, where a quasi-steady flow case in neutral conditions was generated. This case became a golden benchmark to test flow-over-hill models until the *Bolund* hill experiment in 2007 :cite:`bechmann_bolund_2009` :cite:`berg_bolund_2011`: a 12-m high isolated ridge with **steep terrain** in the prevailing wind direction, suitable for testing non-linear flow models still in surface-layer and predominanantly neutral conditions :cite:`bechmann_bolund_2011`. 
 
 The idealized inflow conditions assumed in flow-over-hill studies are suitable for wind tunnel experiments. These are adequate for parametric testing of the flow under different hill shapes, surface roughnesses and stability coditions, e.g. :cite:`finnigan_wind_1990`, :cite:`kim_test_2000`, :cite:`ross_comparison_2004`, :cite:`ross_neutral_2005`, :cite:`wan_large-eddy_2011`. 
 
-The NEWA experiment at the Röderser Berg hill near Kassel is the most recent field campaign in the *isolated hill* category in the wind energy context. This ~200 m hill, covered by a forest with 20-30 m tree-heights, includes two 200-m tall masts at the inflow and hilltop and doppler-lidar longitudinal profiles across the hill to measure the speed-up at two heights (80 and 135 m) :cite:`dorenkamper_large-eddy_2019`.  
+The NEWA experiment at the *Röderser Berg* hill near Kassel is the most recent field campaign in the isolated hills category in the wind energy context. This ~200 m hill, **covered by a forest** of 20-30 m tree-heights, includes two 200-m tall masts at the inflow and hilltop and doppler-lidar longitudinal profiles across the hill to measure the speed-up at two heights (80 and 135 m) :cite:`dorenkamper_large-eddy_2019`.  
 
 .. toctree::
    :glob:
@@ -337,10 +345,13 @@ The NEWA experiment at the Röderser Berg hill near Kassel is the most recent fi
    benchmarks/bolund.rst
    benchmarks/rodeserberg.rst
 
+.. todo:: 
+   * Complete Rodeser Berg benchmark. 
+
 
 Complex Terrain 
 ^^^^^^^^^^^^^^^
-.. todo:: Introduce phenomena you could find in these benchmarks. 
+.. todo:: 
 
    * Perdigao: double-hill
    * Alaiz: mountain-valley-ridge
@@ -354,10 +365,14 @@ Complex Terrain
     Phenomena of interest in the Perdigão experiment. `©American Meteorological Society <https://journals.ametsoc.org/doi/full/10.1175/BAMS-D-17-0227.1>`_. Used with permission. :cite:`fernando_perdigao_2019`
 
 
+Applications
+------------
 
-Wind Resource Assessment and Site Suitability Benchmark 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. todo:: wrapping up flow models to provide QoIs for WRA and Site Suitability 
+.. _apps-wra:
+
+Wind Resource Assessment and Site Suitability 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Cabauw :cite:`rodrigo_comparing_2018`.
 
    * NEWA Challenge
 
@@ -369,9 +384,9 @@ Wind Resource Assessment and Site Suitability Benchmark
 
 Numerical Site Calibration Benchmark
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. todo:: wrapping up flow models to provide QoIs for numerical site calibration 
+.. todo:: 
 
-   * Alaiz site calibration campaign
+   * Add Alaiz site calibration 
 
 
 References
