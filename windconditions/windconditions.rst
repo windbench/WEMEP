@@ -126,9 +126,9 @@ Validation Strategy
 -------------------
 Following the model evaluation process of :numref:`fig-ambidextrous-process`, a validation strategy for wind conditions requires the provision of high-fidelity experiments targeting high-impact phenomena of interest, to validate the capacity of the flow model to deal with relevant physics, as well as long-term wind resource campaigns to demonstrate the added value that resolving these phenomena brings to the applications of interest. These applications typically involve integrating a discrete number of flow model simulations with a statistical methodology that provides the expected long-term mean or extreme values and the associated uncertainties. This should be done for a wide variety of wind climates and siting conditions to cover the widest operational range possible. 
 
-This validation strategy was implemented in the `New European Wind Atlas <https://zenodo.org/communities/newa/?page=1&size=20>`_ (NEWA) project towards the development of a new methodology for the assessment of wind conditions that is based on a mesoscale to microscale model-chain approach (Sanz Rodrigo et al., 2020) :cite:`rodrigo_new_2020`. The scope of the project was focused on wind conditions for wind resource and site assessment, i.e. without the influence of wind turbines. Therefore, the model-chain was devoted to atmospheric flow models with two applications in mind:
+This validation strategy was implemented in the `New European Wind Atlas <https://zenodo.org/communities/newa/?page=1&size=20>`_ (NEWA) project towards the development of a new methodology for the assessment of wind conditions that is based on a mesoscale to microscale model-chain approach :cite:`rodrigo_new_2020`. The scope of the project was focused on wind conditions for wind resource and site assessment, i.e. without the influence of wind turbines. Therefore, the model-chain was devoted to atmospheric flow models with two applications in mind:
 
-* **Wind atlas for regional planning**: the main focus was on the mesoscale model, to come up with a reference set-up of the Weather Research and Forecasting (WRF) model that could be used seamlessly across Europe. Through sensitivity analysis, the most suitable configuration was selected to produce a 30-year long simulation forced by ERA5 reanalysis data (Hahmann et al. 2020) :cite:`hahmann_making_2020`. Then, this long-term wind climate was statistically downscaled to 50 m using the WAsP methodology. Hence, the wind atlas model-chain consists on physical downscaling down to 3 km resolution, to produce long-term time series of mesoscale wind characteristics, whose long-term wind climate distributions are then used as input data for a microscale model to produce high-resolution wind resource quantities. The validation strategy was based on a database of 291 meteorological masts, at least 40 m tall, made available by Vestas (Dörenkämper et al., 2020) :cite:`dorenkamper_making_2020`. The main objective of the validation campaign was to determine the general quality of the wind atlas, categorized by regions and terrain complexity, determined by the ruggedness index *RIX* (:numref:`fig-NEWA-windatlas-validation`) :cite:`mortensen_field_2008`. A one year multi-physics ensemble run was also used to quantify the spread of mesoscale winds which would translate into input uncertainty for microscale models :cite:`f_gonzalez_rouco_report_2019`.       
+* **Wind atlas for regional planning**: the main focus was on the mesoscale model, to come up with a reference set-up of the Weather Research and Forecasting (WRF) model that could be used seamlessly across Europe. Through sensitivity analysis, the most suitable configuration was selected to produce a 30-year long simulation forced by ERA5 reanalysis data :cite:`hahmann_making_2020`. Then, this long-term wind climate was statistically downscaled to 50 m using the WAsP methodology. Hence, the wind atlas model-chain consists on physical downscaling down to 3 km resolution, to produce long-term time series of mesoscale wind characteristics, whose long-term wind climate distributions are then used as input data for a microscale model to produce high-resolution wind resource quantities. The validation strategy was based on a database of 291 meteorological masts, at least 40 m tall, made available by Vestas :cite:`dorenkamper_making_2020`. The main objective of the validation campaign was to determine the general quality of the wind atlas, categorized by regions and terrain complexity, determined by the ruggedness index *RIX* (:numref:`fig-NEWA-windatlas-validation`) :cite:`mortensen_field_2008`. A one year multi-physics ensemble run was also used to quantify the spread of mesoscale winds which would translate into input uncertainty for microscale models :cite:`f_gonzalez_rouco_report_2019`.       
 
 .. _fig-NEWA-windatlas-validation:
 .. figure:: ../_static/windconditions/NEWA_windatlas_validation.png
@@ -139,7 +139,7 @@ This validation strategy was implemented in the `New European Wind Atlas <https:
 
 * **Site assessment**: here the main focus was on the microscale model, in particular, in the implementation of mesoscale forcing and boundary conditions for heterogeneous topography (complex terrain and forest canopies) using both Reynolds-Averaged Navier Stokes (RANS) and Large-Eddy Simulation (LES) turbulence models. Hence, the validation strategy seeked validation cases from detailed experiments where these modeling feutures would be tested in the prediction of mean flow and turbulence quantities. The range of experiments carried out in the NEWA allows testing over a wide range of siting conditions from offshore to coastal transitions to smooth and complex terrain with a without forest canopies. Next section provides an overview of these experiments and other open-access datasets that can be used to validate flow models.         
 
-Experiments and other observational datasets  
+Experiments and other Observational Datasets  
 --------------------------------------------
 The building-block validation hierarchy of :numref:`fig-windconditions-building-blocks` provides a framework to map validation datasets with phenomena of interest at different scales and show how they complement each other to cover a reasonably wide range of wind conditions. Site effects are modulated by the regional wind climate which is driven by synoptic weather and local mesoscale processes.    
 
@@ -252,10 +252,11 @@ Phenomena of Interest
    * List of physical phenomena providing definitions and references 
    * PIRT table from MMC
 
+.. _benchmarks_phenomena:
 
-Benchmarks
-----------
-Following the building-block approach illustrated in :numref:`fig-windconditions-building-blocks`, we provide a comprehensive list of benchmarks for the design and testing of atmospheric flow models. These test cases are derived from theory and high-fidelity experiments to target specific phenomena that is considered relevant for the intended uses of the models. From Monin-Obukhov theory in homogeneous conditions to flow over complex terrain and forest canopies, a hierarchy of flow cases is provided.   
+Benchmarks on Flow Phenomena 
+----------------------------
+Following the building-block approach illustrated in :numref:`fig-windconditions-building-blocks`, we provide a comprehensive list of benchmarks for the design and testing of atmospheric flow models. These test cases are derived from theory and high-fidelity experiments to target specific flow phenomena that is considered relevant for the intended uses of the models. From Monin-Obukhov theory in homogeneous conditions to flow over complex terrain and forest canopies, a hierarchy of flow cases is provided in each building-block.   
 
 The Homogeneous Atmospheric Boundary Layer (ABL)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -329,6 +330,8 @@ The *Ryningsnäs* experiment was used in the NEWA project to validate ABL models
 .. todo:: 
    * Complete Ryningsnas and Hornamossen benchmarks. 
 
+.. _isolated-hills:
+
 Isolated Hills 
 ^^^^^^^^^^^^^^
 To study the influence of terrain elevation changes on the ABL we first study the flow over isolated hills, i.e. when the inflow conditions are relatively homogeneous and the height of the hill is small compared to the ABL height (~100 m, where surface-layer turbulence dominates the flow). These conditions have been traditionally used to validate linearized flow models since pioneering work from Jackson and Hunt (1975) :cite:`jackson_turbulent_1975` that led to the *Askervein* experiment in 1982 and 1983 :cite:`taylor_askervein_1987`. This is a 116-m high hill in Scothland with **gentle slopes** (i.e. less than ~30% to prevent flow separation) and homogeneous inflow from the SW, where a quasi-steady flow case in neutral conditions was generated. This case became a golden benchmark to test flow-over-hill models until the *Bolund* hill experiment in 2007 :cite:`bechmann_bolund_2009` :cite:`berg_bolund_2011`: a 12-m high isolated ridge with **steep terrain** in the prevailing wind direction, suitable for testing non-linear flow models still in surface-layer and predominanantly neutral conditions :cite:`bechmann_bolund_2011`. 
@@ -351,11 +354,17 @@ The NEWA experiment at the *Röderser Berg* hill near Kassel is the most recent 
 
 Complex Terrain 
 ^^^^^^^^^^^^^^^
-.. todo:: 
+According to the IEC 61400-12-1 standard :cite:`IEC_61400_12_1`, in the context of power performance testing, *complex terrain* is terrain surrounding the test site that features significant variations in topography and terrain obstacles that may cause flow distortion, i.e. significant variations in the wind conditions that affect turbine performance (wind shear, turbulence intensity, etc). To categorize terrain complexity, three types of complex terrain are defined :cite:`IEC_61400_12_1`:
 
-   * Perdigao: double-hill
-   * Alaiz: mountain-valley-ridge
+* *Type A*: does not have significant changes in elevation relative to the hub height or particularly steep slopes over long distances. Examples of Type A terrain include gentle rolling hills, and turbine located on a ridge facing a plane. 
+* *Type B*: includes mountains, ridgelines, large hills and hilly sites with moderate to steepy sloping terrain and significant changes in elevation relative to the hub height. 
+* *Type C*: typically have a steep terrain feature such as a mountain or canyon that may cause flow separation directly upwind of the site of interest. These conditions create drastic changes in wind conditions  
 
+These definitions are relative to the terrain conditions seen at a target wind turbine site and, therefore, depend on the wind direction sector under consideration. 
+
+Terrain complexity has been quantified using the ruggedness index *RIX* which measures the fraction of terrain surface that is steeper than a critical slope of 30-40%. This index is related to the likelihood of **flow separation**, an important factor in the performance of flow models :cite:`mortensen_field_2008`. In effect, the difference between the *RIX* at the reference (measured) site and that at the predicted site, :math:`\Delta RIX` shows positive correlation with the prediction error of a linearized model when the flow is dominated by terrain effects, i.e. without much influence from thermal effects, drastic roughness changes, forest canopy effects or mesoscale effects :cite:`mortensen_field_2008`.      
+
+:numref:`fig-cblast` shows a schematic of the *Perdigão* double-hill experiment illustrating the most relevant physical phenomena :cite:`fernando_perdigao_2019`. While the flow near the surface is dominated by terrain effects, wind conditions at turbine-relevant heights are modulated by mesoscale thermal and (synoptic) topographic forcings. **Thermal circulation effects** due to differences in temperature between the hilltop and the valley cause upslope (anabatic) and katabatic (downslope) winds driven by buoyancy forces. Under synoptic conditions the flow is determined by atmospheric **stability**. In stable conditions, turbulence mixing is reduced mitigating flow separation but favouring the generation of multiple flow phenomena: **lee waves**, **hydraulic jumps**, **shear layers**, **upstream blocking**, etc. In neutral and unstable conditions terrain-induced flow separation is more likely producing **recirculation** in the lee side and other unsteady phenomena due to the interaction with downstream topography.           
 
 .. _fig-Perdigao:
 .. figure:: ../_static/windconditions/Perdigao.jpeg
@@ -364,14 +373,23 @@ Complex Terrain
 
     Phenomena of interest in the Perdigão experiment. `©American Meteorological Society <https://journals.ametsoc.org/doi/full/10.1175/BAMS-D-17-0227.1>`_. Used with permission. :cite:`fernando_perdigao_2019`
 
+Besides *Perdigão*, the NEWA project produced a follow-up experiment in complex terrain at the *Alaiz* site :cite:`santos_alaiz_2020` to study the interaction between the *Tajonar* ridge, of similar height as *Perdigão* hills (~250 m), and the *Alaiz* mountain range (~700 m), both separated by a ~ 6-km wide valley. The high altitude of *Alaiz* results in larger interaction with the ABL structure and mesoscale flow. 
 
-Applications
-------------
+.. todo:: 
+   * Perdigão benchmark.  
+   * Alaiz diurnal cycles benchmark.
+
+
+Benchmarks on Intended Use
+--------------------------
+This section describes benchmarks in the application space, where flow models are integrated with the statistics of the long-term wind climate to predict the quantities of interest that are relevant for the inteded uses of the model. Before running these benchmarks, flow models should have demonstrated their predictive capacity by validating as many flow cases as possible from the :ref:`benchmarks_phenomena` section. Now, the objective is to quantify the impact that this formal V&V process has on the applications of interest. 
+
+The assessment shall be done on as many sites as possible to cover a wide range of operational conditions. This will require contribution from measurement campaigns from industry to complement the publicly available experimental campaigns.
 
 .. _apps-wra:
 
-Wind Resource Assessment and Site Suitability 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Assessment of Wind Resource, Energy Yield and Site Suitability 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Cabauw :cite:`rodrigo_comparing_2018`.
 
    * NEWA Challenge
@@ -382,8 +400,8 @@ Cabauw :cite:`rodrigo_comparing_2018`.
 
    benchmarks/mesomicrochallenge.rst
 
-Numerical Site Calibration Benchmark
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Numerical Site Calibration
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. todo:: 
 
    * Add Alaiz site calibration 
