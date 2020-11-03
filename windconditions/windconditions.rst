@@ -3,12 +3,17 @@ Wind Conditions
 
 Wind conditions is a generic term to refer to atmospheric flow quantities that affect wind turbine and wind farm performance in terms of energy production and structural integrity. This is the context for the application of atmospheric flow models in activities such as wind resource and energy yield assessment, wind turbine site suitability and wind farm design, during the planning phase, and weather and wind power forecasting during the operational phase of the wind farm. The IEA-Wind TCP Task 31 `Wakebench <https://community.ieawind.org/task31/home>`_ is focused on the planning phase while `Task 36 <https://www.ieawindforecasting.dk/>`_ is dealing with wind power forecasting. The model evaluation framework shall focus on the wind farm system, considering all the mesoscale-to-microscale weather and turbulence processes, which are relevant for inflow and wind farm wake propagation and interaction.   
 
+
+.. _intended-use:
+
 Intended Use
 ------------
 
 Assessment of Wind Resource, Energy Yield and Turbine Suitability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The assessment of the long-term wind resource, energy yield and turbine site suitability is addressed by the `IEC 61400-15 working group <https://www.iec.ch/dyn/www/f?p=103:14:13217413763586::::FSP_ORG_ID:10314>`_ by providing a framework for assessment and reporting. Two standards result from this group: 
+The pre-construction wind resource and energy yield assessment process aims at predicting the net energy output of a wind farm over its lifespan. Based on the net energy yield and its associated uncertainty, the developer can judge the financial viability of the project. This estimate is defined in terms of a distribution that determines the exceedence probability of a certain annual energy production (*AEP*) within a specified timeframe (e.g. 20 years). The process to arrive to these estimates is described in :cite:`brower_wind_2012` :cite:`clifton_wind_2016`. Besides energy yield, the process also predicts mean and extreme wind conditions that are relevant for wind turbine design, i.e. to guarantee that siting conditions meet the requirements to ensure the structural integrity of the wind turbines as per the IEC 61400-1 :cite:`IEC_61400_1` and IEC61400-3 :cite:`IEC_61400_3` (fixed offshore) standards.
+
+The `IEC 61400-15 working group <https://www.iec.ch/dyn/www/f?p=103:14:13217413763586::::FSP_ORG_ID:10314>`_ has recently defined a framework for a standardized reporting of the wind resource, energy yield and turbine suitability process: 
 
 * The IEC 61400-15-1 complements IEC 61400-1 and 61400-3 in the reporting of site specific wind conditions and related atmospheric variables. 
 * The IEC 61400-15-2 addresses the asessment and reporting of wind resource and energy yield.
@@ -382,7 +387,7 @@ Besides *Perdigão*, the NEWA project produced a follow-up experiment in complex
 
 Benchmarks on Intended Use
 --------------------------
-This section describes benchmarks in the application space, where flow models are integrated with the statistics of the long-term wind climate to predict the quantities of interest that are relevant for the inteded uses of the model. Before running these benchmarks, flow models should have demonstrated their predictive capacity by validating as many flow cases as possible from the :ref:`benchmarks_phenomena` section. Now, the objective is to quantify the impact that this formal V&V process has on the applications of interest and highlight gaps that should be addressed in the next round of targeted experiments and validation campaigns. 
+This section describes benchmarks in the application space, where flow models are integrated with the statistics of the long-term wind climate to predict the quantities of interest that are relevant for the inteded uses of the model (see :ref:`intended-use` section). Before running these benchmarks, flow models should have demonstrated their predictive capacity by validating as many flow cases as possible from the :ref:`benchmarks_phenomena` section. This way, it will be easier to understand the limitations of the model and relate them to the resulting prediction bias. In other words, the objective  is to quantify the impact that the formal V&V process has on the applications of interest and highlight gaps that should be addressed in the next round of targeted experiments and validation campaigns. 
 
 The assessment shall be done on as many sites as possible to cover a wide range of operational conditions. This will require the provision of measurement campaigns from industry to complement the publicly available experimental campaigns. 
 
@@ -390,10 +395,7 @@ The assessment shall be done on as many sites as possible to cover a wide range 
 
 Assessment of Wind Resource, Energy Yield and Site Suitability 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Cabauw :cite:`rodrigo_comparing_2018`.
-
-   * NEWA Challenge
+The NEWA project offers a number of public long-term measurement campaigns that can be used to validate *AEP* and long-term wind conditions in different European wind climates and topographic conditions. A baseline case in horizontally homogeneous conditions is based at the Cabauw Experimental Site for Atmospheric Research (`CESAR <https://ruisdael-observatory.nl/cesar-observatory/>`_) in the Netherlands.   
 
 .. toctree::
    :glob:
@@ -401,6 +403,9 @@ Cabauw :cite:`rodrigo_comparing_2018`.
 
    benchmarks/cabauw.rst
 
+.. todo:: 
+
+   * Add Rödeser Berg AEP benchmark  
 
 Numerical Site Calibration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
