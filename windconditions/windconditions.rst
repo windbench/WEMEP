@@ -187,7 +187,7 @@ While long-term statistics of wind conditions are traditionally characterized wi
    +                    +-------------+----------------------+-------------------------+--------------------------------------------------------------------+
    |                    | Baltic Sea  | 2017-02 to 2017-06   | Offshore                | :cite:`gottschall_newa_2018`                                       |
    +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
-   | **Roughness Changes and Canopies**                                                                                                                     |
+   | **Roughness Changes and Forest Canopies**                                                                                                              |
    +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
    | *Ryningsnäs*       | 200-m tall mast in a patchy forested site in simple terrain conditions                                                            |
    +                    +-------------+----------------------+-------------------------+--------------------------------------------------------------------+
@@ -233,7 +233,7 @@ While long-term statistics of wind conditions are traditionally characterized wi
    |                    |             |                      |                         | `NCAR Database <https://data.eol.ucar.edu/project/Perdigao>`_,     |
    |                    |             |                      |                         | :cite:`fernando_perdigao_2019`                                     |
    +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
-   | **Mountaineous complex terrain**                                                                                                                       |
+   | **Mountaineous Complex Terrain**                                                                                                                       |
    +--------------------+-------------+----------------------+-------------------------+--------------------------------------------------------------------+
    | *Alaiz*            | 5 scanning Doppler lidars measuring a Z-shaped 10-km long transect along the ridge tops and across the valley together            |
    | *(ALEX17)*         | with a windRASS profiler, 7 tall masts and 10 surface stations                                                                    |
@@ -382,14 +382,15 @@ Besides *Perdigão*, the NEWA project produced a follow-up experiment in complex
 
 Benchmarks on Intended Use
 --------------------------
-This section describes benchmarks in the application space, where flow models are integrated with the statistics of the long-term wind climate to predict the quantities of interest that are relevant for the inteded uses of the model. Before running these benchmarks, flow models should have demonstrated their predictive capacity by validating as many flow cases as possible from the :ref:`benchmarks_phenomena` section. Now, the objective is to quantify the impact that this formal V&V process has on the applications of interest. 
+This section describes benchmarks in the application space, where flow models are integrated with the statistics of the long-term wind climate to predict the quantities of interest that are relevant for the inteded uses of the model. Before running these benchmarks, flow models should have demonstrated their predictive capacity by validating as many flow cases as possible from the :ref:`benchmarks_phenomena` section. Now, the objective is to quantify the impact that this formal V&V process has on the applications of interest and highlight gaps that should be addressed in the next round of targeted experiments and validation campaigns. 
 
-The assessment shall be done on as many sites as possible to cover a wide range of operational conditions. This will require contribution from measurement campaigns from industry to complement the publicly available experimental campaigns.
+The assessment shall be done on as many sites as possible to cover a wide range of operational conditions. This will require the provision of measurement campaigns from industry to complement the publicly available experimental campaigns. 
 
 .. _apps-wra:
 
 Assessment of Wind Resource, Energy Yield and Site Suitability 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Cabauw :cite:`rodrigo_comparing_2018`.
 
    * NEWA Challenge
@@ -398,7 +399,8 @@ Cabauw :cite:`rodrigo_comparing_2018`.
    :glob:
    :maxdepth: 1
 
-   benchmarks/mesomicrochallenge.rst
+   benchmarks/cabauw.rst
+
 
 Numerical Site Calibration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^

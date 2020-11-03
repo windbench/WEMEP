@@ -154,7 +154,7 @@ References
 
 Acknowledgements
 ----------------
-This benchmark was produced with support from the MesoWake and NEWA European projects under the umbrella of IEA-Wind Task 31 Wakebench.
+This benchmark was produced with support from the MesoWake and NEWA European projects under the umbrella of IEA-Wind Task 31 Wakebench Phase 2.
 
 
 
