@@ -11,7 +11,16 @@ Intended Use
 
 Assessment of Wind Resource, Energy Yield and Turbine Suitability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The pre-construction wind resource and energy yield assessment process aims at predicting the net energy output of a wind farm over its lifespan. Based on the net energy yield and its associated uncertainty, the developer can judge the financial viability of the project. This estimate is defined in terms of a distribution that determines the exceedence probability of a certain annual energy production (*AEP*) within a specified timeframe (e.g. 20 years). The process to arrive to these estimates is described in :cite:`brower_wind_2012` :cite:`clifton_wind_2016`. Besides energy yield, the process also predicts mean and extreme wind conditions that are relevant for wind turbine design, i.e. to guarantee that siting conditions meet the requirements to ensure the structural integrity of the wind turbines as per the IEC 61400-1 :cite:`IEC_61400_1` and IEC61400-3 :cite:`IEC_61400_3` (fixed offshore) standards.
+The pre-construction wind resource and energy yield assessment process aims at predicting the net energy output of a wind farm over its lifespan. Based on the net energy yield and its associated uncertainty, the developer can judge the financial viability of the project. This estimate is defined in terms of a distribution that determines the exceedence probability of a certain annual energy production (*AEP*) within a specified timeframe (e.g. 20 years) (:numref:`fig-AEP-distributions`). The process to arrive to these estimates is described in :cite:`brower_wind_2012` :cite:`clifton_wind_2016`. 
+
+.. _fig-AEP-distributions:
+.. figure:: ../_static/windconditions/AEP_distributions.png
+    :width: 600
+    :align: center
+
+    Annual energy production distributions. `Reprinted with permission from the National Renewable Energy Laboratory <https://www.osti.gov/biblio/1248798>`_. :cite:`clifton_wind_2016`
+
+Besides energy yield, the process also predicts mean and extreme wind conditions that are relevant for wind turbine design, i.e. to guarantee that siting conditions meet the requirements to ensure the structural integrity of the wind turbines as per the IEC 61400-1 :cite:`IEC_61400_1` and IEC61400-3 :cite:`IEC_61400_3` (fixed offshore) standards.
 
 The `IEC 61400-15 working group <https://www.iec.ch/dyn/www/f?p=103:14:13217413763586::::FSP_ORG_ID:10314>`_ has recently defined a framework for a standardized reporting of the wind resource, energy yield and turbine suitability process: 
 
