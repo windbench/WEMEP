@@ -51,7 +51,11 @@ Farm-Farm
 
 Array Efficiency Prediction
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-* OWA Wake Modelling Challenge
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   benchmarks/owabench.rst
 
 References
 ----------
