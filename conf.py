@@ -58,7 +58,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Wind Energy Model Evaluation Protocol'
-copyright = u'2018, Javier Sanz Rodrigo'
+copyright = u'2021, Javier Sanz Rodrigo'
 author = u'Javier Sanz Rodrigo'
 
 # The version info for the project you're documenting, acts as replacement for
