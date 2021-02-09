@@ -150,6 +150,8 @@ The lower panel of :numref:`fig-validation-program-planning` shows the process o
     :align: center
 
     Validated directed program planning and execution (from Hills et al., 2015).
+	
+The implmenetation of the integrated program planning process for model validation in the Atmosphere to electrions (A2e) program can be found in Maniaci and Naughton (:cite:`ManiaciNaughton_2019`). 
 
 Phenomena Identification Ranking Table (PIRT) 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
