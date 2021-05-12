@@ -198,6 +198,15 @@ Each scale has a number of physical phenomena, some of them listed in :numref:`f
 Integrated Experiment, Model Planning and Execution 
 ---------------------------------------------------
 
+The inegrated experiment, model planning and execution phase has many componenets that must interact between various program components, as outlined in the workflow shown in figure :numref:`fig-VandV_workflow`.
+
+.. _fig-VandV_workflow:
+.. figure:: figures/VandV_Workflow.png
+    :width: 600
+    :align: center
+
+    V\&V Workflow, showing detailed components of the validation focused program.
+
 Experiment design
 ^^^^^^^^^^^^^^^^^
 
