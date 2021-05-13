@@ -52,6 +52,7 @@ templates_path = ['_templates']
 #
 # source_suffix = ['.rst', '.md']
 source_suffix = '.rst'
+#extensions = ['recommonmark']
 
 # The master toctree document.
 master_doc = 'index'
@@ -88,6 +89,23 @@ pygments_style = 'sphinx'
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
 
+# This seems like a new requirement if we're using X 2.0
+bibtex_bibfiles = ['wakes/wakes_references.bib',
+    'wakes/benchmarks/owabench_references.bib',
+    'mep/mep_references.bib',
+    'mep/references.bib',    
+    'windconditions/windconditions_references.bib',
+    'windconditions/benchmarks/MOST_references.bib',
+    'windconditions/benchmarks/askervein_references.bib',
+    'windconditions/benchmarks/bolund_references.bib',
+    'windconditions/benchmarks/cabauw_references.bib',
+    'windconditions/benchmarks/ferry-lidar.bib',
+    'windconditions/benchmarks/gabls3_references.bib',
+    'windconditions/benchmarks/hornamossen_references.bib',
+    'windconditions/benchmarks/leipzig_references.bib',
+    'windconditions/benchmarks/rodeserberg_references.bib',
+    'windconditions/benchmarks/ryningsnas_references.bib'
+    ]
 
 # -- Options for HTML output ----------------------------------------------
 

@@ -1,7 +1,9 @@
+.. _Wind Conditions:
+
 Wind Conditions 
 ===============
 
-Wind conditions is a generic term to refer to atmospheric flow quantities that affect wind turbine and wind farm performance in terms of energy production and structural integrity. This is the context for the application of atmospheric flow models in activities such as wind resource and energy yield assessment, wind turbine site suitability and wind farm design, during the planning phase, and weather and wind power forecasting during the operational phase of the wind farm. The IEA-Wind TCP Task 31 `Wakebench <https://community.ieawind.org/task31/home>`_ is focused on the planning phase while `Task 36 <https://www.ieawindforecasting.dk/>`_ is dealing with wind power forecasting. The model evaluation framework shall focus on the wind farm system, considering all the mesoscale-to-microscale weather and turbulence processes, which are relevant for inflow and wind farm wake propagation and interaction.   
+*Wind conditions* is a generic term to refer to atmospheric flow quantities that affect wind turbine and wind farm performance in terms of energy production and structural integrity. This is the context for the application of atmospheric flow models in activities such as wind resource and energy yield assessment, wind turbine site suitability and wind farm design, during the planning phase, and weather and wind power forecasting during the operational phase of the wind farm. The IEA-Wind TCP Task 31 `Wakebench <https://community.ieawind.org/task31/home>`_ is focused on the planning phase while `Task 36 <https://www.ieawindforecasting.dk/>`_ is dealing with wind power forecasting. The model evaluation framework shall focus on the wind farm system, considering all the mesoscale-to-microscale weather and turbulence processes, which are relevant for inflow and wind farm wake propagation and interaction.   
 
 
 .. _intended-use:
@@ -11,7 +13,7 @@ Intended Use
 
 Assessment of Wind Resource, Energy Yield and Turbine Suitability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The pre-construction wind resource and energy yield assessment process aims at predicting the net energy output of a wind farm over its lifespan. Based on the net energy yield and its associated uncertainty, the developer can judge the financial viability of the project. This estimate is defined in terms of a distribution that determines the exceedence probability of a certain annual energy production (*AEP*) within a specified timeframe (e.g. 20 years) (:numref:`fig-AEP-distributions`). The process to arrive to these estimates is described in :cite:`brower_wind_2012` :cite:`clifton_wind_2016`. 
+The pre-construction wind resource and energy yield assessment process aims at predicting the net energy output of a wind farm over its lifespan. Based on the net energy yield and its associated uncertainty, the developer can judge the financial viability of the project. This estimate is defined in terms of a distribution that determines the exceedence probability of a certain annual energy production (*AEP*) within a specified timeframe (e.g. 20 years) (:numref:`fig-AEP-distributions`). The process to arrive at these estimates is described in :cite:`brower_wind_2012` :cite:`clifton_wind_2016`. 
 
 .. _fig-AEP-distributions:
 .. figure:: ../_static/windconditions/AEP_distributions.png
@@ -24,7 +26,7 @@ Besides energy yield, the process also predicts mean and extreme wind conditions
 
 The `IEC 61400-15 working group <https://www.iec.ch/dyn/www/f?p=103:14:13217413763586::::FSP_ORG_ID:10314>`_ has recently defined a framework for a standardized reporting of the wind resource, energy yield and turbine suitability process: 
 
-* The IEC 61400-15-1 complements IEC 61400-1 and 61400-3 in the reporting of site specific wind conditions and related atmospheric variables. 
+* The IEC 61400-15-1 complements IEC 61400-1 and 61400-3 in the reporting of site-specific wind conditions and related atmospheric variables. 
 * The IEC 61400-15-2 addresses the asessment and reporting of wind resource and energy yield.
 
 Whenever possible we shall use the definitions provided therein on relevant quantities of interest for flow model evaluation. The variables are integrated with a wind speed distribution that is representative of the design lifetime and they are defined at hub-height (:math:`z_{hub}`) unless otherwise stated.
